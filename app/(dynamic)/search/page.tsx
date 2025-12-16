@@ -344,13 +344,5 @@ function SearchPageContent() {
 }
 
 export default function SearchPage() {
-  return (
-    <Suspense
-      fallback={
-        <LoadingState title="جاري التحميل..." message="يرجى الإنتظار..." />
-      }
-    >
-      <SearchPageContent />
-    </Suspense>
-  );
+  return <SearchPageContent />;
 }
