@@ -245,6 +245,7 @@ nav h1 {
 .icon-burger {
   display: none !important;
   color: #253a7b;
+  rotate: 180deg;
 }
 
 .mobile-nav-lang {
