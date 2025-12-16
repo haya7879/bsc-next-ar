@@ -1,0 +1,351 @@
+"use client";
+
+import React, {
+  useState,
+  useMemo,
+  useEffect,
+  useRef,
+  useCallback,
+  Suspense,
+} from "react";
+import { useSearchParams, useRouter } from "next/navigation";
+import { useSearchCourses } from "@/services/search/search-hooks";
+import { useCategories } from "@/services/categories/categories-hooks";
+import { useCities } from "@/services/cities/cities-hooks";
+import CustomSelect from "@/components/ui/custom-select";
+import Breadcrumb from "@/components/ui/breadcrumb";
+import ErrorState from "@/components/ui/error-state";
+import EmptyState from "@/components/ui/empty-state";
+import LoadingState from "@/components/ui/loading-state";
+import SearchTimingCard from "@/components/cards/search-timing-card";
+import SearchCourseCard from "@/components/cards/search-course-card";
+import { FaArrowsRotate } from "react-icons/fa6";
+import "@/styles/courses.css";
+
+// Force dynamic rendering to prevent static generation errors
+export const dynamic = 'force-dynamic';
+
+// Months options
+const months = [
+  { value: "1", label: "January" },
+  { value: "2", label: "February" },
+  { value: "3", label: "March" },
+  { value: "4", label: "April" },
+  { value: "5", label: "May" },
+  { value: "6", label: "June" },
+  { value: "7", label: "July" },
+  { value: "8", label: "August" },
+  { value: "9", label: "September" },
+  { value: "10", label: "October" },
+  { value: "11", label: "November" },
+  { value: "12", label: "December" },
+];
+
+// Duration options
+const durations = [
+  { value: "5", label: "5 Days" },
+  { value: "10", label: "10 Days" },
+];
+
+function SearchPageContent() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const { data: categories = [] } = useCategories();
+  const { data: cities = [] } = useCities();
+
+  // Get filters from URL params (single source of truth)
+  const filters = useMemo(() => {
+    const category_slug = searchParams?.get("category_slug") || "";
+    const duration = searchParams?.get("duration") || "";
+    const city_slug = searchParams?.get("city_slug") || "";
+    const month = searchParams?.get("month") || "";
+
+    return {
+      category_slug: category_slug || undefined,
+      duration: duration || undefined,
+      city_slug: city_slug || undefined,
+      month: month || undefined,
+    };
+  }, [searchParams]);
+
+  // Get current values from URL params for form state
+  const currentCategory = searchParams?.get("category_slug") || "";
+  const currentCity = searchParams?.get("city_slug") || "";
+  const currentMonth = searchParams?.get("month") || "";
+  const currentDuration = searchParams?.get("duration") || "";
+
+  // Handler to perform search
+  const performSearch = useCallback(
+    (newFilters: {
+      category?: string | number;
+      city?: string | number;
+      month?: string | number;
+      duration?: string | number;
+    }) => {
+      const params = new URLSearchParams();
+
+      if (newFilters.category)
+        params.append("category_slug", String(newFilters.category));
+      if (newFilters.city) params.append("city_slug", String(newFilters.city));
+      if (newFilters.month) params.append("month", String(newFilters.month));
+      if (newFilters.duration)
+        params.append("duration", String(newFilters.duration));
+
+      const queryString = params.toString();
+      router.push(`/search${queryString ? `?${queryString}` : ""}`);
+    },
+    [router]
+  );
+
+  // Handlers for select changes
+  const handleCategoryChange = useCallback(
+    (value: string | number) => {
+      performSearch({
+        category: value,
+        city: currentCity,
+        month: currentMonth,
+        duration: currentDuration,
+      });
+    },
+    [performSearch, currentCity, currentMonth, currentDuration]
+  );
+
+  const handleCityChange = useCallback(
+    (value: string | number) => {
+      performSearch({
+        category: currentCategory,
+        city: value,
+        month: currentMonth,
+        duration: currentDuration,
+      });
+    },
+    [performSearch, currentCategory, currentMonth, currentDuration]
+  );
+
+  const handleMonthChange = useCallback(
+    (value: string | number) => {
+      performSearch({
+        category: currentCategory,
+        city: currentCity,
+        month: value,
+        duration: currentDuration,
+      });
+    },
+    [performSearch, currentCategory, currentCity, currentDuration]
+  );
+
+  const handleDurationChange = useCallback(
+    (value: string | number) => {
+      performSearch({
+        category: currentCategory,
+        city: currentCity,
+        month: currentMonth,
+        duration: value,
+      });
+    },
+    [performSearch, currentCategory, currentCity, currentMonth]
+  );
+
+  // Check if there are any active filters
+  const hasActiveFilters = Object.values(filters).some(
+    (value) => value !== undefined
+  );
+
+  const { data, isError, error, isLoading } = useSearchCourses(
+    filters,
+    hasActiveFilters
+  );
+
+  const handleClear = useCallback(() => {
+    router.push("/");
+  }, [router]);
+
+  // Convert categories to select options
+  const categoryOptions = categories.map((cat) => ({
+    value: cat.slug || "",
+    label: cat.title || "",
+  }));
+
+  // Convert cities to select options
+  const cityOptions = cities.map((city) => ({
+    value: city.slug || "",
+    label: city.title || "",
+  }));
+
+  // Determine if we should show courses list or timings cards based on API response type
+  const showCoursesList = data?.type === "courses";
+  const showTimingsCards = data?.type === "timings";
+
+  return (
+    <>
+      <Breadcrumb items={[{ label: "Search Results", href: "/search" }]} />
+
+      <section className="container-main md:py-10! py-8!">
+        {/* Search Form */}
+        <div className="flex items-center flex-wrap md:gap-4 gap-2 mb-10">
+          {/* Category Select */}
+          <div style={{ flex: "1", minWidth: "200px" }}>
+            <CustomSelect
+              value={currentCategory}
+              onValueChange={handleCategoryChange}
+              placeholder="Select Category"
+              options={categoryOptions}
+              className=""
+              size="default"
+              variant="outline"
+              fullWidth={true}
+            />
+          </div>
+
+          {/* City Select */}
+          <div style={{ flex: "1", minWidth: "200px" }}>
+            <CustomSelect
+              value={currentCity}
+              onValueChange={handleCityChange}
+              placeholder="Select city"
+              options={cityOptions}
+              className=""
+              size="default"
+              variant="outline"
+              fullWidth={true}
+            />
+          </div>
+
+          {/* Month Select */}
+          <div style={{ flex: "1", minWidth: "200px" }}>
+            <CustomSelect
+              value={currentMonth}
+              onValueChange={handleMonthChange}
+              placeholder="Select month"
+              options={months}
+              className=""
+              size="default"
+              variant="outline"
+              fullWidth={true}
+            />
+          </div>
+
+          {/* Duration Select */}
+          <div style={{ flex: "1", minWidth: "200px" }}>
+            <CustomSelect
+              value={currentDuration}
+              onValueChange={handleDurationChange}
+              placeholder="Select duration"
+              options={durations}
+              className=""
+              size="default"
+              variant="outline"
+              fullWidth={true}
+            />
+          </div>
+
+          {/* Clear Button */}
+          <button
+            type="button"
+            onClick={handleClear}
+            className="clear-btn"
+            style={{ whiteSpace: "nowrap" }}
+          >
+            <FaArrowsRotate className="clear-icon" />
+            Clear
+          </button>
+        </div>
+
+        {isLoading && (
+          <LoadingState
+            title="Searching..."
+            message="Please wait while we search for courses"
+          />
+        )}
+
+        {isError && !isLoading && (
+          <ErrorState
+            title="Error searching"
+            message={error?.message || "Failed to search courses"}
+          />
+        )}
+
+        {!isLoading && !isError && hasActiveFilters && data && (
+          <div className="search-results">
+            {/* Results Header */}
+            <div className="search-results-header">
+              <h1>Search Results</h1>
+              {data.count > 0 && (
+                <p className="results-count">
+                  Found {data.count} {data.count === 1 ? "result" : "results"}
+                </p>
+              )}
+            </div>
+
+            {/* Active Filters */}
+            {/* {Object.keys(data.filters).length > 0 && (
+              <div className="active-filters">
+                <h3>Active Filters:</h3>
+                <div className="filters-tags">
+                  {data.filters.keyword && (
+                    <span className="filter-tag">Keyword: {data.filters.keyword}</span>
+                  )}
+                  {data.filters.category_slug && (
+                    <span className="filter-tag">Category: {data.filters.category_slug}</span>
+                  )}
+                  {data.filters.duration && (
+                    <span className="filter-tag">Duration: {data.filters.duration} days</span>
+                  )}
+                  {data.filters.city_slug && (
+                    <span className="filter-tag">City: {data.filters.city_slug}</span>
+                  )}
+                  {data.filters.month && (
+                    <span className="filter-tag">Month: {data.filters.month}</span>
+                  )}
+                </div>
+              </div>
+            )} */}
+
+            {/* Results Content */}
+            {data.count === 0 || (data.data && data.data.length === 0) ? (
+              <EmptyState
+                title="Not Found"
+                message="No results found. Try adjusting your search filters"
+              />
+            ) : showCoursesList ? (
+              // Show courses list when type is "courses"
+              <div className="courses-section">
+                <div className="courses-items">
+                  {(data.data as SearchCourse[])
+                    .filter((item) => item.title && item.slug)
+                    .map((item) => (
+                      <SearchCourseCard
+                        key={item.id}
+                        course={{
+                          id: item.id,
+                          title: item.title || "",
+                          slug: item.slug,
+                          category_title: item.category?.title,
+                          category_slug: item.category?.slug,
+                        }}
+                      />
+                    ))}
+                </div>
+              </div>
+            ) : showTimingsCards ? (
+              // Show timings cards grid when type is "timings"
+              <div className="timings-grid">
+                {(data.data as SearchTiming[]).map((timing) => (
+                  <SearchTimingCard key={timing.id} timing={timing} />
+                ))}
+              </div>
+            ) : null}
+          </div>
+        )}
+      </section>
+    </>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <Suspense fallback={<LoadingState title="Loading..." message="Please wait..." />}>
+      <SearchPageContent />
+    </Suspense>
+  );
+}

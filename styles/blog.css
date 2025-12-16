@@ -1,0 +1,152 @@
+.blog-details .container-main {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+    border-bottom: 1px solid #d9d9d9;
+    padding-block: 56px;
+}
+
+.blog-details p {
+    font-size: 18px;
+    font-weight: 500;
+    color: #6f6f6f;
+    line-height: 37px;
+    text-align: justify;
+}
+
+.blog-details .blog-details-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.blog-details .blog-details-title h3 {
+    max-width: 900px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #134e88;
+    line-height: 40px;
+}
+
+.blog-details .blog-details-title .date {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.blog-details .blog-details-title .date span {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6f6f6f;
+}
+
+.blog-details .blog-question {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.blog-details .blog-question h4 {
+    font-size: 24px;
+    color: var(--black);
+}
+
+.blog-cards {
+    padding-block: 56px;
+}
+
+.blog-cards .card-container-blog {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
+    gap: 24px;
+    width: 100%;
+}
+
+.blog-cards .blog-card-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.blog-cards .blog-card-title h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 57.24px;
+    letter-spacing: -0.6655414700508118px;
+    color: var(--black);
+}
+
+.blog-cards .blog-card-title a {
+    font-size: 12px;
+    font-weight: 400;
+    color: #484848;
+    display: block;
+    text-decoration: underline;
+}
+
+.blog-content {
+    margin-block: 50px;
+    color: #6f6f6f;
+}
+
+.blog-content h3 {
+    margin-top: 14px;
+}
+
+.blog-content h2 {
+    margin-block: 18px;
+}
+
+.blog-content ul {
+    color: #6f6f6f;
+    flex: 1;
+    list-style: disc !important;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-position: inside;
+    padding-inline: 20px !important;
+}
+
+.blog-content ol {
+    list-style-position: inside;
+    padding-inline: 20px !important;
+}
+
+@media screen and (max-width: 1024px) {
+    .blog-cards .card-container-blog {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        row-gap: 8px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .blog-details .container-main {
+        gap: 40px;
+    }
+
+    .blog-details p {
+        line-height: 34px;
+    }
+
+    .blog-details .blog-details-title {
+        gap: 16px;
+    }
+
+    .blog-details .blog-details-title h3 {
+        max-width: 100%;
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    .blog-details .blog-question {
+        gap: 16px;
+    }
+
+    .blog-details .blog-question h4 {
+        font-size: 22px;
+    }
+}

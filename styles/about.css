@@ -1,0 +1,77 @@
+.about-content .about-info {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding-block: 40px;
+}
+
+.about-content .about-info .about-item p {
+    color: #6f6f6f;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-top: 8px;
+}
+
+.about-content .about-info .about-item h2 {
+    width: 400px;
+    color: #134e88;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.about-content .about-info .about-item .about-why {
+    max-width: 786px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.about-content .about-info .about-item .about-why div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.about-content .about-info .about-item .about-why div p {
+    font-size: 14px;
+    color: #00000079;
+    line-height: normal;
+    text-align: center;
+}
+
+.about-content .about-info .about-item .about-why div .about-why-img {
+    width: 84px;
+    height: 84px;
+    background-color: #f7f7ff;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1025px) {
+    .about-content .about-info {
+        gap: 45px;
+    }
+
+    .about-content .about-info .about-item p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+
+    .about-content .about-info .about-item h2 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .about-content .about-info {
+        padding-block: 32px;
+    }
+
+}

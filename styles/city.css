@@ -1,0 +1,31 @@
+.section-title {
+    margin-bottom: 32px !important;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.section-title p {
+    color: #4d4d4d;
+    font-weight: 500;
+}
+
+.courses-section.city {
+    margin-top: 0 !important;
+}
+
+@media screen and (max-width: 768px) {
+    .section-title {
+        margin-bottom: 26px !important;
+    }
+
+    .section-title h2 {
+        font-size: 28px;
+    }
+
+    .courses-section .courses-section-head {
+        padding-top: 0 !important;
+    }
+}

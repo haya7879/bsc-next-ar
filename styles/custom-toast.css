@@ -1,0 +1,46 @@
+    .custom-toast {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    background-color: #253a7b;
+    border: none;
+    border-radius: 12px;
+    padding: 20px 30px;
+    max-width: 350px;
+    z-index: 10000;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    transform: translateX(100%);
+}
+
+.custom-toast.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(0);
+}
+
+.custom-toast img {
+    width: 40px;
+    filter: brightness(0) invert(1); /* Make the dark icon white */
+}
+
+.custom-toast h3 {
+    font-size: 18px;
+    margin: 0;
+    color: white;
+}
+
+.custom-toast p {
+    font-size: 14px;
+    color: #e5e5e5;
+    margin: 0;
+}
+

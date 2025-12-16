@@ -1,0 +1,191 @@
+"use client";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  // Helper function to check if a link is active
+  const isActive = (href: string) => {
+    if (href === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(href);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 50);
+    };
+
+    // Check initial scroll position
+    handleScroll();
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <>
+      <nav className={isScrolled ? "scrolled" : ""}>
+        <div className="container-main flex-between h-full!">
+          <Link href="/" className="nav-logo">
+            <img src="/imgs/logo-en.png" alt="logo-en" />
+          </Link>
+          <div className="mobile-nav-lang">
+            <a
+              className="btn"
+              href="https://bscenter.org"
+              role="button"
+              style={{ color: "#616161" }}
+            >
+              <h3 className="shrink-0">English courses</h3>
+            </a>
+          </div>
+          <div className="icon-burger" onClick={toggleMobileMenu}>
+            <svg
+              className="menu-icon"
+              stroke="currentColor"
+              fill="currentColor"
+              strokeWidth="0.4"
+              viewBox="0 0 24 24"
+              fontSize="30"
+              fontWeight="900"
+              height="1em"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g id="Menu_Fries">
+                <path d="M20.437,19.937c0.276,0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-16.874,0.002c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l16.874,-0.002Z"></path>
+                <path d="M20.437,11.5c0.276,-0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-10,0.001c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l10,-0.001Z"></path>
+                <path d="M20.437,3.062c0.276,-0 0.5,0.224 0.5,0.5c0,0.276 -0.224,0.5 -0.5,0.5l-16.874,0.001c-0.276,-0 -0.5,-0.224 -0.5,-0.5c-0,-0.276 0.224,-0.5 0.5,-0.5l16.874,-0.001Z"></path>
+              </g>
+            </svg>
+          </div>
+          <div className="nav-links">
+            <ul className="flex-between">
+              <li>
+                <Link href="/" className={isActive("/") ? "active" : ""}>
+                  الصفحة الرئيسية
+                </Link>
+              </li>
+              <li>
+                <Link href="/training-courses" className={isActive("/training-courses") ? "active" : ""}>
+                  التخصصات
+                </Link>
+              </li>
+              <li>
+                <Link href="/training-cities" className={isActive("/training-cities") ? "active" : ""}>
+                  المدن
+                </Link>
+              </li>
+              <li>
+                <Link href="/about" className={isActive("/about") ? "active" : ""}>
+                  عن المركز
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className={isActive("/contact") ? "active" : ""}>
+                  اتصل بنا
+                </Link>
+              </li>
+            </ul>
+          </div>
+          <div className="search-container flex-between">
+            <div>
+              <input type="text" suppressHydrationWarning />
+              <img src="/icons/search.svg" alt="search-icon" id="search-icon" />
+            </div>
+            <span className="line-search"></span>
+            <div className="search">
+              <a
+                className="btn"
+                href="https://bscenter.org"
+                role="button"
+                style={{ color: "#616161" }}
+              >
+                <h3 className="shrink-0 text-[17px]">
+                  <b>English courses</b>
+                </h3>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <div
+        className="mobile-overlay"
+        style={{ display: isMobileMenuOpen ? "block" : "none" }}
+        onClick={closeMobileMenu}
+      ></div>
+
+      <div
+        className={`nav-links-phone ${isMobileMenuOpen ? "showMobileNav" : ""}`}
+      >
+        <div className="flex-between mebile-menu-header">
+          <Link href="/" className="nav-logo" onClick={closeMobileMenu}>
+            <Image src="/imgs/logo-en.png" alt="logo-en" width={150} height={150}/>
+          </Link>
+        </div>
+        <ul className="flex-column">
+          <li>
+            <Link href="/" onClick={closeMobileMenu} className={isActive("/") ? "active" : ""}>
+              الصفحة الرئيسية
+            </Link>
+          </li>
+          <li>
+            <Link href="/training-courses" onClick={closeMobileMenu} className={isActive("/training-courses") ? "active" : ""}>
+              التخصصات
+            </Link>
+          </li>
+          <li>
+            <Link href="/training-cities" onClick={closeMobileMenu} className={isActive("/training-cities") ? "active" : ""}>
+              المدن
+            </Link>
+          </li>
+          <li>
+            <Link href="/about" onClick={closeMobileMenu} className={isActive("/about") ? "active" : ""}>
+              عن المركز
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact" onClick={closeMobileMenu} className={isActive("/contact") ? "active" : ""}>
+              اتصل بنا
+            </Link>
+          </li>
+        </ul>
+        <div className="search-phone">
+          <div className="search flex-between">
+            <a
+              className="btn"
+              href="https://bscenter.org"
+              role="button"
+              style={{ color: "#616161" }}
+            >
+              <h3 className="shrink-0">English courses</h3>
+            </a>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
