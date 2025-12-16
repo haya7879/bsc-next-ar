@@ -13,7 +13,6 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.5s ease, transform 0.5s ease;
-    font-family: "Poppins", sans-serif;
     color: white;
     display: flex;
     gap: 15px;

@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 interface HeroBannerProps {
   title: string;
   description?: string;
@@ -17,7 +19,7 @@ export default function HeroBanner({
 }: HeroBannerProps) {
   return (
     <section className={`hero-banner ${type == "form" && "w-full! m-0! before:rounded-none! h-[40vh]!"}`}>
-      <img src={image} alt={imageAlt} title={imageTitle} className={`${type == "form" && "rounded-none!"}`} />
+      <Image width={1000} height={1000} alt={imageAlt} src={image} title={imageTitle} className={`${type == "form" && "rounded-none!"}`} />
       <div className="hero-title">
         <div>
           <h1>{title}</h1>
