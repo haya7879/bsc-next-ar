@@ -272,7 +272,7 @@ export default function DownloadPopup() {
 
           <div>
             <div className="form-title">
-              <h2>تحميل كتيب الدورة</h2>
+              <h2>تحميل بروشورالدورة</h2>
             </div>
             <div className="form-inputs">
               {/* Full Name */}
