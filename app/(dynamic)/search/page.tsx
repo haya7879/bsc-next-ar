@@ -27,18 +27,18 @@ export const dynamic = "force-dynamic";
 
 // Months options
 const months = [
-  { value: "1", label: "January" },
-  { value: "2", label: "February" },
-  { value: "3", label: "March" },
-  { value: "4", label: "April" },
-  { value: "5", label: "May" },
-  { value: "6", label: "June" },
-  { value: "7", label: "July" },
-  { value: "8", label: "August" },
-  { value: "9", label: "September" },
-  { value: "10", label: "October" },
-  { value: "11", label: "November" },
-  { value: "12", label: "December" },
+  { value: "1", label: "كانون الثاني" },
+  { value: "2", label: "شباط" },
+  { value: "3", label: "آذار" },
+  { value: "4", label: "نيسان" },
+  { value: "5", label: "أيار" },
+  { value: "6", label: "حزيران" },
+  { value: "7", label: "تموز" },
+  { value: "8", label: "آب" },
+  { value: "9", label: "أيلول" },
+  { value: "10", label: "تشرين الأول" },
+  { value: "11", label: "تشرين الثاني" },
+  { value: "12", label: "كانون الأول" },
 ];
 
 // Duration options

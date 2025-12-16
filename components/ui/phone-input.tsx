@@ -593,7 +593,7 @@ export default function PhoneInput({
                     <input
                       ref={searchInputRef}
                       type="text"
-                      placeholder="Search country..."
+                      placeholder="ابحث عن بلد..."
                       value={searchQuery}
                       onChange={handleSearchChange}
                       onKeyDown={handleSearchKeyDown}
@@ -634,7 +634,7 @@ export default function PhoneInput({
                     ))
                   ) : (
                     <div className="px-4 py-3 text-sm text-[#6B7280] text-center">
-                      No countries found
+                      لا يوجد بلدان
                     </div>
                   )}
                 </div>
@@ -676,7 +676,7 @@ export default function PhoneInput({
                 `${selectedCountry.dialCode}${phoneInput}`,
                 selectedCountry.code
               )
-            ? `Invalid phone number format`
+            ? `تنسيق رقم الهاتف غير صحيح`
             : helperText}
         </p>
       )}
