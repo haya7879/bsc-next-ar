@@ -4,6 +4,7 @@ import { useRef, useState, useEffect } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
+import Image from 'next/image';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -70,8 +71,8 @@ export default function Hero() {
       >
         {heroSlides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="img-container">
-              <img src={slide.image} alt={slide.title} />
+            <div className="img-container" style={{ position: 'relative' }}>
+              <Image src={slide.image} alt={slide.title} fill className="object-cover" />
               <div className="overlay"></div>
               <div className="content">
                 <div className="hero-content-left">

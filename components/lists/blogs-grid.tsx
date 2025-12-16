@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { formatDate, truncateDescription, redirectTo } from "@/lib/helpers";
 import Link from "next/link";
 
@@ -13,11 +14,12 @@ export default function BlogsGrid({ blogs }: { blogs: Blog[] }) {
           className="card-blogs clickable-card"
         >
           {blog.image && (
-            <img
+            <Image
               src={blog.image}
               alt={blog.image_alt || blog.title}
               className="card-blog-img"
-              loading="lazy"
+              width={400}
+              height={300}
             />
           )}
           <div className="card-blog-content">
@@ -38,7 +40,7 @@ export default function BlogsGrid({ blogs }: { blogs: Blog[] }) {
                   redirectTo(`/blogs/${blog.slug}`);
                 }}
               >
-                Read More
+                اقرأ المزيد
               </button>
               <div className="card-blog-views">
                 <img src="/icons/calender.svg" alt="Calendar" />

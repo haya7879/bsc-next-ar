@@ -63,8 +63,7 @@ export default function Pagination({
     <div className="custom-pagination mb-[40px]!">
       <div className="pagination-info">
         <span>
-          Showing {pagination.from} to {pagination.to} of {pagination.total}{" "}
-          results
+          عرض {pagination.from} إلى {pagination.to} من {pagination.total} نتائج
         </span>
       </div>
 
@@ -76,12 +75,12 @@ export default function Pagination({
             className="pagination-btn"
           >
             <HiArrowLeft />
-            Previous
+            السابق
           </Link>
         ) : (
           <button className="pagination-btn pagination-btn-disabled" disabled>
             <HiArrowLeft />
-            Previous
+            السابق
           </button>
         )}
 
@@ -117,12 +116,12 @@ export default function Pagination({
             href={`/blogs?page=${currentPage + 1}`}
             className="pagination-btn"
           >
-            Next
+            التالي
             <HiArrowRight />
           </Link>
         ) : (
           <button className="pagination-btn pagination-btn-disabled" disabled>
-            Next
+            التالي
             <HiArrowRight />
           </button>
         )}

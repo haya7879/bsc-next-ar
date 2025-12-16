@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useFormatDate } from "@/lib/hooks/use-format-date";
 import { useRouter } from "next/navigation";
 
@@ -20,10 +21,11 @@ export default function UpcommingCard({ course }: UpcommingCardProps) {
       onClick={() => router.push(readMoreUrl)}
       style={{ cursor: "pointer" }}
     >
-      <img
-        src={course.course_image}
+      <Image
+        src={course?.course_image || ""}
         alt={course.course_image_alt || course.course_title}
-        loading="lazy"
+        width={400}
+        height={300}
       />
       <div className="card-content">
         <div className="card-title">{course.course_title}</div>

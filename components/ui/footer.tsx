@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Script from "next/script";
 
 export default function Footer() {
@@ -9,10 +10,12 @@ export default function Footer() {
           <ul>
             <li>
               <Link href="/" className="footer-logo">
-                <img
+                <Image
                   src="/imgs/footer-logo.svg"
                   alt="bscenter-logo"
                   title="bscenter-logo"
+                  width={150}
+                  height={50}
                 />
               </Link>
             </li>
@@ -33,7 +36,7 @@ export default function Footer() {
               <Link href="/about">عن المركز</Link>
             </li>
             <li>
-              <Link href="/blogs">المدونة</Link>
+              <Link href="/blogs">المدونات</Link>
             </li>
             <li>
               <Link href="/training-courses">التخصصات</Link>
@@ -101,9 +104,11 @@ export default function Footer() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img
+            <Image
               src="https://images.dmca.com/Badges/dmca-badge-w150-5x1-07.png?ID=a93d1866-cf03-48a4-9106-d51999924b5c"
               alt="DMCA.com Protection Status"
+              width={150}
+              height={30}
             />
           </a>
           <Script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" />

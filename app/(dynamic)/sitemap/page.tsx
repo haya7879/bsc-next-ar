@@ -108,7 +108,7 @@ export default async function SitemapPage() {
         items={[
           {
             href: "/sitemap",
-            label: "Sitemap",
+            label: "خريطة الموقع",
           },
         ]}
       />
@@ -119,20 +119,20 @@ export default async function SitemapPage() {
             {/* Pages Section */}
             <div className="relative flex flex-col gap-10">
               {/* Background stripe */}
-              <div className="absolute left-0 top-0 w-14 h-full bg-blue-50 -z-10 hidden md:block"></div>
+              <div className="absolute right-0 top-0 w-14 h-full bg-blue-50 -z-10 hidden md:block"></div>
 
-              <h2 className="md:text-4xl text-2xl font-semibold ml-0! md:ml-10!">
-                Pages
+              <h2 className="md:text-4xl text-2xl font-semibold mr-0! md:ml-10!">
+                الصفحات
               </h2>
 
-              <div className="ml-0! md:ml-28! flex flex-wrap gap-12 max-w-4xl">
+              <div className="mr-0! md:mr-28! flex flex-wrap gap-12 max-w-4xl">
                 <ul className="list-disc list-inside text-lg font-medium text-gray-500 space-y-1">
                   <li>
                     <a
                       href="/"
                       className="hover:text-blue-600 transition-colors duration-300"
                     >
-                      Home
+                      الصفحة الرئيسية
                     </a>
                   </li>
                   <li>
@@ -140,7 +140,7 @@ export default async function SitemapPage() {
                       href="/training-courses"
                       className="hover:text-blue-600 transition-colors duration-300"
                     >
-                      Categories
+                      التخصصات
                     </a>
                   </li>
                   <li>
@@ -148,7 +148,7 @@ export default async function SitemapPage() {
                       href="/training-cities"
                       className="hover:text-blue-600 transition-colors duration-300"
                     >
-                      Cities
+                      المدن
                     </a>
                   </li>
                 </ul>
@@ -159,7 +159,7 @@ export default async function SitemapPage() {
                       href="/blogs"
                       className="hover:text-blue-600 transition-colors duration-300"
                     >
-                      Blogs
+                      المدونات
                     </a>
                   </li>
                   <li>
@@ -167,7 +167,7 @@ export default async function SitemapPage() {
                       href="/about"
                       className="hover:text-blue-600 transition-colors duration-300"
                     >
-                      About us
+                      عن المركز
                     </a>
                   </li>
                   <li>
@@ -175,7 +175,7 @@ export default async function SitemapPage() {
                       href="/contact"
                       className="hover:text-blue-600 transition-colors duration-300"
                     >
-                      Contact us
+                      اتصل بنا
                     </a>
                   </li>
                 </ul>
@@ -186,7 +186,7 @@ export default async function SitemapPage() {
                       href="/privacy-policy"
                       className="hover:text-blue-600 transition-colors duration-300"
                     >
-                      Privacy policy
+                      سياسة الخصوصية
                     </a>
                   </li>
                   <li>
@@ -194,7 +194,7 @@ export default async function SitemapPage() {
                       href="/terms"
                       className="hover:text-blue-600 transition-colors duration-300"
                     >
-                      Terms & conditions
+                      الشروط والأحكام
                     </a>
                   </li>
                   <li>
@@ -202,7 +202,7 @@ export default async function SitemapPage() {
                       href="/join"
                       className="hover:text-blue-600 transition-colors duration-300"
                     >
-                      Join Our Team
+                      انضم الى فريقنا
                     </a>
                   </li>
                 </ul>
@@ -212,13 +212,13 @@ export default async function SitemapPage() {
             {/* Cities Section */}
             <div className="relative flex flex-col gap-10">
               {/* Background stripe */}
-              <div className="absolute left-0 top-0 w-14 h-full bg-blue-50 -z-10 hidden md:block"></div>
+              <div className="absolute right-0 top-0 w-14 h-full bg-blue-50 -z-10 hidden md:block"></div>
 
-              <h2 className="md:text-4xl text-2xl font-semibold ml-0! md:ml-10!">
-                Cities
+              <h2 className="md:text-4xl text-2xl font-semibold mr-0! md:ml-10!">
+                المدن
               </h2>
 
-              <div className="ml-0! md:ml-28! flex flex-wrap gap-12 max-w-4xl">
+              <div className="mr-0! md:mr-28! flex flex-wrap gap-12 max-w-4xl">
                 <ul className="list-disc list-inside text-lg font-medium text-gray-500 space-y-1">
                   {sitemapData?.cities.map((city) => (
                     <li key={city.id}>
@@ -239,13 +239,13 @@ export default async function SitemapPage() {
               Object.keys(sitemapData.city_category_seos).length > 0 && (
                 <div className="relative flex flex-col gap-10">
                   {/* Background stripe */}
-                  <div className="absolute left-0 top-0 w-14 h-full bg-green-50 -z-10 hidden md:block"></div>
+                  <div className="absolute right-0 top-0 w-14 h-full bg-green-50 -z-10 hidden md:block"></div>
 
-                  <h2 className="md:text-4xl text-2xl font-semibold ml-0! md:ml-10!">
-                    City Category Combinations
+                  <h2 className="md:text-4xl text-2xl font-semibold mr-0! md:ml-10!">
+                    تخصصات ومدن
                   </h2>
 
-                  <div className="ml-0! md:ml-28! space-y-8 max-w-4xl">
+                  <div className="mr-0! md:mr-28! space-y-8 max-w-4xl">
                     {Object.entries(sitemapData.city_category_seos).map(
                       ([categoryId, combinations]) => {
                         const category = sitemapData.categories.find(

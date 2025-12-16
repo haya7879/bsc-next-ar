@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function AboutSection() {
   return (
     <section className="search-courses about-us">
@@ -12,10 +14,10 @@ export default function AboutSection() {
               منذ عام 1996، نقدم حلول تدريب واستشارات مبتكرة على مستوى عالمي مصممة
               لتمكين الأفراد والمنظمات، ومساعدتهم على الازدهار في بيئة الأعمال التنافسية سريعة التطور اليوم.
             </p>
-            <a href="https://bscenter.org/about">اعرف المزيد</a>
+            <a href="https://bscenter.org/about">تعرف على المزيد</a>
           </div>
           <div className="about-right">
-            <img src="/imgs/khda.png" alt="KHDA" />
+            <Image src="/imgs/khda.png" alt="KHDA" width={200} height={200} />
           </div>
         </div>
       </div>

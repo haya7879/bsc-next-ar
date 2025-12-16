@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useCategories } from "@/services/categories/categories-hooks";
 import { useCities } from "@/services/cities/cities-hooks";
 import CustomSelect from "@/components/ui/custom-select";
-import { FaArrowsRotate, FaChevronRight } from "react-icons/fa6";
+import { FaArrowsRotate, FaChevronLeft } from "react-icons/fa6";
 
 // Months options
 const months = [
@@ -171,7 +171,7 @@ export default function HeroSearchForm({ onFormContentChange }: HeroSearchFormPr
         <div className="search-buttons">
           <button type="button" onClick={handleSearch} className="search-btn" suppressHydrationWarning>
             بحث
-            <FaChevronRight fontSize={12} className="search-icon" />
+            <FaChevronLeft fontSize={12} className="search-icon" />
           </button>
           <button type="button" onClick={handleClear} className="clear-btn" suppressHydrationWarning>
             <FaArrowsRotate className="clear-icon" />

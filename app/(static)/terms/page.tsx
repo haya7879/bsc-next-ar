@@ -98,310 +98,239 @@ export default function TermsPage() {
     <>
       <TermSchema />
       <Breadcrumb
-        items={[{ label: "Home", href: "/" }, { label: "Terms & conditions" }]}
+        items={[{ label: "الصفحة الرئيسية", href: "/" }, { label: "الشروط والأحكام" }]}
       />
       <section className="privacy">
         <div className="privacy-main container-main">
           <h1>
-            <strong>Terms & Conditions</strong>
+            <strong>الشروط والأحكام</strong>
           </h1>
 
           <p>
-            Welcome to the Balanced Score Training Center. By accessing or using
-            our website www.bscenter.org ("Website"), services, or any related
-            products (collectively referred to as "Services"), you agree to
-            comply with and be bound by these Terms and Conditions ("Terms"). If
-            you do not agree to these Terms, please do not use our Services.
-            These Terms constitute a legally binding agreement between you
-            ("User," "you," or "your") and Balanced Score Training Center
-            ("Balanced Score Training Center," "we," "us," or "our"),
-            headquartered in the United Arab Emirates with global operations.
+            مرحبًا بك في مركز الأداء المتوازن للتدريب. من خلال الوصول إلى موقعنا الإلكتروني www.bscenter.org ("الموقع الإلكتروني") أو الخدمات أو أي منتجات ذات صلة (يشار إليها مجتمعة باسم "الخدمات") أو استخدامها، فإنك توافق على الامتثال لهذه الشروط والأحكام ("الشروط"). إذا كنت لا توافق على هذه الشروط، يرجى عدم استخدام خدماتنا. تشكل هذه الشروط اتفاقية ملزمة قانونًا بينك ("المستخدم" أو "أنت" أو "خاصتك") مركز الأداء المتوازن للتدريب ("مركز الأداء المتوازن للتدريب" أو "نحن" أو "خاصتنا")، ومقره في الإمارات العربية المتحدة مع عمليات عالمية.
           </p>
 
           <div className="privacy-items">
             <div className="privacy-item">
               <h2>
-                <strong>Acceptance of Terms</strong>
+                <strong>قبول الشروط</strong>
               </h2>
               <p>
-                By accessing or using our Services, you confirm that you have
-                read, understood, and agree to these Terms. You also agree to
-                comply with all applicable local, national, and international
-                laws and regulations. If you do not agree to these Terms, you
-                are not authorized to use our Services.
+                من خلال الوصول إلى خدماتنا أو استخدامها، فإنك تؤكد أنك قرأت وفهمت ووافقت على هذه الشروط. كما توافق على الامتثال لجميع القوانين واللوائح المحلية والوطنية والدولية المعمول بها. إذا كنت لا توافق على هذه الشروط، فلا يحق لك استخدام خدماتنا.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Eligibility</strong>
+                <strong>الأهلية</strong>
               </h2>
-              <p>To access and use our Services, you must:</p>
+              <p>للوصول إلى خدماتنا واستخدامها، يجب عليك:</p>
               <p>
-                1. Be at least 18 years old or the age of majority in your
-                jurisdiction.
+                1. أن تكون في سن 18 عامًا على الأقل أو سن الرشد في ولايتك القضائية.
               </p>
               <p>
-                2. Have the legal capacity to enter into a binding agreement.
+                2. أن تكون لديك القدرة القانونية على إبرام اتفاقية ملزمة.
               </p>
               <p>
-                3. Ensure that your use of our Services does not violate any
-                applicable laws in your jurisdiction.
+                3. التأكد من أن استخدامك لخدماتنا لا ينتهك أي قوانين سارية في ولايتك القضائية.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Changes to the Terms</strong>
+                <strong>تغييرات الشروط</strong>
               </h2>
               <p>
-                We reserve the right to update these Terms at any time. Changes
-                will be effective immediately upon posting to our Website unless
-                otherwise specified. You are encouraged to review these Terms
-                periodically. Continued use of our Services after changes have
-                been made signifies your acceptance of the revised Terms.
+                نحتفظ بالحق في تحديث هذه الشروط في أي وقت. ستصبح التغييرات سارية المفعول فور نشرها على موقعنا الإلكتروني ما لم يُنص على خلاف ذلك. نشجعك على مراجعة هذه الشروط بشكل دوري. الاستمرار في استخدام خدماتنا بعد إجراء التغييرات يعني قبولك للشروط المنقحة.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Global Service Scope</strong>
+                <strong>نطاق الخدمة العالمي</strong>
               </h2>
               <p>
-                We operate globally, providing training and professional
-                development services to users worldwide. While our headquarters
-                are based in the United Arab Emirates, our Services comply with
-                relevant international laws, including:
+                نعمل عالميًا، ونقدم خدمات التدريب والتطوير المهني للمستخدمين في جميع أنحاء العالم. في حين يقع مقرنا الرئيسي في الإمارات العربية المتحدة، فإن خدماتنا تتوافق مع القوانين الدولية ذات الصلة، بما في ذلك:
               </p>
               <ul>
-                <li>UAE Federal Laws.</li>
+                <li>القوانين الاتحادية لدولة الإمارات العربية المتحدة.</li>
                 <li>
-                  General Data Protection Regulation (GDPR) for users in the
-                  European Union (EU).
+                  اللائحة العامة لحماية البيانات (GDPR) للمستخدمين في الاتحاد الأوروبي (EU).
                 </li>
                 <li>
-                  California Consumer Privacy Act (CCPA) for California
-                  residents.
+                  قانون خصوصية المستهلك في كاليفورنيا (CCPA) لسكان كاليفورنيا.
                 </li>
               </ul>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Account Registration</strong>
+                <strong>تسجيل الحساب</strong>
               </h2>
               <p>
-                To access certain features of our Services, you may need to
-                create an account. By registering, you agree to:
+                للوصول إلى ميزات معينة من خدماتنا، قد تحتاج إلى إنشاء حساب. بالتسجيل، فإنك توافق على:
               </p>
-              <p>1. Provide accurate, up-to-date, and complete information.</p>
-              <p>2. Keep your account credentials confidential.</p>
+              <p>1. تقديم معلومات دقيقة ومحدثة وكاملة.</p>
+              <p>2. الحفاظ على سرية بيانات اعتماد حسابك.</p>
               <p>
-                3. Notify us immediately of any unauthorized access or misuse of
-                your account.
+                3. إخطارنا فورًا بأي وصول غير مصرح به أو إساءة استخدام لحسابك.
               </p>
               <p>
-                You are responsible for all activities that occur under your
-                account. We reserve the right to suspend or terminate accounts
-                that violate these Terms or applicable laws.
+                أنت مسؤول عن جميع الأنشطة التي تحدث تحت حسابك. نحتفظ بالحق في تعليق أو إنهاء الحسابات التي تنتهك هذه الشروط أو القوانين المعمول بها.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Fees and Payments</strong>
+                <strong>الرسوم والمدفوعات</strong>
               </h2>
               <p>
-                1. Pricing: All fees for our Services are displayed on our
-                Website or provided in separate agreements. Fees may vary based
-                on customization, location, or additional features.
+                1. التسعير: يتم عرض جميع الرسوم الخاصة بخدماتنا على موقعنا الإلكتروني أو يتم تقديمها في اتفاقيات منفصلة. قد تختلف الرسوم بناءً على التخصيص أو الموقع أو الميزات الإضافية.
               </p>
               <p>
-                2. Payment Terms: Payment must be made in full via approved
-                methods (credit card, bank transfer, or online payment
-                gateways).
+                2. شروط الدفع: يجب أن يتم الدفع بالكامل عبر الطرق المعتمدة (بطاقة الائتمان أو التحويل المصرفي أو بوابات الدفع عبر الإنترنت).
               </p>
               <p>
-                3. Refund Policy: Refunds will be processed according to our
-                refund policy, detailed on our Website. Refund eligibility may
-                vary based on the nature of the Services purchased.
+                3. سياسة الاسترداد: سيتم معالجة عمليات الاسترداد وفقًا لسياسة الاسترداد الخاصة بنا، والموضحة بالتفصيل على موقعنا الإلكتروني. قد تختلف أهلية الاسترداد بناءً على طبيعة الخدمات المشتراة.
               </p>
               <p>
-                4. Taxes: Users are responsible for any applicable taxes in
-                their jurisdiction.
+                4. الضرائب: المستخدمون مسؤولون عن أي ضرائب سارية في ولايتهم القضائية.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Intellectual Property</strong>
+                <strong>الملكية الفكرية</strong>
               </h2>
               <p>
-                All materials, content, and intellectual property available on
-                our Website and through our Services are owned by or licensed to
-                Balanced Score Training Center. These include, but are not
-                limited to, training materials, course content, videos, images,
-                and branding elements. You are granted a limited, non-exclusive,
-                non-transferable license to use these materials for personal or
-                organizational purposes. Unauthorized use, reproduction, or
-                distribution is strictly prohibited.
+                جميع المواد والمحتوى والملكية الفكرية المتاحة على موقعنا الإلكتروني ومن خلال خدماتنا مملوكة لـ Balanced Score Training Center أو مرخصة لها. وتشمل هذه، على سبيل المثال لا الحصر، مواد التدريب ومحتوى الدورة ومقاطع الفيديو والصور وعناصر العلامة التجارية. يتم منحك ترخيصًا محدودًا وغير حصري وغير قابل للتحويل لاستخدام هذه المواد لأغراض شخصية أو تنظيمية. يُحظر الاستخدام أو الاستنساخ أو التوزيع غير المصرح به.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>User Obligations</strong>
+                <strong>التزامات المستخدم</strong>
               </h2>
-              <p>By using our Services, you agree not to:</p>
+              <p>باستخدام خدماتنا، فإنك توافق على عدم:</p>
               <p>
-                1. Engage in any activities that are unlawful, fraudulent, or
-                harmful to others.
+                1. الانخراط في أي أنشطة غير قانونية أو احتيالية أو ضارة بالآخرين.
               </p>
               <p>
-                2. Violate the intellectual property rights of Balanced Score
-                Training Center or third parties.
+                2. انتهاك حقوق الملكية الفكرية لـمركز الأداء المتوازن للتدريب أو أطراف ثالثة.
               </p>
               <p>
-                3. Disrupt the security or functionality of the Website or
-                Services.
+                3. تعطيل أمان أو وظائف الموقع الإلكتروني أو الخدمات.
               </p>
-              <p>4. Provide false or misleading information.</p>
+              <p>4. تقديم معلومات كاذبة أو مضللة.</p>
               <p>
-                5. Attempt to access our systems or data without authorization.
+                5. محاولة الوصول إلى أنظمتنا أو بياناتنا دون إذن.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Data Protection and Privacy</strong>
+                <strong>حماية البيانات والخصوصية</strong>
               </h2>
               <p>
-                Your use of our Services is subject to our Privacy Policy, which
-                outlines how we collect, use, and protect your data. We comply
-                with global data protection regulations, including:
+                يخضع استخدامك لخدماتنا لسياسة الخصوصية الخاصة بنا، والتي تحدد كيفية جمع بياناتك واستخدامها وحمايتها. نحن نلتزم بلوائح حماية البيانات العالمية، بما في ذلك:
               </p>
               <ul>
                 <li>
-                  GDPR (EU residents) for transparency, user rights, and secure
-                  data processing.
+                  GDPR (`مقيمو الاتحاد الأوروبي) للشفافية وحقوق المستخدم ومعالجة البيانات الآمنة.
                 </li>
                 <li>
-                  CCPA (California residents) for disclosures and user control
-                  over personal data.
+                  CCPA (مقيمو كاليفورنيا) للإفصاحات وسيطرة المستخدم على البيانات الشخصية.
                 </li>
                 <li>
-                  UAE Federal Data Protection Law (PDPL) for local and regional
-                  compliance.
+                  قانون حماية البيانات الفيدرالي لدولة الإمارات العربية المتحدة (PDPL) للامتثال المحلي والإقليمي.
                 </li>
               </ul>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Disclaimer of Warranties</strong>
+                <strong>إخلاء المسؤولية عن الضمانات</strong>
               </h2>
               <p>
-                Our Services are provided on an "as is" and "as available"
-                basis. While we strive to deliver high-quality services, we do
-                not guarantee:
+                يتم تقديم خدماتنا على أساس "كما هي" و"كما تتوفر". وبينما نسعى جاهدين لتقديم خدمات عالية الجودة، فإننا لا نضمن:
               </p>
               <p>
-                1. Uninterrupted or error-free operation of the Website or
-                Services.
+                1. التشغيل المتواصل أو الخالي من الأخطاء للموقع أو الخدمات.
               </p>
-              <p>2. That the Services will meet your specific requirements.</p>
+              <p>2. أن الخدمات ستلبي متطلباتك المحددة.</p>
               <p>
-                3. The accuracy or reliability of any content or information.
+                3. دقة أو موثوقية أي محتوى أو معلومات.
               </p>
               <p>
-                To the maximum extent permitted by law, we disclaim all
-                warranties, express or implied.
+                إلى أقصى حد يسمح به القانون، نتنصل من جميع الضمانات، الصريحة أو الضمنية.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Limitation of Liability</strong>
+                <strong>حدود المسؤولية</strong>
               </h2>
               <p>
-                To the fullest extent permitted by law, Balanced Score Training
-                Center shall not be liable for any:
+                إلى أقصى حد يسمح به القانون، لن يكون مركز الأداء المتوازن للتدريب مسؤولاً عن أي:
               </p>
-              <p>1. Indirect, incidental, special, or consequential damages.</p>
-              <p>2. Loss of revenue, profits, or data.</p>
+              <p>1. أضرار غير مباشرة أو عرضية أو خاصة أو تبعية.</p>
+              <p>2. خسارة الإيرادات أو الأرباح أو البيانات.</p>
               <p>
-                3. Damages arising from the use or inability to use our
-                Services.
+                3. الأضرار الناشئة عن استخدام أو عدم القدرة على استخدام خدماتنا.
               </p>
               <p>
-                Our total liability shall not exceed the fees you paid for the
-                specific Services in question.
+                لن تتجاوز مسؤوليتنا الإجمالية الرسوم التي دفعتها مقابل الخدمات المحددة المعنية.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Indemnification</strong>
+                <strong>التعويض</strong>
               </h2>
               <p>
-                You agree to indemnify and hold Balanced Score Training Center,
-                its affiliates, officers, and employees harmless from any
-                claims, liabilities, damages, or expenses arising from your use
-                of our Services or breach of these Terms.
+                أنت توافق على تعويض مركز الأداء المتوازن للتدريب والشركات التابعة لها والمسؤولين والموظفين وحمايتهم من أي مطالبات أو التزامات أو أضرار أو نفقات ناشئة عن استخدامك لخدماتنا أو انتهاك هذه الشروط.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Termination of Services</strong>
+                <strong>إنهاء الخدمات</strong>
               </h2>
               <p>
-                We reserve the right to suspend or terminate your access to the
-                Services at any time, without notice, if you violate these
-                Terms, applicable laws, or engage in conduct that harms our
-                business or other users.
+                نحتفظ بالحق في تعليق أو إنهاء وصولك إلى الخدمات في أي وقت، دون إشعار، إذا انتهكت هذه الشروط أو القوانين المعمول بها أو انخرطت في سلوك يضر بأعمالنا أو المستخدمين الآخرين.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Governing Law and Jurisdiction</strong>
+                <strong>القانون الحاكم والاختصاص القضائي</strong>
               </h2>
               <p>
-                These Terms shall be governed by and construed in accordance
-                with the laws of the United Arab Emirates. For disputes arising
-                from these Terms, the courts of the UAE shall have exclusive
-                jurisdiction. For global users, we aim to comply with applicable
-                local laws. In cases of conflict, mandatory local regulations
-                will prevail.
+                تخضع هذه الشروط لقوانين دولة الإمارات العربية المتحدة ويتم تفسيرها وفقًا لها. بالنسبة للنزاعات الناشئة عن هذه الشروط، فإن محاكم دولة الإمارات العربية المتحدة لها الاختصاص الحصري. بالنسبة للمستخدمين العالميين، نهدف إلى الامتثال للقوانين المحلية المعمول بها. في حالات النزاع، تسود اللوائح المحلية الإلزامية.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Third-Party Links</strong>
+                <strong>روابط الجهات الخارجية</strong>
               </h2>
               <p>
-                Our Website may include links to external websites or services.
-                These links are provided for convenience, and we do not endorse
-                or take responsibility for the content, policies, or practices
-                of third-party sites.
+                قد يتضمن موقعنا الإلكتروني روابط لمواقع أو خدمات خارجية. يتم توفير هذه الروابط للراحة، ولا نؤيد أو نتحمل المسؤولية عن محتوى أو سياسات أو ممارسات مواقع الجهات الخارجية.
               </p>
             </div>
 
             <div className="privacy-item">
               <h2>
-                <strong>Contact Information</strong>
+                <strong>معلومات الاتصال</strong>
               </h2>
               <p>
-                If you have any questions or concerns regarding these Terms,
-                please contact us:
+                إذا كانت لديك أي أسئلة أو مخاوف بشأن هذه الشروط، يرجى الاتصال بنا:
               </p>
               <p>
-                <strong>Balanced Score Training Center</strong>
+                <strong>مركز الأداء المتوازن للتدريب</strong>
               </p>
               <p>
-                Email: <a href="mailto:info@bscenter.org">info@bscenter.org</a>
+                البريد الإلكتروني: <a href="mailto:info@bscenter.org">info@bscenter.org</a>
               </p>
             </div>
           </div>

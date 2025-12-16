@@ -112,7 +112,7 @@ export default async function BlogsPage({ searchParams }: BlogsPageProps) {
   return (
     <>
       <BlogsSchema />
-      <Breadcrumb items={[{ label: "Blogs", href: "/blogs" }]} />
+      <Breadcrumb items={[{ label: "المدونات", href: "/blogs" }]} />
       <HeroBanner
         title={hero.blogs.title}
         description={hero.blogs.description}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 interface CategoryCardProps {
   category: Category;
@@ -14,10 +15,11 @@ export default function CategoryCard({
   return (
     <div className="category-card mx-5">
       <Link href={categoryUrl}>
-        <img
-          src={imageUrl}
+        <Image
+          src={imageUrl || ""}
           alt={category.image_alt || category.title}
-          loading="lazy"
+          width={400}
+          height={300}
         />
       </Link>
       <div className="card-overlay">

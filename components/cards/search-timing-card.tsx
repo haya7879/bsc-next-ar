@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useDownloadPopupStore } from "@/lib/store/download-popup-store";
 import { formatDate } from "@/lib/helpers";
+import { useRouter } from "next/navigation";
 
 interface SearchTimingCardProps {
   timing: SearchTiming;
@@ -11,22 +12,7 @@ interface SearchTimingCardProps {
 export default function SearchTimingCard({ timing }: SearchTimingCardProps) {
   const openPopup = useDownloadPopupStore((state) => state.openPopup);
   const coursePageUrl = `/training-course/${timing.course_slug}`;
-
-
-  const handleCardClick = (e: React.MouseEvent) => {
-    // Don't navigate if clicking on buttons or links
-    const target = e.target as HTMLElement;
-    if (
-      target.closest('.btn-pdf') ||
-      target.closest('.btn-register') ||
-      target.closest('.btn-enquire') ||
-      target.closest('a') ||
-      target.closest('button')
-    ) {
-      return;
-    }
-    window.location.href = coursePageUrl;
-  };
+  const router = useRouter()
 
   const handleDownloadPDF = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -67,7 +53,7 @@ export default function SearchTimingCard({ timing }: SearchTimingCardProps) {
   return (
     <div 
       className="timing-card-grid cursor-pointer" 
-      onClick={handleCardClick}
+      onClick={() => router.push(coursePageUrl)}
       style={{ cursor: 'pointer' }}
     >
       {/* Course Title */}

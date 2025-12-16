@@ -1,16 +1,16 @@
 "use client";
 
-import { useRef, useEffect } from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Autoplay } from 'swiper/modules';
-import type { Swiper as SwiperType } from 'swiper';
-import CategoryCard from '@/components/cards/category-card';
+import { useRef, useEffect } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import type { Swiper as SwiperType } from "swiper";
+import CategoryCard from "@/components/cards/category-card";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/autoplay';
-import { FaChevronLeft, FaChevronRight } from 'react-icons/fa6';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/autoplay";
+import { FaChevronLeft } from "react-icons/fa6";
 
 interface CategoriesSliderClientProps {
   categories: Category[];
@@ -38,37 +38,41 @@ export function CategoriesArrows() {
 
   return (
     <div className="arrows">
-      <div 
-        ref={(el) => { 
+      <div
+        suppressHydrationWarning
+        ref={(el) => {
           sharedRefs.prevRef.current = el;
         }}
         onClick={handlePrevClick}
-        className="swiper-button-prev arrow-btn" 
-        tabIndex={0} 
-        role="button" 
+        className="swiper-button-prev arrow-btn"
+        tabIndex={0}
+        role="button"
         aria-label="Previous slide"
-        style={{ cursor: 'pointer' }}
+        style={{ cursor: "pointer" }}
       >
-        <FaChevronLeft className='w-4! h-4!' color='white'/>
+        <FaChevronLeft className="w-4! h-4!" color="white" />
       </div>
-      <div 
-        ref={(el) => { 
+      <div
+        suppressHydrationWarning
+        ref={(el) => {
           sharedRefs.nextRef.current = el;
         }}
         onClick={handleNextClick}
-        className="swiper-button-next arrow-btn" 
-        tabIndex={0} 
-        role="button" 
+        className="swiper-button-next arrow-btn"
+        tabIndex={0}
+        role="button"
         aria-label="Next slide"
-        style={{ cursor: 'pointer' }}
+        style={{ cursor: "pointer" }}
       >
-        <FaChevronRight className='w-4! h-4!' color='white'/>
+        <FaChevronLeft className="w-4! h-4!" color="white" />
       </div>
     </div>
   );
 }
 
-export default function CategoriesSliderClient({ categories }: CategoriesSliderClientProps) {
+export default function CategoriesSliderClient({
+  categories,
+}: CategoriesSliderClientProps) {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
@@ -120,11 +124,13 @@ export default function CategoriesSliderClient({ categories }: CategoriesSliderC
       >
         {categories?.map((category) => (
           <SwiperSlide key={category.slug || category.id}>
-            <CategoryCard category={category} categoryUrl={`/training-courses/${category.slug}`}/>
+            <CategoryCard
+              category={category}
+              categoryUrl={`/training-courses/${category.slug}`}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
   );
 }
-

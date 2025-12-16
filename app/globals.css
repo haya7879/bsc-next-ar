@@ -774,7 +774,7 @@ textarea:focus,
 }
 
 .search-courses {
-  margin-top: 40px;
+  margin-top: 50px;
 }
 
 .search-courses .section-title {
@@ -1514,10 +1514,6 @@ footer .footer-bottom .container-main .social-links a:hover {
     --main-width: 90%;
   }
 
-  .search-courses {
-    margin-top: 32px;
-  }
-
   .course-hero-title {
     left: 5vw !important;
   }
@@ -1609,6 +1605,10 @@ footer .footer-bottom .container-main .social-links a:hover {
 }
 
 @media screen and (max-width: 700px) {
+  .search-courses {
+    margin-top: 32px;
+  }
+
   footer .footer-top {
     flex-direction: column;
   }

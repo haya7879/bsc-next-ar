@@ -23,7 +23,7 @@ import { FaArrowsRotate } from "react-icons/fa6";
 import "@/styles/courses.css";
 
 // Force dynamic rendering to prevent static generation errors
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 // Months options
 const months = [
@@ -43,8 +43,8 @@ const months = [
 
 // Duration options
 const durations = [
-  { value: "5", label: "5 Days" },
-  { value: "10", label: "10 Days" },
+  { value: "5", label: "5 ايام" },
+  { value: "10", label: "10 ايام" },
 ];
 
 function SearchPageContent() {
@@ -178,7 +178,7 @@ function SearchPageContent() {
 
   return (
     <>
-      <Breadcrumb items={[{ label: "Search Results", href: "/search" }]} />
+      <Breadcrumb items={[{ label: "نتائج البحث", href: "/search" }]} />
 
       <section className="container-main md:py-10! py-8!">
         {/* Search Form */}
@@ -241,27 +241,28 @@ function SearchPageContent() {
 
           {/* Clear Button */}
           <button
+            suppressHydrationWarning
             type="button"
             onClick={handleClear}
             className="clear-btn"
             style={{ whiteSpace: "nowrap" }}
           >
             <FaArrowsRotate className="clear-icon" />
-            Clear
+            مسح
           </button>
         </div>
 
         {isLoading && (
           <LoadingState
-            title="Searching..."
-            message="Please wait while we search for courses"
+            title="جاري البحث..."
+            message="يرجى الإنتظار أثناء البحث عن الدورات"
           />
         )}
 
         {isError && !isLoading && (
           <ErrorState
-            title="Error searching"
-            message={error?.message || "Failed to search courses"}
+            title="خطأ في البحث"
+            message={error?.message || "فشل البحث عن الدورات"}
           />
         )}
 
@@ -269,10 +270,10 @@ function SearchPageContent() {
           <div className="search-results">
             {/* Results Header */}
             <div className="search-results-header">
-              <h1>Search Results</h1>
+              <h1>نتائج البحث</h1>
               {data.count > 0 && (
                 <p className="results-count">
-                  Found {data.count} {data.count === 1 ? "result" : "results"}
+                  يوجد {data.count} {data.count === 1 ? "نتيجة" : "نتائج"}
                 </p>
               )}
             </div>
@@ -304,8 +305,8 @@ function SearchPageContent() {
             {/* Results Content */}
             {data.count === 0 || (data.data && data.data.length === 0) ? (
               <EmptyState
-                title="Not Found"
-                message="No results found. Try adjusting your search filters"
+                title="لم يتم العثور على نتائج"
+                message="لا يوجد نتائج. يرجى تعديل البحث الخاص بك"
               />
             ) : showCoursesList ? (
               // Show courses list when type is "courses"
@@ -344,7 +345,11 @@ function SearchPageContent() {
 
 export default function SearchPage() {
   return (
-    <Suspense fallback={<LoadingState title="Loading..." message="Please wait..." />}>
+    <Suspense
+      fallback={
+        <LoadingState title="جاري التحميل..." message="يرجى الإنتظار..." />
+      }
+    >
       <SearchPageContent />
     </Suspense>
   );

@@ -48,7 +48,7 @@ export default function Navbar() {
       <nav className={isScrolled ? "scrolled" : ""}>
         <div className="container-main flex-between h-full!">
           <Link href="/" className="nav-logo">
-            <img src="/imgs/logo-en.png" alt="logo-en" />
+            <Image src="/imgs/logo-en.png" alt="logo-en" width={150} height={50} />
           </Link>
           <div className="mobile-nav-lang">
             <a
