@@ -102,7 +102,7 @@ export default async function BlogDetailPage({ params }: BlogDetailPageProps) {
       {blog && <BlogSchema blog={blog} />}
       <Breadcrumb
         items={[
-          { label: "Blogs", href: "/blogs" },
+          { label: "المدونات", href: "/blogs" },
           { label: blog.title },
         ]}
       />
