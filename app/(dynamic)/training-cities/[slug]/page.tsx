@@ -12,6 +12,7 @@ import CoursesList from "@/components/lists/courses-list";
 import SearchCourse from "@/components/ui/search-course";
 import CategoriesGrid from "@/components/lists/categories-grid";
 import CitySchema from "@/components/schema/city-schema";
+import Loader from "@/components/ui/loader";
 
 export default function CityPage() {
   const params = useParams();
@@ -40,27 +41,38 @@ export default function CityPage() {
           { label: city?.title || "" },
         ]}
       />
-      <HeroBanner
-        title={city?.h1 || ""}
-        description={city?.description || ""}
-        image={city?.image}
-        imageAlt={city?.image_alt}
-        imageTitle={city?.image_title}
-      />
-      <div className="courses-section container-main">
-        <div className="courses-section-head">
-          <p>
-            قائمة الدورات في{" "}
-            <span className="font-bold">{city?.title || ""}</span>
-          </p>
-          <SearchCourse
-            searchQuery={searchQuery}
-            handleSearchChange={handleSearchChange}
+      {city && (
+        <HeroBanner
+          title={city?.h1 || ""}
+          description={city?.description || ""}
+          image={city?.image}
+          imageAlt={city?.image_alt}
+          imageTitle={city?.image_title}
+        />
+      )}
+
+      {courses ? (
+        <div className="courses-section container-main">
+          <div className="courses-section-head">
+            <p>
+              قائمة الدورات في
+              <span className="font-bold">{city?.title || ""}</span>
+            </p>
+            <SearchCourse
+              searchQuery={searchQuery}
+              handleSearchChange={handleSearchChange}
+            />
+          </div>
+
+          <CoursesList
+            courses={filteredCourses}
+            pathPrefix="/training-course"
           />
         </div>
+      ) : (
+        <Loader />
+      )}
 
-        <CoursesList courses={filteredCourses} pathPrefix="/training-course" />
-      </div>
 
       {city?.additional_description && (
         <section className="container-main">

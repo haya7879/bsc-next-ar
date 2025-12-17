@@ -182,7 +182,7 @@ function SearchPageContent() {
 
       <section className="container-main md:py-10! py-8!">
         {/* Search Form */}
-        <div className="flex items-center flex-wrap md:gap-4 gap-2 mb-10">
+        <div className="flex items-center flex-wrap md:gap-4 gap-2 m-0! timings-filters">
           {/* Category Select */}
           <div style={{ flex: "1", minWidth: "200px" }}>
             <CustomSelect
