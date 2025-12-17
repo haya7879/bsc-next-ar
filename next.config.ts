@@ -17,6 +17,16 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
+        protocol: 'http',
+        hostname: 'api-ar.bscenter.org',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'api-ar.bscenter.org',
+        pathname: '/**',
+      },
+      {
         protocol: 'https',
         hostname: 'bscenter.org',
         pathname: '/**',
