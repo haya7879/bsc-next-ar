@@ -344,5 +344,16 @@ function SearchPageContent() {
 }
 
 export default function SearchPage() {
-  return <SearchPageContent />;
+  return (
+    <Suspense fallback={
+      <div className="container-main md:py-10! py-8!">
+        <LoadingState
+          title="جاري التحميل..."
+          message="يرجى الإنتظار"
+        />
+      </div>
+    }>
+      <SearchPageContent />
+    </Suspense>
+  );
 }
