@@ -44,7 +44,7 @@ export default function TimingsFilters({
           placeholder="الشهر"
           options={months.map((month) => ({
             value: month,
-            label: month,
+            label: `${month} 2026`,
           }))}
           className="filter-select"
           size="default"

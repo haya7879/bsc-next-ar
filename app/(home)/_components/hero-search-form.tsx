@@ -9,18 +9,18 @@ import { FaArrowsRotate, FaChevronLeft } from "react-icons/fa6";
 
 // Months options
 const months = [
-  { value: "1", label: "يناير" },
-  { value: "2", label: "فبراير" },
-  { value: "3", label: "مارس" },
-  { value: "4", label: "أبريل" },
-  { value: "5", label: "مايو" },
-  { value: "6", label: "يونيو" },
-  { value: "7", label: "يوليو" },
-  { value: "8", label: "أغسطس" },
-  { value: "9", label: "سبتمبر" },
-  { value: "10", label: "أكتوبر" },
-  { value: "11", label: "نوفمبر" },
-  { value: "12", label: "ديسمبر" },
+  { value: "1", label: "يناير 2026" },
+  { value: "2", label: "فبراير 2026" },
+  { value: "3", label: "مارس 2026" },
+  { value: "4", label: "أبريل 2026" },
+  { value: "5", label: "مايو 2026" },
+  { value: "6", label: "يونيو 2026" },
+  { value: "7", label: "يوليو 2026" },
+  { value: "8", label: "أغسطس 2026" },
+  { value: "9", label: "سبتمبر 2026" },
+  { value: "10", label: "أكتوبر 2026" },
+  { value: "11", label: "نوفمبر 2026" },
+  { value: "12", label: "ديسمبر 2026" },
 ];
 
 // Duration options

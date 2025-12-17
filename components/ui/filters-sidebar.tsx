@@ -35,7 +35,7 @@ export default function FiltersSidebar({
 
   const monthOptions: SelectOption[] = months.map((month) => ({
     value: month,
-    label: month,
+    label: `${month} 2026`,
   }));
 
   const monthOrder = [
@@ -135,7 +135,7 @@ export default function FiltersSidebar({
                     )}
                   >
                     {isSelected && <IoCheckmark className="h-4 w-4" />}
-                    <span>{month}</span>
+                    <span>{month} 2026</span>
                   </button>
                 );
               })}

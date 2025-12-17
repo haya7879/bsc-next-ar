@@ -27,18 +27,18 @@ export const dynamic = "force-dynamic";
 
 // Months options
 const months = [
-  { value: "1", label: "كانون الثاني" },
-  { value: "2", label: "شباط" },
-  { value: "3", label: "آذار" },
-  { value: "4", label: "نيسان" },
-  { value: "5", label: "أيار" },
-  { value: "6", label: "حزيران" },
-  { value: "7", label: "تموز" },
-  { value: "8", label: "آب" },
-  { value: "9", label: "أيلول" },
-  { value: "10", label: "تشرين الأول" },
-  { value: "11", label: "تشرين الثاني" },
-  { value: "12", label: "كانون الأول" },
+  { value: "1", label: "كانون الثاني 2026" },
+  { value: "2", label: "شباط 2026" },
+  { value: "3", label: "آذار 2026" },
+  { value: "4", label: "نيسان 2026" },
+  { value: "5", label: "أيار 2026" },
+  { value: "6", label: "حزيران 2026" },
+  { value: "7", label: "تموز 2026" },
+  { value: "8", label: "آب 2026" },
+  { value: "9", label: "أيلول 2026" },
+  { value: "10", label: "تشرين الأول 2026" },
+  { value: "11", label: "تشرين الثاني 2026" },
+  { value: "12", label: "كانون الأول 2026" },
 ];
 
 // Duration options

@@ -25,7 +25,7 @@ export default function CityTimingsFilters({
           placeholder="Select Month"
           options={months.map((month) => ({
             value: month,
-            label: month,
+            label: `${month} 2026`,
           }))}
           className="filter-select"
           size="default"
