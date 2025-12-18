@@ -10,7 +10,7 @@ export default function SearchCourse({
       <input
         type="text"
         id="search"
-        className="search-area-input pr-0!"
+        className="p-0! h-auto! text-xs!"
         placeholder="البحث في الدورات التدريبية"
         value={searchQuery}
         onChange={handleSearchChange}
