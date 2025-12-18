@@ -2250,7 +2250,7 @@ footer .footer-bottom .container-main .social-links a:hover {
 .search-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 10px;
 }
 
 .search-input {

@@ -3,15 +3,22 @@
 import { useState, useMemo } from "react";
 import TimingsGrid from "./timings-grid";
 import TimingsFilters from "@/components/ui/timings-filters";
+import { getRollingMonthOptions, MONTH_NAMES_AR } from "@/lib/rolling-month-options";
 
 interface TimingsSectionProps {
   timings: CourseTiming[];
   course: CourseDetail;
 }
 
-export default function TimingsSection({ timings, course }: TimingsSectionProps) {
+export default function TimingsSection({
+  timings,
+  course,
+}: TimingsSectionProps) {
   const [selectedCity, setSelectedCity] = useState<string>("");
   const [selectedMonth, setSelectedMonth] = useState<string>("");
+
+  // Months options (rolling based on current month)
+  const months = getRollingMonthOptions();
 
   // Get unique cities and months from timings
   const cities = useMemo(() => {
@@ -24,32 +31,6 @@ export default function TimingsSection({ timings, course }: TimingsSectionProps)
     return Array.from(citySet).sort();
   }, [timings]);
 
-  const months = useMemo(() => {
-    const monthSet = new Set<string>();
-    timings.forEach((timing) => {
-      const date = new Date(timing.start_date);
-      const monthName = date.toLocaleString("en-US", { month: "long" });
-      monthSet.add(monthName);
-    });
-    return Array.from(monthSet).sort((a, b) => {
-      const monthOrder = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      return monthOrder.indexOf(a) - monthOrder.indexOf(b);
-    });
-  }, [timings]);
-
   // Filter timings based on selected filters
   const filteredTimings = useMemo(() => {
     return timings.filter((timing) => {
@@ -58,8 +39,8 @@ export default function TimingsSection({ timings, course }: TimingsSectionProps)
         !selectedMonth ||
         (() => {
           const date = new Date(timing.start_date);
-          const monthName = date.toLocaleString("en-US", { month: "long" });
-          return monthName === selectedMonth;
+          const monthLabel = `${MONTH_NAMES_AR[date.getMonth()]} ${date.getFullYear()}`;
+          return monthLabel === selectedMonth;
         })();
       return cityMatch && monthMatch;
     });
@@ -89,4 +70,3 @@ export default function TimingsSection({ timings, course }: TimingsSectionProps)
     </div>
   );
 }
-

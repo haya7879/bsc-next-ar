@@ -6,22 +6,7 @@ import { useCategories } from "@/services/categories/categories-hooks";
 import { useCities } from "@/services/cities/cities-hooks";
 import CustomSelect from "@/components/ui/custom-select";
 import { FaArrowsRotate, FaChevronLeft } from "react-icons/fa6";
-
-// Months options
-const months = [
-  { value: "1", label: "يناير 2026" },
-  { value: "2", label: "فبراير 2026" },
-  { value: "3", label: "مارس 2026" },
-  { value: "4", label: "أبريل 2026" },
-  { value: "5", label: "مايو 2026" },
-  { value: "6", label: "يونيو 2026" },
-  { value: "7", label: "يوليو 2026" },
-  { value: "8", label: "أغسطس 2026" },
-  { value: "9", label: "سبتمبر 2026" },
-  { value: "10", label: "أكتوبر 2026" },
-  { value: "11", label: "نوفمبر 2026" },
-  { value: "12", label: "ديسمبر 2026" },
-];
+import { getRollingMonthOptions } from "@/lib/rolling-month-options";
 
 // Duration options
 const durations = [
@@ -33,7 +18,9 @@ interface HeroSearchFormProps {
   onFormContentChange?: (hasContent: boolean) => void;
 }
 
-export default function HeroSearchForm({ onFormContentChange }: HeroSearchFormProps) {
+export default function HeroSearchForm({
+  onFormContentChange,
+}: HeroSearchFormProps) {
   const router = useRouter();
   const { data: categories = [] } = useCategories();
   const { data: cities = [] } = useCities();
@@ -43,6 +30,9 @@ export default function HeroSearchForm({ onFormContentChange }: HeroSearchFormPr
   const [citySlug, setCitySlug] = useState<string | number>("");
   const [month, setMonth] = useState<string | number>("");
   const [duration, setDuration] = useState<string | number>("");
+
+  // Months options (rolling based on current month)
+  const months = getRollingMonthOptions();
 
   // Check if form has content
   useEffect(() => {
@@ -169,11 +159,21 @@ export default function HeroSearchForm({ onFormContentChange }: HeroSearchFormPr
 
         {/* Buttons Row */}
         <div className="search-buttons">
-          <button type="button" onClick={handleSearch} className="search-btn" suppressHydrationWarning>
+          <button
+            type="button"
+            onClick={handleSearch}
+            className="search-btn"
+            suppressHydrationWarning
+          >
             بحث
             <FaChevronLeft fontSize={12} className="search-icon" />
           </button>
-          <button type="button" onClick={handleClear} className="clear-btn" suppressHydrationWarning>
+          <button
+            type="button"
+            onClick={handleClear}
+            className="clear-btn"
+            suppressHydrationWarning
+          >
             <FaArrowsRotate className="clear-icon" />
             مسح
           </button>

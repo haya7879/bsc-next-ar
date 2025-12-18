@@ -21,25 +21,10 @@ import SearchTimingCard from "@/components/cards/search-timing-card";
 import SearchCourseCard from "@/components/cards/search-course-card";
 import { FaArrowsRotate } from "react-icons/fa6";
 import "@/styles/courses.css";
+import { getRollingMonthOptions } from "@/lib/rolling-month-options";
 
 // Force dynamic rendering to prevent static generation errors
 export const dynamic = "force-dynamic";
-
-// Months options
-const months = [
-  { value: "1", label: "كانون الثاني 2026" },
-  { value: "2", label: "شباط 2026" },
-  { value: "3", label: "آذار 2026" },
-  { value: "4", label: "نيسان 2026" },
-  { value: "5", label: "أيار 2026" },
-  { value: "6", label: "حزيران 2026" },
-  { value: "7", label: "تموز 2026" },
-  { value: "8", label: "آب 2026" },
-  { value: "9", label: "أيلول 2026" },
-  { value: "10", label: "تشرين الأول 2026" },
-  { value: "11", label: "تشرين الثاني 2026" },
-  { value: "12", label: "كانون الأول 2026" },
-];
 
 // Duration options
 const durations = [
@@ -52,7 +37,7 @@ function SearchPageContent() {
   const searchParams = useSearchParams();
   const { data: categories = [] } = useCategories();
   const { data: cities = [] } = useCities();
-
+  const months = getRollingMonthOptions();
   // Get filters from URL params (single source of truth)
   const filters = useMemo(() => {
     const category_slug = searchParams?.get("category_slug") || "";
@@ -345,14 +330,13 @@ function SearchPageContent() {
 
 export default function SearchPage() {
   return (
-    <Suspense fallback={
-      <div className="container-main md:py-10! py-8!">
-        <LoadingState
-          title="جاري التحميل..."
-          message="يرجى الإنتظار"
-        />
-      </div>
-    }>
+    <Suspense
+      fallback={
+        <div className="container-main md:py-10! py-8!">
+          <LoadingState title="جاري التحميل..." message="يرجى الإنتظار" />
+        </div>
+      }
+    >
       <SearchPageContent />
     </Suspense>
   );
