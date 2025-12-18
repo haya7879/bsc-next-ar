@@ -1,150 +1,85 @@
 export const partnerLogos1 = [
   {
-    src: "https://bscenter.org/assets/imgs/logos/adsc-logo.svg",
-    alt: "ADSC Logo",
-    title: "ADSC Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/aramco.png",
-    alt: "Aramco Logo",
-    title: "Aramco Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/dmLogo.svg",
-    alt: "Dubai Municipality Logo",
-    title: "Dubai Municipality Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/Group 316.svg",
-    alt: "Partner Logo",
-    title: "Partner Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/kacst.png",
-    alt: "KACST Logo",
-    title: "KACST Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/katara_logo.png",
-    alt: "Katara Logo",
-    title: "Katara Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/light-brand-logo.png",
-    alt: "Light Brand Logo",
-    title: "Light Brand Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/logo (1).svg",
+    src: "/logos/client1.svg",
     alt: "Company Logo",
     title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/logo-01.png",
+    src: "/logos/client2.svg",
     alt: "Company Logo",
     title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/logo-c.svg",
+    src: "/logos/client3.svg",
     alt: "Company Logo",
     title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/logo.png",
+    src: "/logos/client4.svg",
     alt: "Company Logo",
     title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/logo.svg",
+    src: "/logos/client5.svg",
     alt: "Company Logo",
     title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/logo1.png",
+    src: "/logos/client6.svg",
     alt: "Company Logo",
     title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/SABIC-LOGO_tcm1010-14323.svg",
-    alt: "SABIC Logo",
-    title: "SABIC Logo",
+    src: "/logos/client7.svg",
+    alt: "Company Logo",
+    title: "Company Logo",
+  },
+  {
+    src: "/logos/client8.svg",
+    alt: "Company Logo",
+    title: "Company Logo",
   },
 ];
 export const partnerLogos2 = [
   {
-    src: "https://bscenter.org/assets/imgs/logos/SABIC-LOGO_tcm1010-14323.svg",
-    alt: "SABIC Logo",
-    title: "SABIC Logo",
+    src: "/logos/client9.svg",
+    alt: "Company Logo",
+    title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/sanabil-main-logo.svg",
-    alt: "Sanabil Logo",
-    title: "Sanabil Logo",
+    src: "/logos/client10.svg",
+    alt: "Company Logo",
+    title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/sfda_logo_colored.svg",
-    alt: "SFDA Logo",
-    title: "SFDA Logo",
+    src: "/logos/client11.svg",
+    alt: "Company Logo",
+    title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/image001.png",
-    alt: "Partner Logo",
-    title: "Partner Logo",
+    src: "/logos/client12.svg",
+    alt: "Company Logo",
+    title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/image002.png",
-    alt: "Partner Logo",
-    title: "Partner Logo",
+    src: "/logos/client13.svg",
+    alt: "Company Logo",
+    title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/image003.png",
-    alt: "Partner Logo",
-    title: "Partner Logo",
+    src: "/logos/client14.svg",
+    alt: "Company Logo",
+    title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/image004.png",
-    alt: "Partner Logo",
-    title: "Partner Logo",
+    src: "/logos/client15.svg",
+    alt: "Company Logo",
+    title: "Company Logo",
   },
   {
-    src: "https://bscenter.org/assets/imgs/logos/image005.png",
-    alt: "Partner Logo",
-    title: "Partner Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/LOGO.png",
-    alt: "Partner Logo",
-    title: "Partner Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/image006.png",
-    alt: "Partner Logo",
-    title: "Partner Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/logo11112.svg",
-    alt: "Partner Logo",
-    title: "Partner Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/logo11113.png",
-    alt: "Partner Logo",
-    title: "Partner Logo",
-  },
-  {
-    src: "https://images.seeklogo.com/logo-png/40/2/saudi-ministry-of-sport-logo-png_seeklogo-403049.png",
-    alt: "Saudi Ministry of Sport Logo",
-    title: "Saudi Ministry of Sport Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/الديوان.jpg",
-    alt: "Al Diwan Logo",
-    title: "Al Diwan Logo",
-  },
-  {
-    src: "https://bscenter.org/assets/imgs/logos/mrafk.svg",
-    alt: "Mrafk Logo",
-    title: "Mrafk Logo",
+    src: "/logos/client16.svg",
+    alt: "Company Logo",
+    title: "Company Logo",
   },
 ];
 
@@ -224,7 +159,7 @@ export const heroSlides: HeroSlide[] = [
   },
   {
     id: "slide-3",
-    title: 'دعم التطوير المهني والمؤسسي',
+    title: "دعم التطوير المهني والمؤسسي",
     description:
       "يسعى مركز الأداء المتوازن للتدريب إلى دعم التطوير المهني والمؤسسي من خلال تقديم برامج تدريبية عالية الجودة، مبنية على الخبرة والمعايير الدولية، لتلبية متطلبات بيئة عمل متغيّرة وتنافسية.",
     image: "/imgs/hero-bg-4.webp",

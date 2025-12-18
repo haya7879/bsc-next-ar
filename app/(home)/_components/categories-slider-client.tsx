@@ -61,6 +61,7 @@ export function CategoriesArrows() {
   return (
     <div className="arrows">
       <div
+        suppressHydrationWarning
         ref={(el) => {
           sharedRefs.nextRef.current = el;
         }}
