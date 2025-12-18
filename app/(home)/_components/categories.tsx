@@ -13,7 +13,7 @@ export default async function CategoriesSliderSection() {
   return (
     <section className="search-courses categories-home categories">
       <div className="container-main">
-        <div className="section-title">
+        <div className="section-title mb-0!">
           <h2>التخصصات</h2>
           <CategoriesArrows />
         </div>

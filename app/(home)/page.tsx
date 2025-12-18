@@ -56,11 +56,11 @@ export async function generateMetadata(): Promise<Metadata> {
     }
     // Fallback metadata
     return {
-      title: "Balanced Score Training Center | Training Courses",
+      title: "مركز الأداء المتوازن للتدريب | دورات التدريب",
       description:
-        "Balanced Score Training Center delivers advanced professional courses in leadership, management, quality, HR and more to empower Gulf and international organizations.",
+        "مركز الأداء المتوازن للتدريب يقدم دورات تدريبية متقدمة في القيادة والإدارة والجودة والموارد البشرية والمزيد لتعزيز المؤسسات الخليجية والدولية.",
       keywords:
-        "professional training, development programs, management courses, HR training, IT skills, finance training, quality courses",
+        "التدريب المهني, برامج التطوير, دورات الإدارة, دورات الموارد البشرية, مهارات IT, دورات المالية, دورات الجودة",
       robots: {
         index: true,
         follow: true,
@@ -78,11 +78,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
     // Fallback metadata
     return {
-      title: "Balanced Score Training Center | Training Courses",
+      title: "مركز الأداء المتوازن للتدريب | دورات التدريب",
       description:
-        "Balanced Score Training Center delivers advanced professional courses in leadership, management, quality, HR and more to empower Gulf and international organizations.",
+        "مركز الأداء المتوازن للتدريب يقدم دورات تدريبية متقدمة في القيادة والإدارة والجودة والموارد البشرية والمزيد لتعزيز المؤسسات الخليجية والدولية.",
       keywords:
-        "professional training, development programs, management courses, HR training, IT skills, finance training, quality courses",
+        "التدريب المهني, برامج التطوير, دورات الإدارة, دورات الموارد البشرية, مهارات IT, دورات المالية, دورات الجودة",
       robots: {
         index: true,
         follow: true,

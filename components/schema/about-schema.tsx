@@ -22,7 +22,7 @@ export default function AboutSchema({ domain }: AboutSchemaProps) {
         url: aboutUrl,
         name: "About us",
         description:
-          "Learn more about Balanced Score Training Center, our mission, vision, and values. Since 1996, we have been a leading provider of comprehensive training programs and consulting services.",
+          "تعرف على مركز الأداء المتوازن للتدريب, رسالتنا, رؤيتنا, وقيمنا. منذ عام 1996, نحن نقدم خدمات التدريب والاستشارات المتكاملة المتقدمة في المجالات المختلفة.",
         inLanguage: "en",
         isPartOf: { "@id": `${baseUrl}/#website` },
         mainEntity: {

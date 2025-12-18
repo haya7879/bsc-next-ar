@@ -53,9 +53,9 @@ export async function generateMetadata(): Promise<Metadata> {
     }
     // Fallback metadata
     return {
-      title: "Sitemap | Balanced Score Training Center",
+      title: "خريطة الموقع | مركز الأداء المتوازن للتدريب",
       description:
-        "Complete sitemap of Balanced Score Training Center training courses, categories, cities, and all available pages.",
+        "خريطة موقع شاملة لدورات مركز الأداء المتوازن للتدريب والتصنيفات والمدن وجميع الصفحات المتاحة.",
       robots: {
         index: true,
         follow: true,
@@ -73,9 +73,9 @@ export async function generateMetadata(): Promise<Metadata> {
 
     // Fallback metadata
     return {
-      title: "Sitemap | Balanced Score Training Center",
+      title: "خريطة الموقع | مركز الأداء المتوازن للتدريب",
       description:
-        "Complete sitemap of Balanced Score Training Center training courses, categories, cities, and all available pages.",
+        "خريطة موقع شاملة لدورات مركز الأداء المتوازن للتدريب والتصنيفات والمدن وجميع الصفحات المتاحة.",
       robots: {
         index: true,
         follow: true,

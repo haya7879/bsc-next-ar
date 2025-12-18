@@ -8,7 +8,6 @@ import DownloadPopup from "@/components/ui/download-popup";
 import { Providers } from "@/lib/providers";
 import OurPartners from "./(home)/_components/our-partners";
 
-
 const notoKufiArabic = Noto_Kufi_Arabic({
   variable: "--font-noto-kufi-arabic",
   subsets: ["arabic"],
@@ -18,8 +17,9 @@ const notoKufiArabic = Noto_Kufi_Arabic({
 });
 
 export const metadata: Metadata = {
-  title: "مركز Balanced Score للتدريب",
-  description: "مركز Balanced Score للتدريب هو شريكك الاستراتيجي في تطوير المهارات وتعزيز الأداء.",
+  title: "مركز الأداء المتوازن للتدريب",
+  description:
+    "مركز الأداء المتوازن للتدريب هو شريكك الاستراتيجي في تطوير المهارات وتعزيز الأداء.",
 };
 
 export default function RootLayout({
@@ -33,7 +33,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
-          <OurPartners/>
+          <OurPartners />
           <Footer />
           <WhatsAppButton />
           <DownloadPopup />

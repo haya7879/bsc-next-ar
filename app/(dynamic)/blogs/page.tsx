@@ -60,8 +60,8 @@ export async function generateMetadata(): Promise<Metadata> {
     
     // Fallback metadata if SEO data is not available
     return {
-      title: "Blogs | Balanced Score Training Center",
-      description: "Read our latest blogs and articles about professional training, management, and development.",
+      title: "المدونات | مركز الأداء المتوازن للتدريب",
+      description: "اقرأ أحدث المدونات والمقالات حول التدريب المهني والإدارة والتطوير.",
       keywords: "training blogs, professional development, management articles",
       robots: {
         index: true,
@@ -80,9 +80,9 @@ export async function generateMetadata(): Promise<Metadata> {
     
     // Fallback metadata
     return {
-      title: "Blogs | Balanced Score Training Center",
-      description: "Read our latest blogs and articles about professional training, management, and development.",
-      keywords: "training blogs, professional development, management articles",
+      title: "المدونات | مركز الأداء المتوازن للتدريب",
+      description: "اقرأ أحدث المدونات والمقالات حول التدريب المهني والإدارة والتطوير.",
+      keywords: "المدونات, التدريب المهني, الإدارة, التطوير",
       robots: {
         index: true,
         follow: true,

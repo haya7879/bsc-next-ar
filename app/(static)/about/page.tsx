@@ -56,10 +56,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
     // Fallback metadata
     return {
-      title: "About Us | Balanced Score Training Center",
+      title: "عن المركز | مركز الأداء المتوازن للتدريب",
       description:
-        "Learn about Balanced Score Training Center, our mission, services, and expert trainers.",
-      keywords: "about us, training center, professional development",
+        "تعرف على مركز الأداء المتوازن للتدريب, رسالتنا, خدماتنا, ومدربينا الخبراء.",
+      keywords: "عن المركز, مركز الأداء المتوازن للتدريب, التدريب المهني, التطوير المهني",
       robots: {
         index: true,
         follow: true,
@@ -77,10 +77,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
     // Fallback metadata
     return {
-      title: "About Us | Balanced Score Training Center",
+      title: "عن المركز | مركز الأداء المتوازن للتدريب",
       description:
-        "Learn about Balanced Score Training Center, our mission, services, and expert trainers.",
-      keywords: "about us, training center, professional development",
+        "تعرف على مركز الأداء المتوازن للتدريب, رسالتنا, خدماتنا, ومدربينا الخبراء.",
+      keywords: "عن المركز, مركز الأداء المتوازن للتدريب, التدريب المهني, التطوير المهني",
       robots: {
         index: true,
         follow: true,

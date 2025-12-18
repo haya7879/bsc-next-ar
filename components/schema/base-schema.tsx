@@ -11,7 +11,7 @@ export const getLogoUrl = (domain?: string) => `${getBaseUrl(domain)}/assets/img
 export const organizationSchema = (domain?: string) => ({
   "@type": "Organization",
   "@id": `${getBaseUrl(domain)}/#organization`,
-  name: "Balanced Score Training Center",
+  name: "مركز الأداء المتوازن للتدريب",
   url: getBaseUrl(domain),
   logo: getLogoUrl(domain),
   sameAs: [
@@ -57,7 +57,7 @@ export const organizationSchema = (domain?: string) => ({
     },
   ],
   description:
-    "Balanced Score Training Center – Your strategic partner in development and excellence. Since 1996, we have been delivering innovative, world-class training and consulting solutions designed to empower individuals and organizations, helping them thrive in today's fast-paced and competitive business environment.",
+    "مركز الأداء المتوازن للتدريب – شريكك الاستراتيجي في التطوير والاكتمال. منذ عام 1996, نقدم حلول تدريبية وابحاث واستشارات مبتكرة وعالمية المستوى تم تصميمها لتعزيز الأفراد والمؤسسات, مساعدتهم في النجاح في بيئة الأعمال الحديثة والمنافسة.",
   knowsAbout: [
     "Management & Leadership",
     "Accounting, Finance and Banking",
@@ -89,9 +89,9 @@ export const websiteSchema = (domain?: string, includeSearchAction = true) => {
     "@type": "WebSite",
     "@id": `${getBaseUrl(domain)}/#website`,
     url: getBaseUrl(domain),
-    name: "Balanced Score Training Center",
+    name: "مركز الأداء المتوازن للتدريب",
     description:
-      "Balanced Score Training Center offers innovative, world-class training and consulting solutions to empower individuals and organizations.",
+      "مركز الأداء المتوازن للتدريب يقدم حلول تدريبية وابحاث واستشارات مبتكرة وعالمية المستوى تم تصميمها لتعزيز الأفراد والمؤسسات, مساعدتهم في النجاح في بيئة الأعمال الحديثة والمنافسة.",
     publisher: {
       "@id": `${getBaseUrl(domain)}/#organization`,
     },

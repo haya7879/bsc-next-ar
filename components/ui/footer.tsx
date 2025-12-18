@@ -21,7 +21,7 @@ export default function Footer() {
             </li>
             <li>
               <p>
-                <b>مركز Balanced Score للتدريب</b> <br />
+                <b>مركز الأداء المتوازن للتدريب</b> <br />
                 هو شريكك الاستراتيجي في تطوير المهارات وتعزيز الأداء.
               </p>
             </li>
@@ -96,7 +96,7 @@ export default function Footer() {
       <div className="hr"></div>
       <div className="footer-bottom">
         <div className="container-main">
-          <p>© حقوق النشر 2025 مركز Balanced Score للتدريب</p>
+          <p>© حقوق النشر 2025 مركز الأداء المتوازن للتدريب</p>
           <a
             href="//www.dmca.com/Protection/Status.aspx?ID=a93d1866-cf03-48a4-9106-d51999924b5c"
             title="DMCA.com Protection Status"

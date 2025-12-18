@@ -58,9 +58,9 @@ export async function generateMetadata(): Promise<Metadata> {
     
     // Fallback metadata if SEO data is not available
     return {
-      title: "Training Categories | Balanced Score Training Center",
-      description: "Explore our wide range of training categories and professional development courses.",
-      keywords: "training categories, professional courses, development programs",
+      title: "التخصصات | مركز الأداء المتوازن للتدريب",
+      description: "استكشف مجموعة واسعة من تصنيفات التدريب ودورات التدريب المهني والتطوير.",
+      keywords: "التخصصات, دورات التدريب, التطوير",
       robots: {
         index: true,
         follow: true,
@@ -78,9 +78,9 @@ export async function generateMetadata(): Promise<Metadata> {
     
     // Fallback metadata
     return {
-      title: "Training Categories | Balanced Score Training Center",
-      description: "Explore our wide range of training categories and professional development courses.",
-      keywords: "training categories, professional courses, development programs",
+      title: "التخصصات | مركز الأداء المتوازن للتدريب",
+      description: "استكشف مجموعة واسعة من تصنيفات التدريب ودورات التدريب المهني والتطوير.",
+      keywords: "التخصصات, دورات التدريب, التطوير",
       robots: {
         index: true,
         follow: true,

@@ -23,8 +23,8 @@ export async function generateMetadata({
 
     if (!data || !data.seo) {
       return {
-        title: `${resolvedParams.category} Courses in ${resolvedParams.citySlug} | Balanced Score Training Center`,
-        description: `Find ${resolvedParams.category} training courses in ${resolvedParams.citySlug}.`,
+        title: `${resolvedParams.category} دورات في ${resolvedParams.citySlug} | مركز الأداء المتوازن للتدريب`,
+        description: `العثور على ${resolvedParams.category} دورات في ${resolvedParams.citySlug}.`,
         robots: {
           index: false,
           follow: false,
@@ -40,7 +40,7 @@ export async function generateMetadata({
     }
 
     const seo = data.seo;
-    const metaTitle = seo.meta_title || `${data.category.title} Courses in ${data.city.title}`;
+    const metaTitle = seo.meta_title || `${data.category.title} دورات في ${data.city.title}`;
     const metaDescription = seo.meta_description || seo.description || "";
     const canonical = seo.canonical || `${baseUrl}/courses/${resolvedParams.category}/${resolvedParams.citySlug}`;
 
@@ -78,8 +78,8 @@ export async function generateMetadata({
     
     // Fallback metadata
     return {
-      title: "Training Courses | Balanced Score Training Center",
-      description: "Explore training courses by category and city.",
+      title: "دورات التدريب | مركز الأداء المتوازن للتدريب",
+      description: "استكشف دورات التدريب بالتصنيف والمدينة.",
       robots: {
         index: true,
         follow: true,

@@ -27,8 +27,8 @@ export async function generateMetadata({
 
     if (!course || !city) {
       return {
-        title: "Course Not Found | Balanced Score Training Center",
-        description: "The requested course could not be found.",
+        title: "الدورة غير موجودة | مركز الأداء المتوازن للتدريب",
+        description: "تعذّر العثور على الدورة المطلوبة.",
         robots: {
           index: false,
           follow: false,
@@ -85,8 +85,8 @@ export async function generateMetadata({
     
     // Fallback metadata
     return {
-      title: "Training Course | Balanced Score Training Center",
-      description: "Explore our professional training courses.",
+      title: "الدورة غير موجودة | مركز الأداء المتوازن للتدريب",
+      description: "العثور على دورات التدريب في المدن في دول الخليج والمواقع الدولية.",
       robots: {
         index: false,
         follow: false,

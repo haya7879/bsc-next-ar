@@ -19,11 +19,11 @@ export default function HomeSchema({ domain }: HomeSchemaProps) {
         "@type": "WebPage",
         "@id": `${baseUrl}/#webpage`,
         url: baseUrl,
-        name: "Balanced Score Training Center",
+        name: "مركز الأداء المتوازن للتدريب",
         isPartOf: { "@id": `${baseUrl}/#website` },
         mainEntity: { "@id": `${baseUrl}/#organization` },
         description:
-          "Explore a wide range of professional training courses offered by Balanced Score Training Center in various cities worldwide. Empowering individuals and organizations since 1996.",
+          "استكشف مجموعة واسعة من الدورات التدريبية الاحترافية التي يقدمها مركز الأداء المتوازن للتدريب في مدن متعددة حول العالم. نُمكّن الأفراد والمؤسسات منذ عام 1996.",
         breadcrumb: {
           "@type": "BreadcrumbList",
           itemListElement: [

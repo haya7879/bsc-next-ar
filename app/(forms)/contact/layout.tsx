@@ -51,8 +51,8 @@ export async function generateMetadata(): Promise<Metadata> {
     
     // Fallback metadata if SEO data is not available
     return {
-      title: "اتصل بنا | مركز Balanced Score للتدريب",
-      description: "تواصل مع مركز Balanced Score للتدريب للاستفسارات والدعم.",
+      title: "اتصل بنا | مركز الأداء المتوازن للتدريب",
+      description: "تواصل مع مركز الأداء المتوازن للتدريب للاستفسارات والدعم.",
       keywords: "اتصال, دعم, استفسار",
       robots: {
         index: true,
@@ -71,8 +71,8 @@ export async function generateMetadata(): Promise<Metadata> {
     
     // Fallback metadata
     return {
-      title: "اتصل بنا | مركز Balanced Score للتدريب",
-      description: "تواصل مع مركز Balanced Score للتدريب للاستفسارات والدعم.",
+      title: "اتصل بنا | مركز الأداء المتوازن للتدريب",
+      description: "تواصل مع مركز الأداء المتوازن للتدريب للاستفسارات والدعم.",
       keywords: "اتصال, دعم, استفسار",
       robots: {
         index: true,

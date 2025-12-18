@@ -58,13 +58,13 @@ export default function CourseSchema({ course, timings, domain }: CourseSchemaPr
         provider: { "@id": `${baseUrl}/#organization` },
         educationalCredentialAwarded: {
           "@type": "EducationalOccupationalCredential",
-          name: "Certificate of Completion",
+          name: "شهادة إتمام الدورة",
           description:
-            "An official certificate issued by Balanced Score Training Center upon successful completion of the course.",
+            "شهادة رسمية يصدرها مركز الأداء المتوازن للتدريب عند إتمام الدورة بنجاح.",
           credentialCategory: "Certificate of Completion",
           recognizedBy: {
             "@type": "Organization",
-            name: "Balanced Score Training Center",
+            name: "مركز الأداء المتوازن للتدريب",
           },
         },
         hasCourseInstance: timings.length > 0 ? timings.map((timing) => ({

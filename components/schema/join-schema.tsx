@@ -20,9 +20,9 @@ export default function JoinSchema({ domain }: JoinSchemaProps) {
         "@type": "WebPage",
         "@id": `${joinUrl}#webpage`,
         url: joinUrl,
-        name: "Join Our Team",
+        name: "انضم إلى فريقنا",
         description:
-          "Interested in joining the Balanced Score Training Center team? Submit your details and CV through our online form to express your interest in career opportunities.",
+          "هل ترغب في الانضمام إلى فريق مركز الأداء المتوازن للتدريب؟ قدّم بياناتك وسيرتك الذاتية عبر النموذج الإلكتروني لإبداء اهتمامك بفرص العمل المتاحة.",
         inLanguage: "en",
         isPartOf: { "@id": `${baseUrl}/#website` },
         breadcrumb: {

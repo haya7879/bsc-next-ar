@@ -17,9 +17,9 @@ export default function CategoriesSchema({ domain }: CategoriesSchemaProps) {
         "@type": "CollectionPage",
         "@id": `${categoriesUrl}#webpage`,
         url: categoriesUrl,
-        name: "Training Courses Categories",
+        name: "تخصصات دورات التدريب",
         description:
-          "Explore all training courses categories offered by Balanced Score Training Center. Find courses in management, finance, HR, technical skills, and more.",
+          "استكشف جميع تخصصات دورات التدريب المقدمة من مركز الأداء المتوازن للتدريب. ابحث عن دورات في الإدارة والمالية والموارد البشرية والمهارات الفنية والمزيد.",
         inLanguage: "en",
         isPartOf: { "@id": `${baseUrl}/#website` },
         breadcrumb: {
@@ -30,7 +30,7 @@ export default function CategoriesSchema({ domain }: CategoriesSchemaProps) {
             {
               "@type": "ListItem",
               position: 2,
-              name: "Training Courses Categories",
+              name: "تخصصات دورات التدريب",
               item: categoriesUrl,
             },
           ],

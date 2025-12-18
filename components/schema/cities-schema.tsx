@@ -22,7 +22,7 @@ export default function CitiesSchema({ domain }: CitiesSchemaProps) {
         url: citiesUrl,
         name: "Training Courses Venues",
         description:
-          "Explore the Balanced Score Training Center training courses venues spread across multiple cities across the globe. Join us and begin your success journey today!",
+          "استكشف مواقع دورات التدريب المتاحة في مختلف المدن حول العالم. انضم إلينا وابدأ رحلتك النجاح اليوم!",
         inLanguage: "en",
         isPartOf: { "@id": `${baseUrl}/#website` },
         breadcrumb: {

@@ -149,9 +149,11 @@ button:hover,
   text-align: center;
   font-size: 16px;
 }
-.nav-links-phone{
+
+.nav-links-phone {
   display: none;
 }
+
 .nav-links-phone li {
   font-size: 17px;
   font-weight: 500;
@@ -247,6 +249,7 @@ nav h1 {
   color: #253a7b;
   rotate: 180deg;
 }
+
 /* //test */
 .mobile-nav-lang {
   display: none;
@@ -484,6 +487,7 @@ nav h1 {
 .scrolled li a {
   color: var(--white);
 }
+
 .scrolled li,
 .scrolled li a.active {
   color: #253a7b;
@@ -672,27 +676,28 @@ nav h1 {
 input,
 textarea,
 .select-box {
-    border: 1px solid #ccc;
-    padding: 9px 12px;
-    border-radius: 4px;
-    outline: 0;
-    height: 40px;
-    transition: 0.4s;
-    width: 100%;
-    font-size: 14px;
+  border: 1px solid #ccc;
+  padding: 9px 12px;
+  border-radius: 4px;
+  outline: 0;
+  height: 40px;
+  transition: 0.4s;
+  width: 100%;
+  font-size: 14px;
 }
+
 /* ===================== //// Inputs //// ===================== */
 input:focus,
 textarea:focus,
 .select-box:focus {
-    border-color: #253a7b;
+  border-color: #253a7b;
 }
 
 .textarea textarea {
-    width: 100%;
-    height: 150px;
-    resize: none;
-    /* margin-top: 24px; */
+  width: 100%;
+  height: 150px;
+  resize: none;
+  /* margin-top: 24px; */
 }
 
 .custom-select-wrapper {
@@ -781,14 +786,14 @@ textarea:focus,
 .search-courses .section-title {
   display: -webkit-flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
 }
 
 .search-courses h2 {
   font-size: 32px;
   font-weight: 600;
   color: var(--black);
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 
@@ -1045,19 +1050,14 @@ textarea:focus,
   border-radius: 50%;
   background-color: #2b2b2b;
   cursor: pointer;
+  display: -webkit-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .categories .swiper-button-prev,
 .categories .swiper-button-next {
-  position: static !important;
-  left: 0 !important;
-  top: 0 !important;
-}
-
-.categories .swiper-button-prev::after,
-.categories .swiper-button-next::after {
-  font-size: 14px !important;
-  color: var(--white) !important;
+  display: none !important;
 }
 
 .categories .swiper {
@@ -1070,108 +1070,6 @@ textarea:focus,
 
 .categories .swiper-slide h3 {
   min-height: 80px !important;
-}
-
-.category-card {
-  display: block;
-  position: relative;
-  max-width: 265px;
-  width: 100%;
-  margin: 0 auto;
-  height: 250px;
-  overflow: hidden;
-  border-radius: 14px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  color: var(--white);
-  text-align: start;
-  transition: 0.4s;
-}
-
-.category-card img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border-radius: 8px;
-  object-fit: cover;
-}
-
-.category-card h3 {
-  font-size: 18px;
-  width: 100%;
-  font-weight: 600;
-  min-height: 120px;
-  display: -webkit-flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-
-.category-card p {
-  font-size: 13px;
-  font-weight: 400;
-  line-height: 18px;
-  display: -webkit-box;
-  margin-top: 30px;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.card-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #134e88b2;
-  color: var(--white);
-  display: -webkit-flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  padding: 35px 20px;
-  box-sizing: border-box;
-  opacity: 1;
-  transition: opacity 0.3s;
-}
-
-.card-overlay a:nth-child(1) {
-  width: 100% !important;
-}
-
-.line-card {
-  width: 100%;
-  height: 1px;
-  gap: 0px;
-  border-radius: 1px 0px 0px 0px;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, #ffffff 52.5%, rgba(255, 255, 255, 0.1) 100%);
-  display: block;
-  margin-top: 20px;
-}
-
-.category-card-arrow {
-  background: #d9d9d9;
-  margin: auto;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
-  color: var(--white);
-  border: none;
-  cursor: pointer;
-  text-decoration: none;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.category-card-arrow img {
-  transform: scale(0.25);
 }
 
 /* ===================== //// SERVICES Section //// ================= */
@@ -1523,9 +1421,11 @@ footer .footer-bottom .container-main .social-links a:hover {
   .search-container {
     display: none;
   }
-  .nav-links-phone{
+
+  .nav-links-phone {
     display: block;
   }
+
   .icon-burger {
     display: block !important;
   }
@@ -2247,6 +2147,7 @@ footer .footer-bottom .container-main .social-links a:hover {
 .search-field {
   width: 100%;
 }
+
 .search-row {
   display: grid;
   grid-template-columns: 1fr 1fr;

@@ -20,8 +20,8 @@ export async function generateMetadata({
 
     if (!category) {
       return {
-        title: "Category Not Found | Balanced Score Training Center",
-        description: "The requested category could not be found.",
+        title: "التخصص غير موجود | مركز الأداء المتوازن للتدريب",
+        description: "تعذّر العثور على التخصص المطلوب.",
         robots: {
           index: false,
           follow: false,
@@ -77,8 +77,8 @@ export async function generateMetadata({
     
     // Fallback metadata
     return {
-      title: "Training Category | Balanced Score Training Center",
-      description: "Explore training courses in this category.",
+      title: "التخصص غير موجود | مركز الأداء المتوازن للتدريب",
+      description: "استكشف دورات التدريب في هذا التخصص.",
       robots: {
         index: false,
         follow: false,

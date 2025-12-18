@@ -53,10 +53,10 @@ export async function generateMetadata(): Promise<Metadata> {
     }
     // Fallback metadata
     return {
-      title: "Terms & Conditions | Balanced Score Training Center",
+      title: "الشروط والأحكام | مركز الأداء المتوازن للتدريب",
       description:
-        "Read our terms and conditions for using Balanced Score Training Center services.",
-      keywords: "terms, conditions, legal",
+        "اقرأ الشروط والأحكام لاستخدام خدمات مركز الأداء المتوازن للتدريب.",
+      keywords: "الشروط والأحكام, القانونية",
       robots: {
         index: true,
         follow: true,
@@ -74,10 +74,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
     // Fallback metadata
     return {
-      title: "Terms & Conditions | Balanced Score Training Center",
+      title: "الشروط والأحكام | مركز الأداء المتوازن للتدريب",
       description:
-        "Read our terms and conditions for using Balanced Score Training Center services.",
-      keywords: "terms, conditions, legal",
+        "اقرأ الشروط والأحكام لاستخدام خدمات مركز الأداء المتوازن للتدريب.",
+      keywords: "الشروط والأحكام, القانونية",
       robots: {
         index: true,
         follow: true,
@@ -203,7 +203,7 @@ export default function TermsPage() {
                 <strong>الملكية الفكرية</strong>
               </h2>
               <p>
-                جميع المواد والمحتوى والملكية الفكرية المتاحة على موقعنا الإلكتروني ومن خلال خدماتنا مملوكة لـ Balanced Score Training Center أو مرخصة لها. وتشمل هذه، على سبيل المثال لا الحصر، مواد التدريب ومحتوى الدورة ومقاطع الفيديو والصور وعناصر العلامة التجارية. يتم منحك ترخيصًا محدودًا وغير حصري وغير قابل للتحويل لاستخدام هذه المواد لأغراض شخصية أو تنظيمية. يُحظر الاستخدام أو الاستنساخ أو التوزيع غير المصرح به.
+                جميع المواد والمحتوى والملكية الفكرية المتاحة على موقعنا الإلكتروني ومن خلال خدماتنا مملوكة لـ مركز الأداء المتوازن للتدريب أو مرخصة لها. وتشمل هذه، على سبيل المثال لا الحصر، مواد التدريب ومحتوى الدورة ومقاطع الفيديو والصور وعناصر العلامة التجارية. يتم منحك ترخيصًا محدودًا وغير حصري وغير قابل للتحويل لاستخدام هذه المواد لأغراض شخصية أو تنظيمية. يُحظر الاستخدام أو الاستنساخ أو التوزيع غير المصرح به.
               </p>
             </div>
 

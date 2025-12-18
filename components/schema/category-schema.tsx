@@ -46,7 +46,7 @@ export default function CategorySchema({ category, courses, domain }: CategorySc
             {
               "@type": "ListItem",
               position: 2,
-              name: "Training Course Categories",
+              name: "تخصصات دورات التدريب",
               item: categoriesUrl,
             },
             {
@@ -72,7 +72,7 @@ export default function CategorySchema({ category, courses, domain }: CategorySc
               description: undefined,
               provider: {
                 "@type": "Organization",
-                name: "Balanced Score Training Center",
+                name: "مركز الأداء المتوازن للتدريب",
                 url: baseUrl,
               },
             },

@@ -20,9 +20,9 @@ export default function ContactSchema({ domain }: ContactSchemaProps) {
         "@type": "ContactPage",
         "@id": `${contactUrl}#webpage`,
         url: contactUrl,
-        name: "Contact Us",
+        name: "اتصل بنا",
         description:
-          "Get in touch with Balanced Score Training Center. Find our contact details including phone numbers, email, and office addresses in Dubai and London, or use our contact form.",
+          "تواصل مع مركز الأداء المتوازن للتدريب. اعثر على تفاصيل رقم الجوال والبريد الإلكتروني وعناوين المكاتب في دبي ولندن، أو استخدم صفحة التواصل.",
         inLanguage: "en",
         isPartOf: { "@id": `${baseUrl}/#website` },
         mainEntity: {

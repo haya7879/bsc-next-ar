@@ -58,9 +58,9 @@ export async function generateMetadata(): Promise<Metadata> {
     
     // Fallback metadata if SEO data is not available
     return {
-      title: "Training Cities | Balanced Score Training Center",
-      description: "Find training courses in cities across the Gulf and international locations.",
-      keywords: "training cities, professional courses locations",
+      title: "المدن | مركز الأداء المتوازن للتدريب",
+      description: "العثور على دورات التدريب في المدن في دول الخليج والمواقع الدولية.",
+      keywords: "المدن, دورات التدريب, مواقع التدريب",
       robots: {
         index: true,
         follow: true,
@@ -78,9 +78,9 @@ export async function generateMetadata(): Promise<Metadata> {
     
     // Fallback metadata
     return {
-      title: "Training Cities | Balanced Score Training Center",
-      description: "Find training courses in cities across the Gulf and international locations.",
-      keywords: "training cities, professional courses locations",
+      title: "المدن | مركز الأداء المتوازن للتدريب",
+      description: "العثور على دورات التدريب في المدن في دول الخليج والمواقع الدولية.",
+      keywords: "المدن, دورات التدريب, مواقع التدريب",
       robots: {
         index: true,
         follow: true,

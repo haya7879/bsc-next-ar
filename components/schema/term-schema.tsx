@@ -22,7 +22,7 @@ export default function TermSchema({ domain }: TermSchemaProps) {
         url: termsUrl,
         name: "Terms & Conditions",
         description:
-          "Read the official Terms and Conditions for using the Balanced Score Training Center website and services. Understand your rights and obligations.",
+          "Read the official Terms and Conditions for using the مركز الأداء المتوازن للتدريب website and services. Understand your rights and obligations.",
         inLanguage: "en",
         isPartOf: { "@id": `${baseUrl}/#website` },
         breadcrumb: {

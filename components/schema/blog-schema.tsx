@@ -79,7 +79,7 @@ export default function BlogSchema({ blog, domain }: BlogSchemaProps) {
           : undefined,
         author: {
           "@type": "Organization",
-          name: "Balanced Score Training Center",
+          name: "مركز الأداء المتوازن للتدريب",
           "@id": `${baseUrl}/#organization`,
         },
         publisher: { "@id": `${baseUrl}/#organization` },

@@ -22,7 +22,7 @@ export default function BlogsSchema({ domain }: BlogsSchemaProps) {
         url: blogsUrl,
         name: "Blogs",
         description:
-          "Explore insightful articles and the latest news from Balanced Score Training Center. Covering topics in leadership, strategy, finance, and more.",
+          "استكشف المقالات المثيرة والأخبار الأحدث من مركز الأداء المتوازن للتدريب. تغطي الموضوعات في القيادة والاستراتيجية والمالية والمزيد.",
         inLanguage: "en",
         isPartOf: { "@id": `${baseUrl}/#website` },
         breadcrumb: {
@@ -38,7 +38,7 @@ export default function BlogsSchema({ domain }: BlogsSchemaProps) {
         url: blogsUrl,
         name: "Blogs",
         description:
-          "Explore insightful articles and the latest news from Balanced Score Training Center. Covering topics in leadership, strategy, finance, and more.",
+          "استكشف المقالات المثيرة والأخبار الأحدث من مركز الأداء المتوازن للتدريب. تغطي الموضوعات في القيادة والاستراتيجية والمالية والمزيد.",
         inLanguage: "en",
         isPartOf: { "@id": `${baseUrl}/#website` },
         publisher: { "@id": `${baseUrl}/#organization` },

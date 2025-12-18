@@ -20,9 +20,9 @@ export default function PrivacySchema({ domain }: PrivacySchemaProps) {
         "@type": "WebPage",
         "@id": `${privacyUrl}#webpage`,
         url: privacyUrl,
-        name: "Privacy Policy",
+        name: "سياسة الخصوصية",
         description:
-          "Review the Privacy Policy for Balanced Score Training Center. Learn how we collect, use, and protect your personal information.",
+          "اطّلع على سياسة الخصوصية الخاصة بمركز الأداء المتوازن للتدريب. تعرّف على كيفية جمع بياناتك الشخصية واستخدامها وحمايتها.",
         inLanguage: "en",
         isPartOf: { "@id": `${baseUrl}/#website` },
         breadcrumb: {

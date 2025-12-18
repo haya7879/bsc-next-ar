@@ -22,8 +22,8 @@ export async function generateMetadata({
 
   if (!blog) {
     return {
-      title: "Blog Not Found | Balanced Score Training Center",
-      description: "The requested blog article could not be found.",
+      title: "المدونة غير موجودة | مركز الأداء المتوازن للتدريب",
+      description: "تعذّر العثور على مقال المدونة المطلوب.",
       robots: {
         index: false,
         follow: false,
@@ -41,9 +41,9 @@ export async function generateMetadata({
   return {
     title: metaTitle,
     description: metaDescription,
-    authors: [{ name: "Balanced Score Training Center" }],
-    creator: "Balanced Score Training Center",
-    publisher: "Balanced Score Training Center",
+    authors: [{ name: "مركز الأداء المتوازن للتدريب" }],
+    creator: "مركز الأداء المتوازن للتدريب",
+    publisher: "مركز الأداء المتوازن للتدريب",
     robots: {
       index: false,
       follow: false,
@@ -59,12 +59,12 @@ export async function generateMetadata({
       type: "article",
       locale: "en_US",
       url: canonical,
-      siteName: "Balanced Score Training Center",
+      siteName: "مركز الأداء المتوازن للتدريب",
       title: metaTitle,
       description: metaDescription,
       publishedTime: publishedDate,
       modifiedTime: modifiedDate,
-      authors: ["Balanced Score Training Center"],
+      authors: ["مركز الأداء المتوازن للتدريب"],
       images: metaImage ? [
         {
           url: metaImage,
@@ -87,7 +87,7 @@ export async function generateMetadata({
     other: {
       "article:published_time": publishedDate,
       "article:modified_time": modifiedDate,
-      "article:author": "Balanced Score Training Center",
+      "article:author": "مركز الأداء المتوازن للتدريب",
     },
   };
 }

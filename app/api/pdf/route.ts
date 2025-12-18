@@ -80,7 +80,7 @@ export async function POST(request: NextRequest) {
       `,
       footerTemplate: `
         <div style="font-size: 9px; width: 100%; display: flex; justify-content: space-between; align-items: center; color: #6b7280; padding: 5px 7px; border-top: 1px solid #e5e7eb;">
-          <span>Balanced Score Training Center</span>
+          <span>مركز الأداء المتوازن للتدريب</span>
           <span>Page <span class="pageNumber"></span> of <span class="totalPages"></span></span>
           <span>The Prism Tower, Business Bay, Dubai, UAE</span>
         </div>
@@ -882,7 +882,7 @@ function generateBrochureHTML(course: any, timing: any): string {
         <div class="cover-header-top">
           <div class="cover-header-left">
             <div class="cover-header-company">
-              Balanced Score Training Center
+              مركز الأداء المتوازن للتدريب
             </div>
             <div class="cover-header-contact">
               The Prism Tower, Business Bay, Dubai, UAE<br />
@@ -1052,7 +1052,7 @@ function generateBrochureHTML(course: any, timing: any): string {
       <div class="last-page-content">
         <div class="last-page-logo"></div>
 
-        <h1 class="last-page-title">Balanced Score Training Center</h1>
+        <h1 class="last-page-title">مركز الأداء المتوازن للتدريب</h1>
         <div class="last-page-description">
           <p>
             We are committed to providing world-class training programs that
