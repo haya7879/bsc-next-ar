@@ -9,6 +9,7 @@ import CoursesList from "@/components/lists/courses-list";
 import SearchCourse from "@/components/ui/search-course";
 import { useCategory } from "@/services/categories/categories-hooks";
 import CategorySchema from "@/components/schema/category-schema";
+import Loader from "@/components/ui/loader";
 
 export default function CategoryPage() {
   const params = useParams();
@@ -46,17 +47,27 @@ export default function CategoryPage() {
         imageAlt={category?.image_alt}
         imageTitle={category?.image_title}
       />
-      <div className="courses-section container-main">
-        <div className="courses-section-head">
-          <p>{category?.title || ""}</p>
-          <SearchCourse
-            searchQuery={searchQuery}
-            handleSearchChange={handleSearchChange}
+      {courses ? (
+        <div className="courses-section container-main">
+          <div className="courses-section-head">
+            <p>
+              قائمة الدورات في
+              <span className="font-bold">{` ${category?.title || ""}`}</span>
+            </p>
+            <SearchCourse
+              searchQuery={searchQuery}
+              handleSearchChange={handleSearchChange}
+            />
+          </div>
+
+          <CoursesList
+            courses={filteredCourses}
+            pathPrefix="/training-course"
           />
         </div>
-
-        <CoursesList courses={filteredCourses} pathPrefix="/training-course" />
-      </div>
+      ) : (
+        <Loader />
+      )}
 
       {category?.additional_description && (
         <section className="container-main">

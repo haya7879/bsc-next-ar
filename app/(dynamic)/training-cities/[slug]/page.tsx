@@ -56,7 +56,7 @@ export default function CityPage() {
           <div className="courses-section-head">
             <p>
               قائمة الدورات في
-              <span className="font-bold">{city?.title || ""}</span>
+              <span className="font-bold">{` ${city?.title || ""}`}</span>
             </p>
             <SearchCourse
               searchQuery={searchQuery}
@@ -72,7 +72,6 @@ export default function CityPage() {
       ) : (
         <Loader />
       )}
-
 
       {city?.additional_description && (
         <section className="container-main">
