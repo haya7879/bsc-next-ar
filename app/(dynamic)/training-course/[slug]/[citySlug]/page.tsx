@@ -141,7 +141,7 @@ export default async function Page({ params }: PageProps) {
         ]}
       />
       <HeroBanner
-        title={course.h1 || `${course.title} in ${city.title}`}
+        title={course.h1 || `${course.title} في ${city.title}`}
         description={course.description || ""}
         image={course.image || "/imgs/bg-blog.webp"}
         imageAlt={course.image_alt || course.title}
