@@ -24,16 +24,16 @@ export default function HeroBanner({
       }`}
     >
       <Image
-        width={1000}
-        height={1000}
-        alt={imageAlt}
+        width={1200}
+        height={675}
         src={image}
+        alt={imageAlt}
         title={imageTitle}
-        className={`${type == "form" && "rounded-none!"}`}
-        quality={75}
         priority
         fetchPriority="high"
+        quality={85}
         sizes="100vw"
+        className={`${type == "form" && "rounded-none!"}`}
       />
       <div className="hero-title">
         <div>

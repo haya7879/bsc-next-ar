@@ -24,7 +24,7 @@ export default function CityCard({ city }: { city: City }) {
         <span>
           <HiChevronLeft color="black" fontSize={22} className="card-arrow" />
         </span>
-        <h5>{city.title}</h5>
+        <h2 className="city-card-title">{city.title}</h2>
       </div>
     </Link>
   );

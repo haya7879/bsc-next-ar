@@ -33,7 +33,7 @@ export default function CategoryCard({
         >
           <Image
             src={imageUrl || ""}
-            alt={category.image_alt || category.title}
+            alt={category.image_alt || ""}
             width={400}
             height={300}
             quality={60}
@@ -43,9 +43,9 @@ export default function CategoryCard({
           />
           <span className="absolute inset-0 rounded-xl opacity-70 bg-[#134E88]" />
           <div className="relative z-10 py-3! h-full flex items-center justify-center text-center">
-            <span className="text-white text-[17px] font-semibold px-4! line-clamp-3 block">
+            <h5 className="text-white text-[17px] font-semibold px-4! line-clamp-3 block">
               {category.title}
-            </span>
+            </h5>
           </div>
         </Link>
       )}

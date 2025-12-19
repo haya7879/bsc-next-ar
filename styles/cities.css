@@ -19,7 +19,7 @@
     transition: 0.4s;
 }
 
-.city-card h5 {
+.city-card .city-card-title {
     font-size: 22px;
     text-align: center;
     display: -webkit-box;
@@ -27,6 +27,8 @@
     -webkit-line-clamp: 1;
     overflow: hidden;
     text-overflow: ellipsis;
+    margin: 0;
+    font-weight: 600;
 }
 
 .city-card:hover {
