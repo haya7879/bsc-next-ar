@@ -10,12 +10,13 @@ export default function WhatsAppButton() {
     >
       <Image
         src="https://bscenter.org/assets/imgs/whats.webp"
-        alt="whats-img"
+        alt="Chat with us on WhatsApp"
         width={110}
-        height={110}
-        className='w-[110px] h-auto'
+        height={55}
+        quality={75}
+        sizes="110px"
+        className="w-[110px] h-auto"
       />
     </a>
   );
 }
-
