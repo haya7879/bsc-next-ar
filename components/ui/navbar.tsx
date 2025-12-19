@@ -145,7 +145,13 @@ export default function Navbar() {
                 aria-label="Search"
                 suppressHydrationWarning
               />
-              <img src="/icons/search.svg" alt="search-icon" id="search-icon" />
+              <Image
+                src="/icons/search.svg"
+                alt="search-icon"
+                id="search-icon"
+                width={18}
+                height={18}
+              />
             </div>
             <span className="line-search"></span>
             <div className="nav-lang">
@@ -234,10 +240,7 @@ export default function Navbar() {
           </li>
         </ul>
         <div className="mobile-nav-lang flex-between">
-          <Link
-            href="https://bscenter.org"
-            role="button"
-          >
+          <Link href="https://bscenter.org" role="button">
             <h3 className="shrink-0">English courses</h3>
           </Link>
         </div>

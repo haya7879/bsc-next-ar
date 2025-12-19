@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function SearchCourse({
   searchQuery,
   handleSearchChange,
@@ -8,7 +10,13 @@ export default function SearchCourse({
   return (
     <div className="search-area">
       <div className="search-input-wrapper">
-        <img src="/icons/search.svg" alt="Search" className="search-icon" />
+        <Image
+          src="/icons/search.svg"
+          alt="Search"
+          className="search-icon"
+          width={18}
+          height={18}
+        />
         <input
           type="text"
           id="search"

@@ -1,4 +1,5 @@
 import { servicesData } from "@/constants";
+import Image from "next/image";
 
 export default function Services() {
   return (
@@ -11,7 +12,12 @@ export default function Services() {
           {servicesData.map((service) => (
             <div key={service.id} className="service-card">
               <div className="service-svg">
-                <img src={service.icon} alt={service.title} />
+                <Image
+                  src={service.icon}
+                  alt={service.title}
+                  width={80}
+                  height={80}
+                />
               </div>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
