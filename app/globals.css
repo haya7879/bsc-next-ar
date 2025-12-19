@@ -267,11 +267,11 @@ nav h1 {
   height: 80px;
 }
 
-.nav-links li a.active {
+/* .nav-links li a.active {
   background-color: var(--bg-primary-light);
   color: #134e88;
   padding-inline: 12px;
-}
+} */
 
 .nav-logo {
   width: 150px !important;
@@ -307,33 +307,33 @@ nav h1 {
   filter: brightness(100);
 }
 
-.scrolled .nav-links li a.active-link-nav {
+/* .scrolled .nav-links li a.active-link-nav {
   background: white;
   color: black;
-}
+} */
 
 .scrolled li,
 .scrolled li a {
   color: #ffffff;
 }
 
-.scrolled li a.active {
+/* .scrolled li a.active {
   background-color: #ffffff;
   color: #134e88;
-}
+} */
 
 .scrolled li a:hover {
   color: #e0e0e0;
 }
 
-.scrolled li:focus::before,
+/* .scrolled li:focus::before,
 .scrolled li.active::before,
 .scrolled li a:focus::before,
 .scrolled li a.active::before {
   background-color: transparent;
   width: 100%;
   height: 170px;
-}
+} */
 
 .scrolled h1,
 .scrolled h3 {
@@ -362,10 +362,10 @@ nav h1 {
   transition: background-color 0.2s;
 }
 
-.nav-links-phone li a.active {
+/* .nav-links-phone li a.active {
   background-color: var(--bg-primary-light);
   color: #134e88;
-}
+} */
 
 .mobile-overlay {
   width: 100%;
