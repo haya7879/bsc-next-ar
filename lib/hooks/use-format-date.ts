@@ -1,4 +1,5 @@
 import { useMemo } from 'react';
+import { MONTH_NAMES_AR } from '@/lib/rolling-month-options';
 
 interface FormattedDate {
   day: string;
@@ -14,24 +15,10 @@ interface FormattedDate {
 export const useFormatDate = (dateString: string): FormattedDate => {
   return useMemo(() => {
     const date = new Date(dateString);
-    const months = [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'May',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-    ];
 
     return {
       day: date.getDate().toString().padStart(2, '0'),
-      month: months[date.getMonth()],
+      month: MONTH_NAMES_AR[date.getMonth()],
       year: date.getFullYear().toString(),
     };
   }, [dateString]);
