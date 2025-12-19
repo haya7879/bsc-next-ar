@@ -28,7 +28,13 @@ export default function BlogsGrid({ blogs }: { blogs: Blog[] }) {
               <div className="card-blog-desc">
                 <p>
                   {truncateDescription(blog.description, 150)}
-                  <Link href={`/blogs/${blog.slug}`} className="text-more">more</Link>
+                  <Link 
+                    href={`/blogs/${blog.slug}`} 
+                    className="text-more"
+                  >
+                    اقرأ المزيد
+                    <span className="sr-only"> عن {blog.title}</span>
+                  </Link>
                 </p>
               </div>
             )}
@@ -41,6 +47,7 @@ export default function BlogsGrid({ blogs }: { blogs: Blog[] }) {
                 }}
               >
                 اقرأ المزيد
+                <span className="sr-only"> عن {blog.title}</span>
               </button>
               <div className="card-blog-views">
                 <img src="/icons/calender.svg" alt="Calendar" />

@@ -50,8 +50,12 @@ export default function UpcommingCard({ course }: UpcommingCardProps) {
           <a href={registerUrl} className="btn-primary">
             سجل الآن
           </a>
-          <a href={readMoreUrl} className="btn-secondary">
+          <a 
+            href={readMoreUrl} 
+            className="btn-secondary"
+          >
             اقرأ المزيد
+            <span className="sr-only"> عن {course.course_title}</span>
           </a>
         </div>
       </div>

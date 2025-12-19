@@ -90,8 +90,13 @@ export default function HeroSearchForm({
         <h2 className="search-form-title">ابحث عن دورتك</h2>
         {/* Keyword Input */}
         <div>
+          <label htmlFor="hero-keyword-search" className="sr-only">
+            كلمة مفتاحية
+          </label>
           <input
             type="text"
+            id="hero-keyword-search"
+            aria-label="كلمة مفتاحية"
             placeholder="أدخل كلمة مفتاحية"
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}

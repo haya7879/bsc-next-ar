@@ -16,6 +16,18 @@
   --black: #000;
 }
 
+.sr-only {
+  position: absolute;
+  width: 0px;
+  height: 0px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -158,14 +170,14 @@ button:hover,
   font-size: 17px;
   font-weight: 500;
   text-align: start;
-  color: #00000066;
+  color: #333333;
   position: relative;
   flex-shrink: 0;
   width: 100%;
 }
 
 .nav-links-phone li a {
-  color: #00000066;
+  color: #333333;
   padding: 0.5rem 2rem;
   text-decoration: none;
   display: block;
@@ -178,6 +190,7 @@ button:hover,
 
 .nav-links-phone li a.active {
   background-color: #ebf5ff;
+  color: #134e88;
 }
 
 
@@ -264,14 +277,14 @@ nav h1 {
   font-weight: 500;
   line-height: 28px;
   text-align: start;
-  color: #00000066;
+  color: #333333;
   position: relative;
   flex-shrink: 0;
   padding-inline: 10px;
 }
 
 .nav-links li a {
-  color: #00000066;
+  color: #333333;
   text-decoration: none;
   display: -webkit-flex;
   align-items: center;
@@ -282,6 +295,7 @@ nav h1 {
 
 .nav-links li a.active {
   background-color: #ebf5ff;
+  color: #134e88;
   padding-inline: 12px;
 }
 
@@ -1187,7 +1201,7 @@ textarea:focus,
   }
 }
 
-.service-cards .service-card h5 {
+.service-cards .service-card h3 {
   font-size: 22px;
   font-weight: 600;
   margin-top: 15px;
@@ -1196,14 +1210,14 @@ textarea:focus,
 
 /* Responsive headings */
 @media (max-width: 768px) {
-  .service-cards .service-card h5 {
+  .service-cards .service-card h3 {
     font-size: 20px;
     margin-top: 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .service-cards .service-card h5 {
+  .service-cards .service-card h3 {
     font-size: 18px;
     margin-top: 10px;
   }

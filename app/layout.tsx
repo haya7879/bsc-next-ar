@@ -32,7 +32,9 @@ export default function RootLayout({
       <body className={`antialiased`} suppressHydrationWarning>
         <Providers>
           <Navbar />
-          {children}
+          <main>
+            {children}
+          </main>
           <OurPartners />
           <Footer />
           <WhatsAppButton />

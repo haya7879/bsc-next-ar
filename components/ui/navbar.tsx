@@ -111,7 +111,15 @@ export default function Navbar() {
           </div>
           <div className="search-container flex-between">
             <div>
-              <input type="text" suppressHydrationWarning />
+              <label htmlFor="navbar-search" className="sr-only">
+                البحث
+              </label>
+              <input 
+                type="text" 
+                id="navbar-search"
+                aria-label="البحث"
+                suppressHydrationWarning 
+              />
               <img src="/icons/search.svg" alt="search-icon" id="search-icon" />
             </div>
             <span className="line-search"></span>
