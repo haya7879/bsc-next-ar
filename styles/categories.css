@@ -5,15 +5,7 @@
 .categories-section .categories-cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 18px;
-}
-
-.categories-section .category-card {
-    max-width: none;
-}
-
-.categories-section .category-card:hover {
-    transform: scale(1.05);
+    gap: 12px;
 }
 
 @media screen and (max-width: 992px) {

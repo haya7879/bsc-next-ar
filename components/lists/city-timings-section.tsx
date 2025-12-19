@@ -3,53 +3,28 @@
 import { useState, useMemo } from "react";
 import TimingsGrid from "./timings-grid";
 import CityTimingsFilters from "@/components/ui/city-timings-filters";
+import { getRollingMonthOptions } from "@/lib/rolling-month-options";
 
 interface CityTimingsSectionProps {
   timings: CourseTiming[];
   course: CourseDetail;
 }
 
-export default function CityTimingsSection({ timings, course }: CityTimingsSectionProps) {
+export default function CityTimingsSection({
+  timings,
+  course,
+}: CityTimingsSectionProps) {
   const [selectedMonth, setSelectedMonth] = useState<string>("");
-
-  // Get unique months from timings
-  const months = useMemo(() => {
-    const monthSet = new Set<string>();
-    timings.forEach((timing) => {
-      const date = new Date(timing.start_date);
-      const monthName = date.toLocaleString("en-US", { month: "long" });
-      monthSet.add(monthName);
-    });
-    return Array.from(monthSet).sort((a, b) => {
-      const monthOrder = [
-        "January",
-        "February",
-        "March",
-        "April",
-        "May",
-        "June",
-        "July",
-        "August",
-        "September",
-        "October",
-        "November",
-        "December",
-      ];
-      return monthOrder.indexOf(a) - monthOrder.indexOf(b);
-    });
-  }, [timings]);
+  const months = getRollingMonthOptions();
 
   // Filter timings based on selected month
   const filteredTimings = useMemo(() => {
     return timings.filter((timing) => {
-      const monthMatch =
-        !selectedMonth ||
-        (() => {
-          const date = new Date(timing.start_date);
-          const monthName = date.toLocaleString("en-US", { month: "long" });
-          return monthName === selectedMonth;
-        })();
-      return monthMatch;
+      if (!selectedMonth) return true;
+      
+      const date = new Date(timing.start_date);
+      const monthNumber = String(date.getMonth() + 1); // 1-12
+      return monthNumber === selectedMonth;
     });
   }, [timings, selectedMonth]);
 
@@ -73,4 +48,3 @@ export default function CityTimingsSection({ timings, course }: CityTimingsSecti
     </div>
   );
 }
-

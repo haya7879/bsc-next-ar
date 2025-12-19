@@ -1,10 +1,10 @@
 "use client";
 
-import CustomSelect from "@/components/ui/custom-select";
+import CustomSelect, { type SelectOption } from "@/components/ui/custom-select";
 import { FaArrowsRotate } from "react-icons/fa6";
 
 interface CityTimingsFiltersProps {
-  months: string[];
+  months: SelectOption[];
   selectedMonth: string;
   onMonthChange: (month: string) => void;
   onClear: () => void;
@@ -22,11 +22,8 @@ export default function CityTimingsFilters({
         <CustomSelect
           value={selectedMonth}
           onValueChange={(value) => onMonthChange(value as string)}
-          placeholder="Select Month"
-          options={months.map((month) => ({
-            value: month,
-            label: `${month} 2026`,
-          }))}
+          placeholder="اختر الشهر"
+          options={months}
           className="filter-select"
           size="default"
           variant="outline"
@@ -35,7 +32,7 @@ export default function CityTimingsFilters({
         />
         <button className="clear-filters-btn" onClick={onClear} suppressHydrationWarning={true}>
           <FaArrowsRotate />
-          Reset
+          مسح
         </button>
       </div>
     </div>
