@@ -1,10 +1,10 @@
 "use client";
 
-import CustomSelect, { type SelectOption } from "@/components/ui/custom-select";
+import CustomSelect from "@/components/ui/custom-select";
 import { FaArrowsRotate } from "react-icons/fa6";
 
 interface CityTimingsFiltersProps {
-  months: SelectOption[];
+  months: string[];
   selectedMonth: string;
   onMonthChange: (month: string) => void;
   onClear: () => void;
@@ -23,7 +23,10 @@ export default function CityTimingsFilters({
           value={selectedMonth}
           onValueChange={(value) => onMonthChange(value as string)}
           placeholder="اختر الشهر"
-          options={months}
+          options={months.map((month) => ({
+            value: month,
+            label: `${month} 2026`,
+          }))}
           className="filter-select"
           size="default"
           variant="outline"
