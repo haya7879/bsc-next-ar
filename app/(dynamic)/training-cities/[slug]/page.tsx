@@ -54,7 +54,7 @@ export default function CityPage() {
           <>
             <div className="courses-section-head">
               <p>
-                List of courses in
+                قائمة الدورات في 
                 {` ${city?.title || ""}`}
               </p>
               <SearchCourse
