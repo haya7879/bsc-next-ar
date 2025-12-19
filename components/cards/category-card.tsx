@@ -40,7 +40,7 @@ export default function CategoryCard({
             className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl transition-transform duration-500 ease-out group-hover:scale-110"
           />
           <span className="absolute inset-0 rounded-2xl opacity-70 bg-[#134E88]" />
-          <div className="relative z-10 py-3!">
+          <div className="relative z-10 py-3! h-full flex items-center justify-center text-center">
             <h3 className="text-white text-lg font-semibold px-4! line-clamp-3">
               {category.title}
             </h3>

@@ -173,7 +173,7 @@ function SearchPageContent() {
             <CustomSelect
               value={currentCategory}
               onValueChange={handleCategoryChange}
-              placeholder="Select Category"
+              placeholder="اختر التخصص"
               options={categoryOptions}
               className=""
               size="default"
@@ -187,7 +187,7 @@ function SearchPageContent() {
             <CustomSelect
               value={currentCity}
               onValueChange={handleCityChange}
-              placeholder="Select city"
+              placeholder="اختر المدينة"
               options={cityOptions}
               className=""
               size="default"
@@ -201,7 +201,7 @@ function SearchPageContent() {
             <CustomSelect
               value={currentMonth}
               onValueChange={handleMonthChange}
-              placeholder="Select month"
+              placeholder="اختر الشهر"
               options={months}
               className=""
               size="default"
@@ -215,7 +215,7 @@ function SearchPageContent() {
             <CustomSelect
               value={currentDuration}
               onValueChange={handleDurationChange}
-              placeholder="Select duration"
+              placeholder="اختر المدة"
               options={durations}
               className=""
               size="default"

@@ -207,7 +207,7 @@ export default function CustomSelect({
                   <div
                     key={index}
                     className={cn(
-                      'relative flex w-full cursor-pointer items-center gap-2 py-1.5! pl-2! pr-4! text-sm! outline-none',
+                      'relative flex w-full cursor-pointer items-center gap-2 py-1.5! pr-2! pl-4! text-sm! outline-none',
                       'hover:bg-gray-100 focus:bg-gray-100',
                       'data-disabled:pointer-events-none data-disabled:opacity-50',
                       option.disabled && 'pointer-events-none opacity-50',
@@ -219,7 +219,7 @@ export default function CustomSelect({
                   >
                     <span className="flex-1 truncate text-start">{option.label}</span>
                     {isValueEqual(option.value, selectedValue) && (
-                      <span className="absolute right-2 flex h-3.5 w-3.5 items-center justify-center">
+                      <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
                         <IoCheckmark className="h-4 w-4" />
                       </span>
                     )}
