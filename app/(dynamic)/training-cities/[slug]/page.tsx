@@ -49,27 +49,28 @@ export default function CityPage() {
         />
       )}
 
-      {courses ? (
-        <div className="courses-section container-main">
-          <div className="courses-section-head">
-            <p>
-              قائمة الدورات في
-              {` ${city?.title || ""}`}
-            </p>
-            <SearchCourse
-              searchQuery={searchQuery}
-              handleSearchChange={handleSearchChange}
+      <div className="courses-section container-main">
+        {courses ? (
+          <>
+            <div className="courses-section-head">
+              <p>
+                List of courses in
+                {` ${city?.title || ""}`}
+              </p>
+              <SearchCourse
+                searchQuery={searchQuery}
+                handleSearchChange={handleSearchChange}
+              />
+            </div>
+            <CoursesList
+              courses={filteredCourses}
+              pathPrefix="/training-course"
             />
-          </div>
-
-          <CoursesList
-            courses={filteredCourses}
-            pathPrefix="/training-course"
-          />
-        </div>
-      ) : (
-        <Loader />
-      )}
+          </>
+        ) : (
+          <Loader />
+        )}
+      </div>
 
       {city?.additional_description && (
         <section className="container-main">

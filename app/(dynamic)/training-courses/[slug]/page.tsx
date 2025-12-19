@@ -33,7 +33,9 @@ export default function CategoryPage() {
 
   return (
     <>
-      {category && courses && <CategorySchema category={category} courses={courses} />}
+      {category && courses && (
+        <CategorySchema category={category} courses={courses} />
+      )}
       <Breadcrumb
         items={[
           { label: "التخصصات", href: "/training-courses" },
@@ -47,27 +49,28 @@ export default function CategoryPage() {
         imageAlt={category?.image_alt}
         imageTitle={category?.image_title}
       />
-      {courses ? (
-        <div className="courses-section container-main">
-          <div className="courses-section-head">
-            <p>
-              قائمة الدورات في
-              {` ${category?.title || ""}`}
-            </p>
-            <SearchCourse
-              searchQuery={searchQuery}
-              handleSearchChange={handleSearchChange}
+      <div className="courses-section container-main">
+        {courses && courses.length > 0 ? (
+          <>
+            <div className="courses-section-head">
+              <p>
+                List of courses in
+                {` ${category?.title || ""}`}
+              </p>
+              <SearchCourse
+                searchQuery={searchQuery}
+                handleSearchChange={handleSearchChange}
+              />
+            </div>
+            <CoursesList
+              courses={filteredCourses}
+              pathPrefix="/training-course"
             />
-          </div>
-
-          <CoursesList
-            courses={filteredCourses}
-            pathPrefix="/training-course"
-          />
-        </div>
-      ) : (
-        <Loader />
-      )}
+          </>
+        ) : (
+          <Loader />
+        )}
+      </div>
 
       {category?.additional_description && (
         <section className="container-main">

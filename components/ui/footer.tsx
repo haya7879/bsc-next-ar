@@ -113,7 +113,9 @@ export default function Footer() {
       <div className="hr"></div>
       <div className="footer-bottom">
         <div className="container-main">
-          <p>© حقوق النشر  {new Date().getFullYear()} مركز الأداء المتوازن للتدريب</p>
+          <p>
+            © حقوق النشر {new Date().getFullYear()} مركز الأداء المتوازن للتدريب
+          </p>
           <a
             href="//www.dmca.com/Protection/Status.aspx?ID=a93d1866-cf03-48a4-9106-d51999924b5c"
             title="DMCA.com Protection Status"
@@ -136,8 +138,8 @@ export default function Footer() {
               height={30}
               alt="facebook icon"
               title="facebook icon"
-              quality={65}
-              loading="lazy"
+              sizes="30px"
+              quality={70}
             />
             <Image
               src="/icons/linkedin.png"
@@ -145,8 +147,8 @@ export default function Footer() {
               height={30}
               alt="linkedin icon"
               title="linkedin icon"
-              quality={65}
-              loading="lazy"
+              sizes="30px"
+              quality={70}
             />
             <Image
               src="/icons/x.png"
@@ -154,8 +156,8 @@ export default function Footer() {
               height={30}
               alt="x icon"
               title="x icon"
-              quality={65}
-              loading="lazy"
+              sizes="30px"
+              quality={70}
             />
             <Image
               src="/icons/instagram.png"
@@ -163,8 +165,8 @@ export default function Footer() {
               height={30}
               alt="instagram icon"
               title="instagram icon"
-              quality={65}
-              loading="lazy"
+              sizes="30px"
+              quality={70}
             />
           </div>
         </div>
