@@ -4,7 +4,7 @@ import { partnerLogos2 } from "@/constants";
 
 export default function OurPartners() {
   return (
-    <section className="md:mt-[70px]! mt-10!">
+    <section className="md:mt-[70px]! mt-10!" style={{ direction: "ltr" }}>
       <div className="container-main mx-auto">
         <div className="section-title">
           <h2>شركاؤنا في النجاح</h2>
