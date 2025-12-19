@@ -15,11 +15,26 @@ export default function HeroBanner({
   image = "/imgs/bg-categories.webp",
   imageAlt = "Hero banner image",
   imageTitle = "Hero banner image",
-  type
+  type,
 }: HeroBannerProps) {
   return (
-    <section className={`hero-banner ${type == "form" && "w-full! m-0! before:rounded-none! h-[40vh]!"}`}>
-      <Image width={1000} height={1000} alt={imageAlt} src={image} title={imageTitle} className={`${type == "form" && "rounded-none!"}`} />
+    <section
+      className={`hero-banner ${
+        type == "form" && "w-full! m-0! before:rounded-none! h-[40vh]!"
+      }`}
+    >
+      <Image
+        width={1000}
+        height={1000}
+        alt={imageAlt}
+        src={image}
+        title={imageTitle}
+        className={`${type == "form" && "rounded-none!"}`}
+        quality={75}
+        priority
+        fetchPriority="high"
+        sizes="100vw"
+      />
       <div className="hero-title">
         <div>
           <h1>{title}</h1>

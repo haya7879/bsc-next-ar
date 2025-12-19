@@ -36,7 +36,9 @@ export default function CategoryCard({
             alt={category.image_alt || category.title}
             width={400}
             height={300}
+            quality={65}
             loading="lazy"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="absolute top-0 left-0 w-full h-full object-cover rounded-2xl transition-transform duration-500 ease-out group-hover:scale-110"
           />
           <span className="absolute inset-0 rounded-xl opacity-70 bg-[#134E88]" />

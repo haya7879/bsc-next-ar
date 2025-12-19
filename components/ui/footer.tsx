@@ -113,33 +113,41 @@ export default function Footer() {
           </a>
           <Script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js" />
           <div className="social-links">
-            <img
+            <Image
               src="/icons/facebook.png"
-              width="30px"
-              height="30px"
+              width={30}
+              height={30}
               alt="facebook icon"
               title="facebook icon"
+              quality={65}
+              loading="lazy"
             />
-            <img
+            <Image
               src="/icons/linkedin.png"
-              width="30px"
-              height="30px"
+              width={30}
+              height={30}
               alt="linkedin icon"
               title="linkedin icon"
+              quality={65}
+              loading="lazy"
             />
-            <img
+            <Image
               src="/icons/x.png"
-              width="30px"
-              height="30px"
+              width={30}
+              height={30}
               alt="x icon"
               title="x icon"
+              quality={65}
+              loading="lazy"
             />
-            <img
+            <Image
               src="/icons/instagram.png"
-              width="30px"
-              height="30px"
+              width={30}
+              height={30}
               alt="instagram icon"
               title="instagram icon"
+              quality={65}
+              loading="lazy"
             />
           </div>
         </div>

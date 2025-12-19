@@ -20,6 +20,9 @@ export default function BlogsGrid({ blogs }: { blogs: Blog[] }) {
               className="card-blog-img"
               width={400}
               height={300}
+              quality={65}
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 400px"
             />
           )}
           <div className="card-blog-content">

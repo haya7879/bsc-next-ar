@@ -26,6 +26,9 @@ export default function UpcommingCard({ course }: UpcommingCardProps) {
         alt={course.course_image_alt || course.course_title}
         width={400}
         height={300}
+        quality={65}
+        loading="lazy"
+        sizes="(max-width: 768px) 100vw, 400px"
       />
       <div className="card-content">
         <div className="card-title">{course.course_title}</div>

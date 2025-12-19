@@ -48,7 +48,15 @@ export default function Navbar() {
       <nav className={isScrolled ? "scrolled" : ""}>
         <div className="container-main flex-between h-full!">
           <Link href="/" className="nav-logo">
-            <Image src="/imgs/logo-en.png" alt="logo-en" width={150} height={50} />
+            <Image
+              src="/imgs/logo-en.png"
+              alt="Balanced Score Training Center logo"
+              width={150}
+              height={150}
+              priority
+              quality={75}
+              sizes="(max-width: 768px) 120px, 150px"
+            />
           </Link>
           <div className="mobile-nav-lang">
             <a
@@ -88,22 +96,34 @@ export default function Navbar() {
                 </Link>
               </li>
               <li>
-                <Link href="/training-courses" className={isActive("/training-courses") ? "active" : ""}>
+                <Link
+                  href="/training-courses"
+                  className={isActive("/training-courses") ? "active" : ""}
+                >
                   التخصصات
                 </Link>
               </li>
               <li>
-                <Link href="/training-cities" className={isActive("/training-cities") ? "active" : ""}>
+                <Link
+                  href="/training-cities"
+                  className={isActive("/training-cities") ? "active" : ""}
+                >
                   المدن
                 </Link>
               </li>
               <li>
-                <Link href="/about" className={isActive("/about") ? "active" : ""}>
+                <Link
+                  href="/about"
+                  className={isActive("/about") ? "active" : ""}
+                >
                   عن المركز
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className={isActive("/contact") ? "active" : ""}>
+                <Link
+                  href="/contact"
+                  className={isActive("/contact") ? "active" : ""}
+                >
                   اتصل بنا
                 </Link>
               </li>
@@ -114,11 +134,11 @@ export default function Navbar() {
               <label htmlFor="navbar-search" className="sr-only">
                 البحث
               </label>
-              <input 
-                type="text" 
+              <input
+                type="text"
                 id="navbar-search"
                 aria-label="البحث"
-                suppressHydrationWarning 
+                suppressHydrationWarning
               />
               <img src="/icons/search.svg" alt="search-icon" id="search-icon" />
             </div>
@@ -150,32 +170,60 @@ export default function Navbar() {
       >
         <div className="flex-between mebile-menu-header">
           <Link href="/" className="nav-logo" onClick={closeMobileMenu}>
-            <Image src="/imgs/logo-en.png" alt="logo-en" width={150} height={150}/>
+            <Image
+              src="/imgs/logo-en.png"
+              alt="Balanced Score Training Center logo"
+              width={150}
+              height={150}
+              priority
+              quality={75}
+              sizes="(max-width: 768px) 120px, 150px"
+            />
           </Link>
         </div>
         <ul className="flex-column">
           <li>
-            <Link href="/" onClick={closeMobileMenu} className={isActive("/") ? "active" : ""}>
+            <Link
+              href="/"
+              onClick={closeMobileMenu}
+              className={isActive("/") ? "active" : ""}
+            >
               الصفحة الرئيسية
             </Link>
           </li>
           <li>
-            <Link href="/training-courses" onClick={closeMobileMenu} className={isActive("/training-courses") ? "active" : ""}>
+            <Link
+              href="/training-courses"
+              onClick={closeMobileMenu}
+              className={isActive("/training-courses") ? "active" : ""}
+            >
               التخصصات
             </Link>
           </li>
           <li>
-            <Link href="/training-cities" onClick={closeMobileMenu} className={isActive("/training-cities") ? "active" : ""}>
+            <Link
+              href="/training-cities"
+              onClick={closeMobileMenu}
+              className={isActive("/training-cities") ? "active" : ""}
+            >
               المدن
             </Link>
           </li>
           <li>
-            <Link href="/about" onClick={closeMobileMenu} className={isActive("/about") ? "active" : ""}>
+            <Link
+              href="/about"
+              onClick={closeMobileMenu}
+              className={isActive("/about") ? "active" : ""}
+            >
               عن المركز
             </Link>
           </li>
           <li>
-            <Link href="/contact" onClick={closeMobileMenu} className={isActive("/contact") ? "active" : ""}>
+            <Link
+              href="/contact"
+              onClick={closeMobileMenu}
+              className={isActive("/contact") ? "active" : ""}
+            >
               اتصل بنا
             </Link>
           </li>
@@ -196,4 +244,3 @@ export default function Navbar() {
     </>
   );
 }
-

@@ -22,7 +22,14 @@ export default function AboutSection() {
             </Link>
           </div>
           <div className="about-right">
-            <Image src="/imgs/khda.png" alt="KHDA" width={200} height={200} />
+            <Image 
+              src="/imgs/khda.png" 
+              alt="KHDA" 
+              width={200} 
+              height={200}
+              quality={65}
+              loading="lazy"
+            />
           </div>
         </div>
       </div>
