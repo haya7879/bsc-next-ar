@@ -22,7 +22,7 @@ export default function ContactPage() {
   const [recaptchaToken, setRecaptchaToken] = useState<string>("");
   const [recaptchaError, setRecaptchaError] = useState("");
   const { mutate: submitContact, isPending } = useContactForm();
-
+  console.log(formData);
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -103,6 +103,7 @@ export default function ContactPage() {
                     name="full_name"
                     value={formData.full_name}
                     onChange={handleInputChange}
+                    suppressHydrationWarning
                   />
                 </div>
                 <div className="input-container">
@@ -128,6 +129,7 @@ export default function ContactPage() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
+                    suppressHydrationWarning
                   />
                 </div>
                 <div className="input-container">
@@ -140,6 +142,7 @@ export default function ContactPage() {
                     name="country"
                     value={formData.country}
                     onChange={handleInputChange}
+                    suppressHydrationWarning
                   />
                 </div>
                 <div className="input-container">
@@ -152,6 +155,7 @@ export default function ContactPage() {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
+                    suppressHydrationWarning
                   />
                 </div>
                 <div className="input-container">
@@ -164,6 +168,7 @@ export default function ContactPage() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
+                    suppressHydrationWarning
                   />
                 </div>
               </div>
@@ -175,6 +180,7 @@ export default function ContactPage() {
                   placeholder="يرجى إدخال استفسارك هنا"
                   value={formData.message}
                   onChange={handleInputChange}
+                  suppressHydrationWarning
                   required
                 />
               </div>
@@ -190,11 +196,15 @@ export default function ContactPage() {
                 }}
                 onExpire={() => {
                   setRecaptchaToken("");
-                  setRecaptchaError("انتهت صلاحية reCAPTCHA. يرجى التحقق مرة أخرى.");
+                  setRecaptchaError(
+                    "انتهت صلاحية reCAPTCHA. يرجى التحقق مرة أخرى."
+                  );
                 }}
                 onError={() => {
                   setRecaptchaToken("");
-                  setRecaptchaError("خطأ في reCAPTCHA. يرجى المحاولة مرة أخرى.");
+                  setRecaptchaError(
+                    "خطأ في reCAPTCHA. يرجى المحاولة مرة أخرى."
+                  );
                 }}
                 action={RECAPTCHA_CONFIG.actions.contact}
               />

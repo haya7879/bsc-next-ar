@@ -4,7 +4,7 @@ import React, { useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 
 // Force dynamic rendering to prevent static generation errors
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import PhoneInput from "@/components/ui/phone-input";
 import ReCaptcha from "@/components/ui/recaptcha";
@@ -122,6 +122,7 @@ function EnquirePageContent() {
                   name="full_name"
                   value={formData.full_name}
                   onChange={handleInputChange}
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -132,7 +133,9 @@ function EnquirePageContent() {
                   label="رقم الجوال"
                   placeholder="أدخل رقم الهاتف"
                   value={formData.mobile}
-                  onChange={(value) => setFormData((prev) => ({ ...prev, mobile: value }))}
+                  onChange={(value) =>
+                    setFormData((prev) => ({ ...prev, mobile: value }))
+                  }
                   required
                 />
               </div>
@@ -147,6 +150,7 @@ function EnquirePageContent() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -158,6 +162,7 @@ function EnquirePageContent() {
                   value={courseSlug}
                   id="course"
                   readOnly
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -171,6 +176,7 @@ function EnquirePageContent() {
                   name="company"
                   value={formData.company}
                   onChange={handleInputChange}
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -184,6 +190,7 @@ function EnquirePageContent() {
                   name="country"
                   value={formData.country}
                   onChange={handleInputChange}
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -197,6 +204,7 @@ function EnquirePageContent() {
                   name="city"
                   value={formData.city}
                   onChange={handleInputChange}
+                  suppressHydrationWarning
                 />
               </div>
             </div>
@@ -210,6 +218,7 @@ function EnquirePageContent() {
               name="message"
               placeholder="يرجى إدخال استفسارك هنا"
               value={formData.message}
+              suppressHydrationWarning
               onChange={handleInputChange}
             />
           </div>
@@ -225,7 +234,9 @@ function EnquirePageContent() {
               }}
               onExpire={() => {
                 setRecaptchaToken("");
-                setRecaptchaError("انتهت صلاحية reCAPTCHA. يرجى التحقق مرة أخرى.");
+                setRecaptchaError(
+                  "انتهت صلاحية reCAPTCHA. يرجى التحقق مرة أخرى."
+                );
               }}
               onError={() => {
                 setRecaptchaToken("");
@@ -234,7 +245,10 @@ function EnquirePageContent() {
               action={RECAPTCHA_CONFIG.actions.inquire}
             />
             {recaptchaError && (
-              <p className="recaptcha-error" style={{ color: "red", fontSize: "14px", marginTop: "8px" }}>
+              <p
+                className="recaptcha-error"
+                style={{ color: "red", fontSize: "14px", marginTop: "8px" }}
+              >
                 {recaptchaError}
               </p>
             )}
@@ -255,7 +269,11 @@ function EnquirePageContent() {
 
 export default function EnquirePage() {
   return (
-    <Suspense fallback={<LoadingState title="جاري التحميل..." message="يرجى الانتظار..." />}>
+    <Suspense
+      fallback={
+        <LoadingState title="جاري التحميل..." message="يرجى الانتظار..." />
+      }
+    >
       <EnquirePageContent />
     </Suspense>
   );

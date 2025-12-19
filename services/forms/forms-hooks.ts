@@ -17,13 +17,13 @@ export const useContactForm = () => {
   return useMutation<FormResponse, Error, ContactFormData>({
     mutationFn: (data: ContactFormData) => formsServices.contact(data),
     onSuccess: (data) => {
-      toast.success("Success!", {
-        description: data.message || "Your message has been sent successfully.",
+      toast.success("تم الإرسال بنجاح", {
+        description: data.message || "تم إرسال رسالتك بنجاح.",
       });
     },
     onError: (error: Error) => {
-      toast.error("Error", {
-        description: error.message || "An error occurred. Please try again.",
+      toast.error("خطأ", {
+        description: error.message || "حدث خطأ. يرجى المحاولة مرة أخرى.",
       });
       console.error(error);
     },
@@ -37,14 +37,14 @@ export const useEnquireForm = () => {
   return useMutation<FormResponse, Error, EnquireFormData>({
     mutationFn: (data: EnquireFormData) => formsServices.enquire(data),
     onSuccess: (data) => {
-      toast.success("Success!", {
+      toast.success("تم الإرسال بنجاح", {
         description:
-          data.message || "Your enquiry has been submitted successfully.",
+          data.message || "تم إرسال استفسارك بنجاح.",
       });
     },
     onError: (error: Error) => {
-      toast.error("Error", {
-        description: error.message || "An error occurred. Please try again.",
+      toast.error("خطأ", {
+        description: error.message || "حدث خطأ. يرجى المحاولة مرة أخرى.",
       });
       console.error(error);
     },
@@ -58,14 +58,14 @@ export const useRegisterForm = () => {
   return useMutation<FormResponse, Error, RegisterFormData>({
     mutationFn: (data: RegisterFormData) => formsServices.register(data),
     onSuccess: (data) => {
-      toast.success("Success!", {
+      toast.success("تم الإرسال بنجاح", {
         description:
-          data.message || "Your registration has been submitted successfully.",
+          data.message || "تم إرسال تسجيلك بنجاح.",
       });
     },
     onError: (error: Error) => {
-      toast.error("Error", {
-        description: error.message || "An error occurred. Please try again.",
+      toast.error("خطأ", {
+        description: error.message || "حدث خطأ. يرجى المحاولة مرة أخرى.",
       });
       console.error(error);
     },
@@ -79,15 +79,15 @@ export const useJoinTeamForm = () => {
   return useMutation<FormResponse, Error, JoinTeamFormData>({
     mutationFn: (data: JoinTeamFormData) => formsServices.joinTeam(data),
     onSuccess: (data) => {
-      toast.success("Success!", {
+      toast.success("تم الإرسال بنجاح", {
         description:
           data.message ||
-          "Your application has been submitted successfully. We'll get back to you soon!",
+          "تم إرسال طلبك بنجاح. سنتواصل معك قريباً!",
       });
     },
     onError: (error: Error) => {
-      toast.error("Error", {
-        description: error.message || "An error occurred. Please try again.",
+      toast.error("خطأ", {
+        description: error.message || "حدث خطأ. يرجى المحاولة مرة أخرى.",
       });
       console.error(error);
     },
@@ -101,14 +101,14 @@ export const useDownloadForm = () => {
   return useMutation<FormResponse, Error, DownloadFormData>({
     mutationFn: (data: DownloadFormData) => formsServices.download(data),
     onSuccess: (data) => {
-      toast.success("Success!", {
+      toast.success("تم الإرسال بنجاح", {
         description:
-          data.message || "Your download request has been submitted successfully.",
+          data.message || "تم إرسال طلبك بنجاح.",
       });
     },
     onError: (error: Error) => {
-      toast.error("Error", {
-        description: error.message || "An error occurred. Please try again.",
+      toast.error("خطأ", {
+        description: error.message || "حدث خطأ. يرجى المحاولة مرة أخرى.",
       });
       console.error(error);
     },

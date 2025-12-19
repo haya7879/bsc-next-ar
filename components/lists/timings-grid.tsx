@@ -35,7 +35,7 @@ export default function TimingsGrid({ timings, course }: TimingsGridProps) {
         ))
       ) : (
         <div className="no-timings">
-          <p>No sessions found matching your filters.</p>
+          <p>لا يوجد جلسات متاحة بالوقت المحدد.</p>
         </div>
       )}
     </div>

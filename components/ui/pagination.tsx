@@ -74,12 +74,12 @@ export default function Pagination({
             href={`/blogs?page=${currentPage - 1}`}
             className="pagination-btn"
           >
-            <HiArrowLeft />
+            <HiArrowRight />
             السابق
           </Link>
         ) : (
           <button className="pagination-btn pagination-btn-disabled" disabled>
-            <HiArrowLeft />
+            <HiArrowRight />
             السابق
           </button>
         )}
@@ -117,12 +117,12 @@ export default function Pagination({
             className="pagination-btn"
           >
             التالي
-            <HiArrowRight />
+            <HiArrowLeft />
           </Link>
         ) : (
           <button className="pagination-btn pagination-btn-disabled" disabled>
             التالي
-            <HiArrowRight />
+            <HiArrowLeft />
           </button>
         )}
       </div>

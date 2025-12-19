@@ -16,13 +16,13 @@ export const RECAPTCHA_CONFIG = {
 // Validation function
 export const validateRecaptchaConfig = () => {
   if (!RECAPTCHA_CONFIG.siteKey) {
-    console.warn('reCAPTCHA site key is not configured. Please add NEXT_PUBLIC_RECAPTCHA_SITE_KEY to your environment variables.')
+    console.warn('reCAPTCHA site key is not configured. يرجى إضافة NEXT_PUBLIC_RECAPTCHA_SITE_KEY في متغيرات البيئة.')
     return false
   }
   
   // Basic format validation - reCAPTCHA site keys are typically 40 characters
   if (RECAPTCHA_CONFIG.siteKey.length < 20) {
-    console.warn('reCAPTCHA site key appears to be invalid (too short). Please verify your NEXT_PUBLIC_RECAPTCHA_SITE_KEY.')
+    console.warn('reCAPTCHA site key appears to be invalid (too short). يرجى التحقق من NEXT_PUBLIC_RECAPTCHA_SITE_KEY.')
     return false
   }
   

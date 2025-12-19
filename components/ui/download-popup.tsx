@@ -253,7 +253,7 @@ export default function DownloadPopup() {
               ></div>
             </div>
             <p className="text-sm text-gray-600">
-              Preparing brochure for download... {Math.round(progress)}%
+              جاري إعداد البروشورالدورة للتحميل... {Math.round(progress)}%
             </p>
           </div>
         )}
@@ -268,7 +268,12 @@ export default function DownloadPopup() {
             id="City"
             value={timing.city?.title || "Unknown"}
           />
-          <input type="hidden" name="timing_id" id="timing_id" value={timing.id} />
+          <input
+            type="hidden"
+            name="timing_id"
+            id="timing_id"
+            value={timing.id}
+          />
 
           <div>
             <div className="form-title">
@@ -286,9 +291,13 @@ export default function DownloadPopup() {
                   value={formData.name}
                   onChange={(e) => handleInputChange("name", e.target.value)}
                   required
+                  suppressHydrationWarning
                 />
                 {errors.name && (
-                  <span className="text-red-500 text-xs" style={{ display: "block", marginTop: "4px" }}>
+                  <span
+                    className="text-red-500 text-xs"
+                    style={{ display: "block", marginTop: "4px" }}
+                  >
                     {errors.name}
                   </span>
                 )}
@@ -322,9 +331,13 @@ export default function DownloadPopup() {
                   value={formData.email}
                   onChange={(e) => handleInputChange("email", e.target.value)}
                   required
+                  suppressHydrationWarning
                 />
                 {errors.email && (
-                  <span className="text-red-500 text-xs" style={{ display: "block", marginTop: "4px" }}>
+                  <span
+                    className="text-red-500 text-xs"
+                    style={{ display: "block", marginTop: "4px" }}
+                  >
                     {errors.email}
                   </span>
                 )}
@@ -343,9 +356,13 @@ export default function DownloadPopup() {
                     handleInputChange("company_name", e.target.value)
                   }
                   required
+                  suppressHydrationWarning
                 />
                 {errors.company_name && (
-                  <span className="text-red-500 text-xs" style={{ display: "block", marginTop: "4px" }}>
+                  <span
+                    className="text-red-500 text-xs"
+                    style={{ display: "block", marginTop: "4px" }}
+                  >
                     {errors.company_name}
                   </span>
                 )}
@@ -356,13 +373,11 @@ export default function DownloadPopup() {
           {/* Form Actions */}
           <div className="form-actions">
             <button
+              suppressHydrationWarning
               id="downloadPDF"
               type="submit"
               disabled={
-                !recaptchaToken ||
-                isPending ||
-                isGeneratingPDF ||
-                !isPhoneValid
+                !recaptchaToken || isPending || isGeneratingPDF || !isPhoneValid
               }
             >
               {isPending
@@ -400,4 +415,3 @@ export default function DownloadPopup() {
     </>
   );
 }
-

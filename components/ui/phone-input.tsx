@@ -648,14 +648,15 @@ export default function PhoneInput({
             type="tel"
             id={id}
             name={name}
-            className="flex-1 border-none! outline-none p-0! ml-3! py-0! text-sm bg-transparent rounded-none! max-md:px-3 max-md:text-[13px] disabled:cursor-not-allowed"
+            className="flex-1 border-none! outline-none p-0! ml-3! py-0! text-sm bg-transparent rounded-none! max-md:px-3 max-md:text-[13px] disabled:cursor-not-allowed text-right"
             placeholder={placeholder}
             value={phoneInput}
             onChange={handlePhoneInputChange}
             onKeyDown={handleKeyDown}
             required={required}
             disabled={disabled}
-            style={{direction:"rtl"}}
+            dir="ltr"
+            suppressHydrationWarning
           />
         </div>
       </div>

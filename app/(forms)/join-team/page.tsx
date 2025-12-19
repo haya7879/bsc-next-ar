@@ -195,6 +195,7 @@ export default function JoinTeamPage({
                   name="full_name"
                   value={formData.full_name}
                   onChange={handleInputChange}
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -205,7 +206,9 @@ export default function JoinTeamPage({
                   label="رقم الهاتف"
                   placeholder="أدخل رقم الهاتف"
                   value={formData.phone_number}
-                  onChange={(value) => setFormData((prev) => ({ ...prev, phone_number: value }))}
+                  onChange={(value) =>
+                    setFormData((prev) => ({ ...prev, phone_number: value }))
+                  }
                   required
                 />
               </div>
@@ -220,6 +223,7 @@ export default function JoinTeamPage({
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -234,11 +238,9 @@ export default function JoinTeamPage({
                   ref={fileInputRef}
                   onChange={handleFileChange}
                   accept=".pdf,.doc,.docx"
+                  suppressHydrationWarning
                 />
-                <div
-                  className="upload-file"
-                  onClick={handleFileButtonClick}
-                >
+                <div className="upload-file" onClick={handleFileButtonClick}>
                   <img src="/icons/arrow-down-white.svg" alt="" />
                 </div>
               </div>
@@ -253,6 +255,7 @@ export default function JoinTeamPage({
                   name="country"
                   value={formData.country}
                   onChange={handleInputChange}
+                  suppressHydrationWarning
                 />
               </div>
 
@@ -270,6 +273,7 @@ export default function JoinTeamPage({
                   required
                   value={formData.category_name}
                   onClick={toggleDropdown}
+                  suppressHydrationWarning
                 />
                 <input
                   type="hidden"
@@ -309,7 +313,9 @@ export default function JoinTeamPage({
               }}
               onExpire={() => {
                 setRecaptchaToken("");
-                setRecaptchaError("انتهت صلاحية reCAPTCHA. يرجى التحقق مرة أخرى.");
+                setRecaptchaError(
+                  "انتهت صلاحية reCAPTCHA. يرجى التحقق مرة أخرى."
+                );
               }}
               onError={() => {
                 setRecaptchaToken("");
@@ -318,7 +324,10 @@ export default function JoinTeamPage({
               action={RECAPTCHA_CONFIG.actions.join}
             />
             {recaptchaError && (
-              <p className="recaptcha-error" style={{ color: "red", fontSize: "14px", marginTop: "8px" }}>
+              <p
+                className="recaptcha-error"
+                style={{ color: "red", fontSize: "14px", marginTop: "8px" }}
+              >
                 {recaptchaError}
               </p>
             )}
