@@ -26,19 +26,28 @@ export default function Navbar() {
   };
 
   useEffect(() => {
+    let isMounted = true;
+
     const handleScroll = () => {
+      if (!isMounted) return;
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 50);
     };
 
-    // Check initial scroll position
-    handleScroll();
+    // Check initial scroll position after a small delay to ensure component is mounted
+    const timeoutId = setTimeout(() => {
+      if (isMounted) {
+        handleScroll();
+      }
+    }, 0);
 
     // Add scroll event listener
     window.addEventListener("scroll", handleScroll);
 
     // Cleanup
     return () => {
+      isMounted = false;
+      clearTimeout(timeoutId);
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
@@ -48,13 +57,13 @@ export default function Navbar() {
       <nav className={isScrolled ? "scrolled" : ""}>
         <div className="container-main flex-between h-full!">
           <Link href="/" className="nav-logo">
-            <Image
-              src="/imgs/logo-en.png"
-              alt="Balanced Score Training Center logo"
-              width={150}
+          <Image 
+              src="/imgs/logo-en.png" 
+              alt="Balanced Score Training Center logo" 
+              width={150} 
               height={150}
               priority
-              quality={75}
+              quality={60}
               sizes="(max-width: 768px) 120px, 150px"
             />
           </Link>
@@ -176,7 +185,7 @@ export default function Navbar() {
               width={150}
               height={150}
               priority
-              quality={75}
+              quality={60}
               sizes="(max-width: 768px) 120px, 150px"
             />
           </Link>
