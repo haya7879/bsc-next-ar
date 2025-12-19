@@ -27,16 +27,51 @@
   justify-content: space-between;
   max-width: 379px;
   width: 100%;
-  border-bottom: 2px solid #efefef;
-  padding-bottom: 6px;
 }
 
-.search-area img {
-  display: none;
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  padding-left: 12px;
+  transition: all 0.3s ease;
+  gap: 8px;
 }
 
-.search-area input {
+.search-input-wrapper:focus-within {
+  border-color: #134e88;
+}
+
+.search-icon {
+  width: 15px;
+  height: 15px;
+  opacity: 0.6;
+  flex-shrink: 0;
+  transition: opacity 0.3s ease;
+  color: #252641;
+}
+
+.search-input-wrapper:focus-within .search-icon {
+  opacity: 1;
+}
+
+.search-input-field {
+  flex: 1;
   border: 0;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #252641;
+  padding: 0;
+  direction: rtl;
+}
+
+.search-input-field::placeholder {
+  color: #9ca3af;
+  font-weight: 400;
 }
 
 .courses-items {

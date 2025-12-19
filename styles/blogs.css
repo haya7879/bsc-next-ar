@@ -379,7 +379,8 @@
         padding: 20px 0;
     }
     .blog-details-title h1 {
-        font-size: 24px;
+        font-size: 20px;
+        line-height: 1.8;
     }
     .blog-content {
         padding: 15px 0;

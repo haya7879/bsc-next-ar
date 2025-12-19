@@ -7,15 +7,17 @@ export default function SearchCourse({
 }) {
   return (
     <div className="search-area">
-      <input
-        type="text"
-        id="search"
-        className="p-0! h-auto! text-xs!"
-        placeholder="البحث في الدورات التدريبية"
-        value={searchQuery}
-        onChange={handleSearchChange}
-      />
-      <img src="/icons/search.svg" alt="Search" />
+      <div className="search-input-wrapper">
+        <img src="/icons/search.svg" alt="Search" className="search-icon" />
+        <input
+          type="text"
+          id="search"
+          className="search-input-field"
+          placeholder="البحث في الدورات التدريبية"
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
+      </div>
     </div>
   );
 }
