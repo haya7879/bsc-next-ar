@@ -1,7 +1,43 @@
-.group-1 h3:nth-of-type(odd) {
+/* .group-1 h3:nth-of-type(odd) {
   background-color: #f0f8ff;
   padding: 15px;
   border-radius: 8px;
+} */
+/* Styles apply only to headings (h2, h3, h4) - not paragraphs or lists */
+.course-content h2,
+.course-content h3,
+.course-content h4 {
+  font-weight: 700 !important;
+  color: #134e88 !important;
+  background-color: #f0f8ff;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* Remove styling from empty h3 headings (handled by JavaScript) */
+.course-content h3.empty-heading {
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin-bottom: 0 !important;
+  color: inherit !important;
+  border-radius: 0 !important;
+  font-weight: inherit !important;
+}
+
+/* Ensure paragraphs and lists are not affected by heading styles */
+.course-content p {
+  color: #6f6f6f;
+  background-color: transparent !important;
+  padding: 0 !important;
+  margin-bottom: 1rem;
+}
+
+.course-content ul li,
+.course-content ol li {
+  color: #6f6f6f;
+  background-color: transparent !important;
+  padding: 0 !important;
 }
 
 .timings-filters {
@@ -453,6 +489,7 @@
     font-size: 20px;
     line-height: 28px !important;
   }
+
   .timings-filters {
     flex-direction: column;
     gap: 15px;

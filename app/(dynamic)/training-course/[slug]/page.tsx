@@ -5,6 +5,7 @@ import HeroBanner from "@/components/ui/hero-banner";
 import { getCourseDetails } from "@/services/courses/courses-services";
 import TimingsSection from "@/components/lists/timings-section";
 import CourseSchema from "@/components/schema/course-schema";
+import CourseContentStyling from "@/components/ui/course-content-styling";
 
 interface TrainingCoursePageProps {
   params: Promise<{
@@ -36,7 +37,8 @@ export async function generateMetadata({
     const metaTitle = course.meta_title || course.title;
     const metaDescription = course.meta_description || course.description || "";
     const metaImage = course.image || "";
-    const canonical = course.canonical || `${baseUrl}/training-course/${resolvedParams.slug}`;
+    const canonical =
+      course.canonical || `${baseUrl}/training-course/${resolvedParams.slug}`;
 
     return {
       title: metaTitle,
@@ -56,19 +58,21 @@ export async function generateMetadata({
       openGraph: {
         title: metaTitle,
         description: metaDescription,
-        images: metaImage ? [
-          {
-            url: metaImage,
-            width: 1200,
-            height: 630,
-            alt: course.title,
-          },
-        ] : [],
-        type: 'website',
+        images: metaImage
+          ? [
+              {
+                url: metaImage,
+                width: 1200,
+                height: 630,
+                alt: course.title,
+              },
+            ]
+          : [],
+        type: "website",
         url: canonical,
       },
       twitter: {
-        card: 'summary_large_image',
+        card: "summary_large_image",
         title: metaTitle,
         description: metaDescription,
         images: metaImage ? [metaImage] : [],
@@ -78,12 +82,13 @@ export async function generateMetadata({
       },
     };
   } catch (error) {
-    console.error('Error generating metadata:', error);
-    
+    console.error("Error generating metadata:", error);
+
     // Fallback metadata
     return {
       title: "الدورة غير موجودة | مركز الأداء المتوازن للتدريب",
-      description: "العثور على دورات التدريب في المدن في دول الخليج والمواقع الدولية.",
+      description:
+        "العثور على دورات التدريب في المدن في دول الخليج والمواقع الدولية.",
       robots: {
         index: false,
         follow: false,
@@ -151,7 +156,8 @@ export default async function TrainingCoursePage({
 
           {/* Course Info */}
           {course.content && (
-            <div className="course-content mb-[60px]!">
+            <div className="course-content">
+              <CourseContentStyling />
               <h1 className="course-title">{course.title}</h1>
               {course.description && (
                 <div className="course-description">
