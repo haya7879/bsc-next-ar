@@ -11,30 +11,29 @@ export default function BlogsGrid({ blogs }: { blogs: Blog[] }) {
         <Link
           key={blog.id}
           href={`/blogs/${blog.slug}`}
-          className="card-blogs clickable-card"
+          className="card-blog"
         >
           {blog.image && (
-            <Image
-              src={blog.image}
-              alt={blog.image_alt || blog.title}
-              className="card-blog-img"
-              width={400}
-              height={300}
-              quality={65}
-              loading="lazy"
-              sizes="(max-width: 768px) 100vw, 400px"
-            />
+            <div className="card-blog-img-wrapper">
+              <Image
+                src={blog.image}
+                alt={blog.image_alt || blog.title}
+                fill
+                className="card-blog-img"
+                loading="lazy"
+                quality={75}
+                sizes="(max-width: 768px) 300px, (max-width: 1024px) 500px, 600px"
+                style={{ objectFit: "cover" }}
+              />
+            </div>
           )}
           <div className="card-blog-content">
-            <h3>{blog.title}</h3>
+            <h5>{blog.title}</h5>
             {blog.description && (
               <div className="card-blog-desc">
                 <p>
                   {truncateDescription(blog.description, 150)}
-                  <Link 
-                    href={`/blogs/${blog.slug}`} 
-                    className="text-more"
-                  >
+                  <Link href={`/blogs/${blog.slug}`} className="text-more">
                     اقرأ المزيد
                     <span className="sr-only"> عن {blog.title}</span>
                   </Link>
@@ -53,8 +52,8 @@ export default function BlogsGrid({ blogs }: { blogs: Blog[] }) {
                 <span className="sr-only"> عن {blog.title}</span>
               </button>
               <div className="card-blog-views">
-                <img src="/icons/calender.svg" alt="Calendar" />
                 <span>{formatDate(blog.created_at)}</span>
+                <img src="/icons/calender.svg" alt="Calendar" />
               </div>
             </div>
           </div>

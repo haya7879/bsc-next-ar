@@ -20,7 +20,7 @@ export default function HeroBanner({
   return (
     <section
       className={`hero-banner ${
-        type == "form" && "w-full! m-0! before:rounded-none! h-[40vh]!"
+        type == "form" && "w-full! m-0! before:rounded-none! h-[40vh]! justify-start!"
       }`}
     >
       <Image

@@ -1,5 +1,5 @@
 .privacy-main {
-    padding-block: 40px;
+    margin-block: 40px;
 }
 
 .privacy-main h1 {
@@ -34,7 +34,6 @@
     font-weight: 600;
 }
 
-/* Responsive for max-width 1025px */
 @media screen and (max-width: 1025px) {
     .privacy-main .privacy-items .privacy-item p {
         font-size: 16px;
@@ -42,7 +41,6 @@
     }
 }
 
-/* Responsive for max-width 992px */
 @media screen and (max-width: 992px) {
     .privacy-main h1 {
         font-size: 26px;
@@ -60,6 +58,6 @@
 
 @media screen and (max-width: 768px) {
     .privacy-main {
-        padding-block: 32px;
+        margin-block: 32px;
     }
 }

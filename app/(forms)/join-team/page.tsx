@@ -326,7 +326,6 @@ export default function JoinTeamPage({
             {recaptchaError && (
               <p
                 className="recaptcha-error"
-                style={{ color: "red", fontSize: "14px", marginTop: "8px" }}
               >
                 {recaptchaError}
               </p>

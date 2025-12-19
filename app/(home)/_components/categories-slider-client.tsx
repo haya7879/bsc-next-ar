@@ -150,7 +150,7 @@ export default function CategoriesSliderClient({
             slidesOffsetBefore: 16,
             slidesOffsetAfter: 16,
           },
-          400: {
+          500: {
             slidesPerView: 2,
             spaceBetween: 20,
             slidesOffsetBefore: 16,

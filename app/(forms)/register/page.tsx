@@ -300,7 +300,7 @@ function RegisterPageContent() {
               action={RECAPTCHA_CONFIG.actions.register}
             />
             {recaptchaError && (
-              <p className="recaptcha-error" style={{ color: "red", fontSize: "14px", marginTop: "8px" }}>
+              <p className="recaptcha-error">
                 {recaptchaError}
               </p>
             )}

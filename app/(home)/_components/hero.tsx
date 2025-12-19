@@ -74,7 +74,7 @@ export default function Hero() {
       >
         {heroSlides.map((slide, index) => (
           <SwiperSlide key={slide.id}>
-            <div className="img-container">
+            <div className="hero-slide">
               <Image
                 src={slide.image}
                 alt={slide.title}
@@ -87,6 +87,7 @@ export default function Hero() {
               <div className="overlay"></div>
               <div className="content">
                 <div className="hero-content-left">
+                  <h1>{slide.title}</h1>
                   <p>{slide.description}</p>
                 </div>
                 <div className="hero-content-right">
@@ -97,9 +98,6 @@ export default function Hero() {
           </SwiperSlide>
         ))}
       </Swiper>
-      {/* <div ref={prevRef} className="swiper-button-prev hero-btn"></div>
-      <div ref={nextRef} className="swiper-button-next hero-btn"></div>
-      <div className="swiper-pagination"></div> */}
     </div>
   );
 }

@@ -76,7 +76,7 @@
     background-color: #fff;
 }
 
-label {
+.form-inputs label , .textarea label {
     color: #252f40;
     font-weight: 700;
     font-size: 12px;
@@ -114,12 +114,12 @@ label {
     gap: 24px;
 }
 
-.select-box {
+.form-inputs .select-box {
     position: relative;
     direction: ltr;
 }
 
-.select-box input {
+.form-inputs .select-box input {
     width: 100%;
     font-size: 12px;
     font-weight: normal !important;
@@ -128,7 +128,7 @@ label {
     border: 0;
 }
 
-.selected-option {
+.form-inputs .selected-option {
     overflow: hidden;
     display: flex;
     justify-content: space-between;
@@ -136,40 +136,40 @@ label {
     height: 100%;
 }
 
-.selected-option div {
+.form-inputs .selected-option div {
     position: relative;
     width: 70px;
     cursor: pointer;
     font-size: 12px;
     font-weight: normal !important;
     color: #495057;
-    border-right: 1px solid #ccc;
+    border-left: 1px solid #ccc;
 }
 
-.selected-option div::after {
+.form-inputs .selected-option div::after {
     position: absolute;
     content: "";
-    right: 8px;
+    left: 8px;
     top: 50%;
     transform: translateY(-50%) rotate(45deg);
     width: 5px;
     height: 5px;
     border-right: 0.12rem solid #495057;
-    border-bottom: 0.12rem solid #495057;
+    border-left: 0.12rem solid #495057;
     transition: 0.2s;
 }
 
-.selected-option div.active::after {
+.form-inputs .selected-option div.active::after {
     transform: translateY(-50%) rotate(225deg);
 }
 
-.selected-option strong {
+.form-inputs .selected-option strong {
     font-size: 12px;
     font-weight: normal !important;
     color: #495057;
 }
 
-.select-box .options {
+.form-inputs .select-box .options {
     position: absolute;
     top: 45px;
     left: 0;
@@ -180,11 +180,11 @@ label {
     z-index: 5;
 }
 
-.select-box .options.active {
+.form-inputs .select-box .options.active {
     display: block;
 }
 
-input.search-box {
+.form-inputs input.search-box {
     background-color: #eee;
     color: #000;
     border-radius: 0.5rem 0.5rem 0 0;
@@ -192,25 +192,25 @@ input.search-box {
     font-size: 12px;
 }
 
-.select-box ol {
+.form-inputs .select-box ol {
     list-style: none;
     max-height: 160px;
     overflow: overlay;
     border: 1px solid #ccc;
 }
 
-.select-box ol::-webkit-scrollbar {
+.form-inputs .select-box ol::-webkit-scrollbar {
     width: 0.4rem;
 }
 
-.select-box ol::-webkit-scrollbar-thumb {
+.form-inputs .select-box ol::-webkit-scrollbar-thumb {
     width: 0.4rem;
     height: 3rem;
     background-color: #ccc;
     border-radius: 0.4rem;
 }
 
-.select-box ol li {
+.form-inputs .select-box ol li {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
@@ -218,23 +218,23 @@ input.search-box {
     font-size: 12px;
 }
 
-.select-box ol li strong {
+.form-inputs .select-box ol li strong {
     font-weight: 400;
 }
 
-.select-box ol li.hide {
+.form-inputs .select-box ol li.hide {
     display: none;
 }
 
-.select-box ol li:not(:last-child) {
+.form-inputs .select-box ol li:not(:last-child) {
     border-bottom: 0.1rem solid #eee;
 }
 
-.select-box ol li:hover {
+.form-inputs .select-box ol li:hover {
     background-color: #eee;
 }
 
-.select-box ol li .country-name {
+.form-inputs .select-box ol li .country-name {
     margin-left: 0.4rem;
 }
 
@@ -317,7 +317,6 @@ input.search-box {
     cursor: pointer;
 }
 
-/* Responsive */
 @media screen and (max-width: 700px) {
     .form-container h1,
     .form-container h2,

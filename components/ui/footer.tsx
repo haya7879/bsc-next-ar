@@ -64,19 +64,31 @@ export default function Footer() {
             <li>الامارات العربية المتحدة</li>
             <li>برج ذا بريزم،الخليج التجاري، دبي</li>
             <li className="info-item">
-              <img src="/icons/mail.svg" alt="Mail Icon" />
+              <Image
+                src="/icons/mail.svg"
+                alt="Mail Icon"
+                width={20}
+                height={20}
+              />
               <span>info@bscenter.org</span>
             </li>
             <li className="info-item">
-              <img
+              <Image
                 src="/icons/phone_light.svg"
                 style={{ marginLeft: "-3px" }}
                 alt="Mobile Icon"
+                width={20}
+                height={20}
               />
               <span className="phone-number">+971 50 625 2099</span>
             </li>
             <li className="info-item">
-              <img src="/icons/phone2.svg" alt="Phone Icon" />
+              <Image
+                src="/icons/phone2.svg"
+                alt="Phone Icon"
+                width={20}
+                height={20}
+              />
               <span className="phone-number">+971 4 432 2444</span>
             </li>
           </ul>
@@ -87,7 +99,12 @@ export default function Footer() {
             <li>شارع Crampton 83</li>
             <li>لندن SE17 3BQ</li>
             <li className="info-item">
-              <img src="/icons/mail.svg" alt="Mail Icon" />
+              <Image
+                src="/icons/mail.svg"
+                alt="Mail Icon"
+                width={20}
+                height={20}
+              />
               <span>info@bscenter.org</span>
             </li>
           </ul>
@@ -96,7 +113,7 @@ export default function Footer() {
       <div className="hr"></div>
       <div className="footer-bottom">
         <div className="container-main">
-          <p>© حقوق النشر 2025 مركز الأداء المتوازن للتدريب</p>
+          <p>© حقوق النشر  {new Date().getFullYear()} مركز الأداء المتوازن للتدريب</p>
           <a
             href="//www.dmca.com/Protection/Status.aspx?ID=a93d1866-cf03-48a4-9106-d51999924b5c"
             title="DMCA.com Protection Status"
@@ -155,4 +172,3 @@ export default function Footer() {
     </footer>
   );
 }
-

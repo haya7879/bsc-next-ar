@@ -1,5 +1,4 @@
 .cities-cards-container {
-    margin-block: 40px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 12px;
@@ -20,7 +19,7 @@
     transition: 0.4s;
 }
 
-.city-card h3 {
+.city-card h5 {
     font-size: 22px;
     text-align: center;
     display: -webkit-box;
@@ -68,10 +67,4 @@
     left: 0;
     z-index: -1;
     border-radius: 15px;
-}
-
-@media screen and (max-width: 768px) {
-    .cities-cards-container {
-        margin-block: 32px;
-    }
 }

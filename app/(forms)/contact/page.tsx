@@ -83,6 +83,7 @@ export default function ContactPage() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="Balanced Score Training Center location on Google Maps"
           />
         </div>
 
@@ -211,7 +212,6 @@ export default function ContactPage() {
               {recaptchaError && (
                 <p
                   className="recaptcha-error"
-                  style={{ color: "red", fontSize: "14px", marginTop: "8px" }}
                 >
                   {recaptchaError}
                 </p>
@@ -230,6 +230,7 @@ export default function ContactPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          title="Balanced Score Training Center location on Google Maps"
         />
       </div>
     </>

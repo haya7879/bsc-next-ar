@@ -1,8 +1,6 @@
 "use client";
 import "@/styles/courses.css";
 import "@/styles/course.css";
-import "@/styles/city.css";
-import "@/styles/categories.css";
 import React, { useState, useMemo } from "react";
 import { useParams } from "next/navigation";
 import { useCity } from "@/services/cities/cities-hooks";
@@ -56,7 +54,7 @@ export default function CityPage() {
           <div className="courses-section-head">
             <p>
               قائمة الدورات في
-              <span className="font-bold">{` ${city?.title || ""}`}</span>
+              {` ${city?.title || ""}`}
             </p>
             <SearchCourse
               searchQuery={searchQuery}
@@ -87,7 +85,12 @@ export default function CityPage() {
       )}
 
       {categories && categories.length > 0 && (
-        <CategoriesGrid categories={categories} showSectionTitle />
+        <section className="section-space-1">
+          <div className="container-main section-title">
+            <h2>التخصصات المتعلقة</h2>
+          </div>
+          <CategoriesGrid categories={categories} />
+        </section>
       )}
     </>
   );

@@ -6,7 +6,7 @@ interface CitiesGridProps {
 
 export default function CitiesGrid({ cities }: CitiesGridProps) {
   return (
-    <section>
+    <section className="section-space-2">
       <div className="container-main">
         <div className="cities-cards-container">
           {cities?.map((city) => (

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import "@/styles/categories.css";
 import HeroBanner from "@/components/ui/hero-banner";
 import { hero } from "@/constants";
 import Breadcrumb from "@/components/ui/breadcrumb";
@@ -7,11 +6,12 @@ import { getCategories } from "@/services/categories/categories-services";
 import CategoriesGrid from "@/components/lists/categories-grid";
 import { getSeoData } from "@/services/seo/seo-services";
 import CategoriesSchema from "@/components/schema/categories-schema";
+import Loader from "@/components/ui/loader";
 
 // Generate metadata dynamically
 export async function generateMetadata(): Promise<Metadata> {
   try {
-    const seoData = await getSeoData('categories');
+    const seoData = await getSeoData("categories");
     if (seoData && seoData.seo) {
       const seo = seoData.seo;
 
@@ -41,11 +41,11 @@ export async function generateMetadata(): Promise<Metadata> {
               alt: seo.meta_title,
             },
           ],
-          type: 'website',
+          type: "website",
           url: seo.canonical,
         },
         twitter: {
-          card: 'summary_large_image',
+          card: "summary_large_image",
           title: seo.meta_title,
           description: seo.meta_description,
           images: [seo.meta_image],
@@ -55,11 +55,12 @@ export async function generateMetadata(): Promise<Metadata> {
         },
       };
     }
-    
+
     // Fallback metadata if SEO data is not available
     return {
       title: "التخصصات | مركز الأداء المتوازن للتدريب",
-      description: "استكشف مجموعة واسعة من تصنيفات التدريب ودورات التدريب المهني والتطوير.",
+      description:
+        "استكشف مجموعة واسعة من تصنيفات التدريب ودورات التدريب المهني والتطوير.",
       keywords: "التخصصات, دورات التدريب, التطوير",
       robots: {
         index: true,
@@ -74,12 +75,13 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     };
   } catch (error) {
-    console.error('Error generating metadata:', error);
-    
+    console.error("Error generating metadata:", error);
+
     // Fallback metadata
     return {
       title: "التخصصات | مركز الأداء المتوازن للتدريب",
-      description: "استكشف مجموعة واسعة من تصنيفات التدريب ودورات التدريب المهني والتطوير.",
+      description:
+        "استكشف مجموعة واسعة من تصنيفات التدريب ودورات التدريب المهني والتطوير.",
       keywords: "التخصصات, دورات التدريب, التطوير",
       robots: {
         index: true,
@@ -110,7 +112,13 @@ export default async function CategoriesPage() {
         imageAlt={hero.categories.imageAlt}
         imageTitle={hero.categories.imageTitle}
       />
-      <CategoriesGrid categories={categories} />
+      {categories && categories.length > 0 ? (
+        <section className="section-space-2">
+          <CategoriesGrid categories={categories} />
+        </section>
+      ) : (
+        <Loader />
+      )}
     </>
   );
 }

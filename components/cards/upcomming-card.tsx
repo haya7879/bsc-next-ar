@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { useFormatDate } from "@/lib/hooks/use-format-date";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 interface UpcommingCardProps {
   course: UpcomingCourse;
@@ -16,7 +17,7 @@ export default function UpcommingCard({ course }: UpcommingCardProps) {
 
   return (
     <div
-      className="card clickable-card"
+      className="upcomming-card"
       data-href={readMoreUrl}
       onClick={() => router.push(readMoreUrl)}
       style={{ cursor: "pointer" }}
@@ -50,16 +51,13 @@ export default function UpcommingCard({ course }: UpcommingCardProps) {
           <span>{course.city_title}</span>
         </div>
         <div className="card-buttons">
-          <a href={registerUrl} className="btn-primary">
+          <Link href={registerUrl} className="btn-primary">
             سجل الآن
-          </a>
-          <a 
-            href={readMoreUrl} 
-            className="btn-secondary"
-          >
+          </Link>
+          <Link href={readMoreUrl} className="btn-secondary">
             اقرأ المزيد
             <span className="sr-only"> عن {course.course_title}</span>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

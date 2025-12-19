@@ -1,11 +1,11 @@
-.about-content .about-info {
+.about-page-content .container-main {
     display: flex;
     flex-direction: column;
     gap: 50px;
-    padding-block: 40px;
+    margin-block: 40px;
 }
 
-.about-content .about-info .about-item p {
+.about-page-content .container-main .about-item p {
     color: #6f6f6f;
     font-size: 15px;
     font-weight: 500;
@@ -13,14 +13,14 @@
     margin-top: 8px;
 }
 
-.about-content .about-info .about-item h2 {
+.about-page-content .container-main .about-item h2 {
     width: 400px;
     color: #134e88;
     font-size: 24px;
     font-weight: 600;
 }
 
-.about-content .about-info .about-item .about-why {
+.about-page-content .container-main .about-item .about-why {
     max-width: 786px;
     width: 100%;
     display: flex;
@@ -30,21 +30,21 @@
     flex-wrap: wrap;
 }
 
-.about-content .about-info .about-item .about-why div {
+.about-page-content .container-main .about-item .about-why div {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 14px;
 }
 
-.about-content .about-info .about-item .about-why div p {
+.about-page-content .container-main .about-item .about-why div p {
     font-size: 14px;
     color: #00000079;
     line-height: normal;
     text-align: center;
 }
 
-.about-content .about-info .about-item .about-why div .about-why-img {
+.about-page-content .container-main .about-item .about-why div .about-why-img {
     width: 84px;
     height: 84px;
     background-color: #f7f7ff;
@@ -55,23 +55,22 @@
 }
 
 @media screen and (max-width: 1025px) {
-    .about-content .about-info {
+    .about-page-content .container-main {
         gap: 45px;
     }
 
-    .about-content .about-info .about-item p {
+    .about-page-content .container-main .about-item p {
         font-size: 16px;
         line-height: 28px;
     }
 
-    .about-content .about-info .about-item h2 {
+    .about-page-content .container-main .about-item h2 {
         width: 100%;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .about-content .about-info {
-        padding-block: 32px;
+    .about-page-content .container-main {
+        margin-block: 32px;
     }
-
 }

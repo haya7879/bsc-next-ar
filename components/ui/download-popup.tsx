@@ -253,7 +253,7 @@ export default function DownloadPopup() {
               ></div>
             </div>
             <p className="text-sm text-gray-600">
-              جاري إعداد البروشورالدورة للتحميل... {Math.round(progress)}%
+              جاري إعداد البروشور الدورة للتحميل... {Math.round(progress)}%
             </p>
           </div>
         )}
@@ -277,7 +277,7 @@ export default function DownloadPopup() {
 
           <div>
             <div className="form-title">
-              <h2>تحميل بروشورالدورة</h2>
+              <h2>تحميل بروشور الدورة</h2>
             </div>
             <div className="form-inputs">
               {/* Full Name */}

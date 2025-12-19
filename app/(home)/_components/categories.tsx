@@ -1,19 +1,21 @@
-import { getCategories } from '@/services/categories/categories-services';
-import CategoriesSliderClient, { CategoriesArrows } from './categories-slider-client';
+import { getCategories } from "@/services/categories/categories-services";
+import CategoriesSliderClient, {
+  CategoriesArrows,
+} from "./categories-slider-client";
 
 export default async function CategoriesSliderSection() {
   let categories: Category[] = [];
-  
+
   try {
     categories = await getCategories();
   } catch (error) {
-    console.error('Error fetching categories:', error);
+    console.error("Error fetching categories:", error);
   }
 
   return (
-    <section className="search-courses categories-home categories">
+    <section className="categories-slider section-space-1">
       <div className="container-main">
-        <div className="section-title mb-0!">
+        <div className="section-title">
           <h2>التخصصات</h2>
           <CategoriesArrows />
         </div>
@@ -22,4 +24,3 @@ export default async function CategoriesSliderSection() {
     </section>
   );
 }
-

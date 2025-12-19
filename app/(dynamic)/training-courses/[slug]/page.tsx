@@ -52,7 +52,7 @@ export default function CategoryPage() {
           <div className="courses-section-head">
             <p>
               قائمة الدورات في
-              <span className="font-bold">{` ${category?.title || ""}`}</span>
+              {` ${category?.title || ""}`}
             </p>
             <SearchCourse
               searchQuery={searchQuery}

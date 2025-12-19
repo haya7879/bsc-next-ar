@@ -8,15 +8,13 @@ interface LoadingStateProps {
 
 export default function LoadingState({
   title,
-  message = "Loading...",
-  className = "search-courses home-courses",
+  message = "",
+  className = "mt-10!",
 }: LoadingStateProps) {
   return (
     <section className={className}>
-      {title && <h2 className="md:text-3xl! text-xl! text-[#253a7b]! font-semibold">{title}</h2>}
-      <div className="card-container">
-        <div>{message}</div>
-      </div>
+      {title && <h1 className="md:text-[28px]! text-[24px]! text-[#253a7b]! font-semibold">{title}</h1>}
+        <div className="text-[#666]! text-sm!">{message}</div>
     </section>
   );
 }

@@ -37,7 +37,9 @@ export default function Breadcrumb({ items, currentPage }: BreadcrumbProps) {
                 )}
               </li>
               {index < finalItems.length - 1 && (
-                <img src="/icons/arrow.svg" alt="arrow icon" className="rotate-180" />
+                <li aria-hidden="true">
+                  <img src="/icons/arrow.svg" className="rotate-180!" alt="" width={6} height={6} />
+                </li>
               )}
             </React.Fragment>
           ))}

@@ -57,25 +57,24 @@ export default function Navbar() {
       <nav className={isScrolled ? "scrolled" : ""}>
         <div className="container-main flex-between h-full!">
           <Link href="/" className="nav-logo">
-          <Image 
-              src="/imgs/logo-en.png" 
-              alt="Balanced Score Training Center logo" 
-              width={150} 
+            <Image
+              src="/imgs/logo-en.png"
+              alt="Balanced Score Training Center logo"
+              width={150}
               height={150}
               priority
               quality={60}
               sizes="(max-width: 768px) 120px, 150px"
             />
           </Link>
-          <div className="mobile-nav-lang">
-            <a
-              className="btn"
+          <div className="mobile-nav-lang-2">
+            <Link
               href="https://bscenter.org"
               role="button"
-              style={{ color: "#616161" }}
+              style={{ color: "#333333" }}
             >
               <h3 className="shrink-0">English courses</h3>
-            </a>
+            </Link>
           </div>
           <div className="icon-burger" onClick={toggleMobileMenu}>
             <svg
@@ -138,31 +137,28 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-          <div className="search-container flex-between">
+          <div className="nav-search flex-between">
             <div>
-              <label htmlFor="navbar-search" className="sr-only">
-                البحث
-              </label>
               <input
                 type="text"
                 id="navbar-search"
-                aria-label="البحث"
+                aria-label="Search"
                 suppressHydrationWarning
               />
               <img src="/icons/search.svg" alt="search-icon" id="search-icon" />
             </div>
             <span className="line-search"></span>
-            <div className="search">
-              <a
+            <div className="nav-lang">
+              <Link
                 className="btn"
-                href="https://bscenter.org"
+                href="https://ar.bscenter.org"
                 role="button"
-                style={{ color: "#616161" }}
+                style={{ color: "#333333" }}
               >
                 <h3 className="shrink-0 text-[17px]">
                   <b>English courses</b>
                 </h3>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -237,17 +233,13 @@ export default function Navbar() {
             </Link>
           </li>
         </ul>
-        <div className="search-phone">
-          <div className="search flex-between">
-            <a
-              className="btn"
-              href="https://bscenter.org"
-              role="button"
-              style={{ color: "#616161" }}
-            >
-              <h3 className="shrink-0">English courses</h3>
-            </a>
-          </div>
+        <div className="mobile-nav-lang flex-between">
+          <Link
+            href="https://bscenter.org"
+            role="button"
+          >
+            <h3 className="shrink-0">English courses</h3>
+          </Link>
         </div>
       </div>
     </>
