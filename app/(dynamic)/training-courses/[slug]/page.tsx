@@ -54,7 +54,7 @@ export default function CategoryPage() {
           <>
             <div className="courses-section-head">
               <p>
-                List of courses in
+                قائمة الدورات في
                 {` ${category?.title || ""}`}
               </p>
               <SearchCourse
