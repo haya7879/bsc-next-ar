@@ -1295,7 +1295,7 @@ textarea:focus,
 /* ==================== //// FOOTER /// ========================== */
 footer {
   background: #222222;
-  color: #999;
+  color: #cccccc;
 }
 
 footer .phone-number {
@@ -1334,7 +1334,7 @@ footer .footer-top b {
 }
 
 footer .footer-top a {
-  color: #999999;
+  color: #cccccc;
 }
 
 footer .footer-top a.footer-logo {
@@ -1372,7 +1372,7 @@ footer .footer-bottom .container-main p {
   font-weight: 400;
   line-height: 24.78px;
   text-align: center;
-  color: #686868;
+  color: #cccccc;
 }
 
 footer .footer-bottom .container-main .social-links {
