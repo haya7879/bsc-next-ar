@@ -87,7 +87,6 @@ export default function Hero() {
               <div className="overlay"></div>
               <div className="content">
                 <div className="hero-content-left">
-                  <h1>{slide.title}</h1>
                   <p>{slide.description}</p>
                 </div>
                 <div className="hero-content-right">
