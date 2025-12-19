@@ -1082,10 +1082,6 @@ textarea:focus,
   display: flex !important;
 }
 
-.categories .swiper-slide h3 {
-  min-height: 80px !important;
-}
-
 /* ===================== //// SERVICES Section //// ================= */
 .service-cards {
   margin-bottom: 70px;
