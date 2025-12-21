@@ -900,7 +900,7 @@ textarea:focus,
 
 .upcomming-cards .upcomming-card .card-dates,
 .upcomming-cards .upcomming-card .card-location {
-  font-size: 11px;
+  font-size: 10px;
   display: -webkit-flex;
   align-items: center;
   font-weight: 500;

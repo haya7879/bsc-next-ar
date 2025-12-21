@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
   // Disable production source maps to avoid source map parsing issues
   productionBrowserSourceMaps: false,
   images: {
+    qualities: [60, 65, 70, 75],
     remotePatterns: [
       {
         protocol: 'http',
