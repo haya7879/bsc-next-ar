@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Autoplay } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import CategoryCard from "@/components/cards/category-card";
 
@@ -14,47 +14,47 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa6";
 
 interface CategoriesSliderClientProps {
   categories: Category[];
+  sliderId?: string;
+  reverseDirection?: boolean;
 }
 
-// Shared refs across component instances
-const sharedRefs = {
-  prevRef: { current: null as HTMLDivElement | null },
-  nextRef: { current: null as HTMLDivElement | null },
-  swiperRef: { current: null as SwiperType | null },
-};
+// Store refs for each slider instance
+const sliderRefs = new Map<
+  string,
+  {
+    prevRef: React.MutableRefObject<HTMLDivElement | null>;
+    nextRef: React.MutableRefObject<HTMLDivElement | null>;
+    swiperRef: React.MutableRefObject<SwiperType | null>;
+  }
+>();
 
-export function CategoriesArrows() {
-  // Ensure Swiper's Navigation module gets properly bound to these external elements,
-  // even when the arrows are rendered outside the <Swiper /> tree.
-  useEffect(() => {
-    const swiper = sharedRefs.swiperRef.current;
-    const prevEl = sharedRefs.prevRef.current;
-    const nextEl = sharedRefs.nextRef.current;
+function getOrCreateRefs(id: string) {
+  if (!sliderRefs.has(id)) {
+    sliderRefs.set(id, {
+      prevRef: { current: null },
+      nextRef: { current: null },
+      swiperRef: { current: null },
+    });
+  }
+  return sliderRefs.get(id)!;
+}
 
-    if (!swiper || !prevEl || !nextEl) return;
-    if (
-      typeof swiper.params.navigation === "boolean" ||
-      !swiper.params.navigation
-    )
-      return;
-
-    swiper.params.navigation.prevEl = prevEl;
-    swiper.params.navigation.nextEl = nextEl;
-
-    // Re-init/update is required when navigation elements are assigned after init.
-    swiper.navigation.init();
-    swiper.navigation.update();
-  }, []);
+export function CategoriesArrows({
+  sliderId = "default",
+}: {
+  sliderId?: string;
+}) {
+  const refs = getOrCreateRefs(sliderId);
 
   const handlePrevClick = () => {
-    if (sharedRefs.swiperRef.current) {
-      sharedRefs.swiperRef.current.slidePrev();
+    if (refs.swiperRef.current) {
+      refs.swiperRef.current.slidePrev();
     }
   };
 
   const handleNextClick = () => {
-    if (sharedRefs.swiperRef.current) {
-      sharedRefs.swiperRef.current.slideNext();
+    if (refs.swiperRef.current) {
+      refs.swiperRef.current.slideNext();
     }
   };
 
@@ -63,21 +63,7 @@ export function CategoriesArrows() {
       <div
         suppressHydrationWarning
         ref={(el) => {
-          sharedRefs.nextRef.current = el;
-        }}
-        onClick={handleNextClick}
-        className="arrow-btn"
-        tabIndex={0}
-        role="button"
-        aria-label="Next slide"
-        style={{ cursor: "pointer" }}
-      >
-        <FaChevronRight className="w-4! h-4!" color="white" />
-      </div>
-      <div
-        suppressHydrationWarning
-        ref={(el) => {
-          sharedRefs.prevRef.current = el;
+          refs.prevRef.current = el;
         }}
         onClick={handlePrevClick}
         className="arrow-btn"
@@ -88,14 +74,31 @@ export function CategoriesArrows() {
       >
         <FaChevronLeft className="w-4! h-4!" color="white" />
       </div>
+      <div
+        suppressHydrationWarning
+        ref={(el) => {
+          refs.nextRef.current = el;
+        }}
+        onClick={handleNextClick}
+        className="arrow-btn"
+        tabIndex={0}
+        role="button"
+        aria-label="Next slide"
+        style={{ cursor: "pointer" }}
+      >
+        <FaChevronRight className="w-4! h-4!" color="white" />
+      </div>
     </div>
   );
 }
 
 export default function CategoriesSliderClient({
   categories,
+  sliderId = "default",
+  reverseDirection = false,
 }: CategoriesSliderClientProps) {
   const swiperRef = useRef<SwiperType | null>(null);
+  const refs = getOrCreateRefs(sliderId);
 
   return (
     <div
@@ -111,38 +114,42 @@ export default function CategoriesSliderClient({
       }}
     >
       <Swiper
-        modules={[Navigation, Autoplay]}
+        modules={[Autoplay]}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
-          sharedRefs.swiperRef.current = swiper;
+          refs.swiperRef.current = swiper;
         }}
         onInit={(swiper) => {
-          const prevEl = sharedRefs.prevRef.current;
-          const nextEl = sharedRefs.nextRef.current;
+          const prevEl = refs.prevRef.current;
+          const nextEl = refs.nextRef.current;
 
-          if (!prevEl || !nextEl) return;
-          if (
-            typeof swiper.params.navigation !== "boolean" &&
-            swiper.params.navigation
-          ) {
-            swiper.params.navigation.prevEl = prevEl;
-            swiper.params.navigation.nextEl = nextEl;
-            swiper.navigation.init();
-            swiper.navigation.update();
+          if (prevEl && nextEl) {
+            if (
+              typeof swiper.params.navigation !== "boolean" &&
+              swiper.params.navigation
+            ) {
+              swiper.params.navigation.prevEl = prevEl;
+              swiper.params.navigation.nextEl = nextEl;
+              swiper.navigation.init();
+              swiper.navigation.update();
+            }
           }
         }}
-        navigation
+        navigation={false}
         slidesPerView={1}
         spaceBetween={8}
         // Provide left/right breathing room on smaller screens
-        slidesOffsetBefore={16}
-        slidesOffsetAfter={16}
+        slidesOffsetBefore={20}
+        slidesOffsetAfter={20}
         loop={true}
         autoplay={{
-          delay: 500,
+          delay: 0,
           disableOnInteraction: false,
+          reverseDirection: reverseDirection,
         }}
-        speed={3000}
+        loopAdditionalSlides={5}
+        // allowTouchMove={false}
+        speed={7000}
         breakpoints={{
           360: {
             slidesPerView: 1,

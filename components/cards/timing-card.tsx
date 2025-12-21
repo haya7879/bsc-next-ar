@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useFormatDate } from "@/lib/hooks/use-format-date";
 import { useDownloadPopupStore } from "@/lib/store/download-popup-store";
 import { useRouter } from "next/navigation";
+import { FaDownload } from "react-icons/fa6";
 
 interface TimingCardProps {
   timing: {
@@ -83,26 +83,26 @@ export default function TimingCard({
       <div className="timing-card-header px-3!">
         <div className="timing-location">
           <img
-            src="/icons/location2.svg"
+            src="/icons/location.svg"
             alt="Location"
             className="w-4.5 h-4.5"
           />
           <span className="sm:text-[15px] text-sm">{cityName}</span>
         </div>
         <div className="timing-price">
-          {parseFloat(timing.fees).toLocaleString("en-US")}$
+        الرسوم: {parseFloat(timing.fees).toLocaleString("en-US")}$
         </div>
       </div>
       <span className="border-b border-[#E4E4E4]"></span>
       <div className="timing-dates-grid px-3!">
         <div className="date-from">
-          من{" "}
+          من: {" "}
           <span className="date-value-green">
             {formatDateFull(timing.start_date)}
           </span>
         </div>
         <div className="date-to">
-          إلى{" "}
+          إلى: {" "}
           <span className="date-value-red">
             {formatDateFull(timing.end_date)}
           </span>
@@ -115,6 +115,7 @@ export default function TimingCard({
           className="btn-pdf"
           suppressHydrationWarning={true}
         >
+          <FaDownload/>
           PDF
         </button>
         <Link

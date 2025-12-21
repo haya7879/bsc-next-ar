@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useDownloadPopupStore } from "@/lib/store/download-popup-store";
 import { formatDate } from "@/lib/helpers";
 import { useRouter } from "next/navigation";
+import { FaDownload } from "react-icons/fa6";
 
 interface SearchTimingCardProps {
   timing: SearchTiming;
@@ -64,30 +65,36 @@ export default function SearchTimingCard({ timing }: SearchTimingCardProps) {
       
       <div className="timing-card-header px-3!">
         <div className="timing-location">
-          <img src="/icons/location2.svg" alt="Location" className="w-4.5 h-4.5" />
+          <img src="/icons/location.svg" alt="Location" className="w-4.5 h-4.5" />
           <span>{timing.city_title}</span>
         </div>
         <div className="timing-price">
-          {parseFloat(timing.fees).toLocaleString('en-US')}$
+        الرسوم: {parseFloat(timing.fees).toLocaleString("en-US")}$
         </div>
       </div>
       <span className="border-b border-[#E4E4E4]"></span>
       <div className="timing-dates-grid px-3!">
-        <div className="date-from">
-          من <span className="date-value-green">{formatDate(timing.start_date)}</span>
+      <div className="date-from">
+          من: {" "}
+          <span className="date-value-green">
+            {formatDate(timing.start_date)}
+          </span>
         </div>
         <div className="date-to">
-          إلى <span className="date-value-red">{formatDate(timing.end_date)}</span>
+          إلى: {" "}
+          <span className="date-value-red">
+            {formatDate(timing.end_date)}
+          </span>
         </div>
       </div>
       <span className="border-b border-[#E4E4E4]"></span>
       <div className="timing-actions-grid px-3!">
-        <button
+      <button
           onClick={handleDownloadPDF}
           className="btn-pdf"
-          type="button"
           suppressHydrationWarning={true}
         >
+          <FaDownload/>
           PDF
         </button>
         <Link
