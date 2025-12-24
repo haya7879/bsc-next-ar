@@ -168,18 +168,17 @@
 .timing-card-grid .timing-actions-grid {
   display: flex;
   gap: 8px;
-  margin-top: 10px;
 }
 
 .timing-card-grid .btn-pdf,
 .timing-card-grid .btn-register,
 .timing-card-grid .btn-enquire {
   text-align: center;
-  border-radius: 8px;
+  border-radius: 4px;
   flex: 1;
   justify-content: center;
   align-items: center;
-  padding: 3px;
+  padding:5px 3px;
   font-size: 12px;
   font-weight: 600;
   text-decoration: none;
@@ -188,33 +187,23 @@
 }
 
 .timing-card-grid .btn-pdf {
-  color: #28a745;
+  background: #28a745;
+  color: var(--white);
   border: none;
-  text-decoration: underline;
+  /* text-decoration: underline; */
   display: flex;
   align-items: center;
   gap: 4px;
 }
 
 .timing-card-grid .btn-register {
-  background: #fff;
-  color: var(--bg-primary);
-  border: 1px solid var(--bg-primary);
-}
-
-.timing-card-grid .btn-register:hover {
-  background: #f8f9fa;
-  border-color: #1e2f63;
+  background: var(--bg-primary);
+  color: var(--white);
 }
 
 .timing-card-grid .btn-enquire {
-  background: #fff;
-  color: var(--bg-primary);
-  border: 1px solid var(--bg-primary);
-}
-.timing-card-grid .btn-enquire:hover {
-  background: #f8f9fa;
-  border-color: #1e2f63;
+  background: var(--bg-primary);
+  color: var(--white);
 }
 
 .timing-card-grid .no-timings {
@@ -355,7 +344,7 @@
 }
 
 .course-content:nth-child(2) ul {
-  list-style-type: circle !important;
+  list-style-type: disc !important;
 }
 
 .popup {

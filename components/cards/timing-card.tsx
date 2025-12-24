@@ -115,7 +115,7 @@ export default function TimingCard({
           className="btn-pdf"
           suppressHydrationWarning={true}
         >
-          <FaDownload/>
+          {/* <FaDownload/> */}
           PDF
         </button>
         <Link
