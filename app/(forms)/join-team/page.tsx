@@ -11,29 +11,15 @@ import { toast } from "sonner";
 import { FaChevronDown } from "react-icons/fa6";
 import HeroBanner from "@/components/ui/hero-banner";
 import JoinSchema from "@/components/schema/join-schema";
+import { useCategories } from "@/services/categories/categories-hooks";
 
 interface Category {
-  id: number;
+  id?: number;
   title: string;
 }
 
-interface JoinTeamPageProps {
-  categories?: Category[];
-}
-
-// Dummy data for categories
-const dummyCategories: Category[] = [
-  { id: 1, title: "القيادة والإدارة" },
-  { id: 2, title: "إدارة المشاريع" },
-  { id: 3, title: "الموارد البشرية" },
-  { id: 4, title: "المالية والمحاسبة" },
-  { id: 5, title: "المبيعات والتسويق" },
-  { id: 6, title: "إدارة الجودة" },
-];
-
-export default function JoinTeamPage({
-  categories = dummyCategories,
-}: JoinTeamPageProps) {
+export default function JoinTeamPage() {
+  const { data: categories } = useCategories();
   const [formData, setFormData] = useState({
     full_name: "",
     phone_number: "",
@@ -88,9 +74,11 @@ export default function JoinTeamPage({
   };
 
   const handleCategorySelect = (category: Category) => {
+    if (!category.id) return;
+    const id = category.id; // Type narrowing
     setFormData((prev) => ({
       ...prev,
-      category_id: category.id.toString(),
+      category_id: id.toString(),
       category_name: category.title,
     }));
     setIsDropdownOpen(false);
@@ -288,15 +276,17 @@ export default function JoinTeamPage({
                 <ul
                   className={`drop-list ${isDropdownOpen ? "show-list" : ""}`}
                 >
-                  {categories.map((category) => (
-                    <li
-                      key={category.id}
-                      data-id={category.id}
-                      onClick={() => handleCategorySelect(category)}
-                    >
-                      {category.title}
-                    </li>
-                  ))}
+                  {categories?.map((category) => 
+                    category.id ? (
+                      <li
+                        key={category.id}
+                        data-id={category.id}
+                        onClick={() => handleCategorySelect(category)}
+                      >
+                        {category.title}
+                      </li>
+                    ) : null
+                  )}
                 </ul>
               </div>
             </div>
@@ -324,11 +314,7 @@ export default function JoinTeamPage({
               action={RECAPTCHA_CONFIG.actions.join}
             />
             {recaptchaError && (
-              <p
-                className="recaptcha-error"
-              >
-                {recaptchaError}
-              </p>
+              <p className="recaptcha-error">{recaptchaError}</p>
             )}
           </div>
         </form>
