@@ -94,7 +94,6 @@ export default function SearchTimingCard({ timing }: SearchTimingCardProps) {
           className="btn-pdf"
           suppressHydrationWarning={true}
         >
-          <FaDownload/>
           PDF
         </button>
         <Link
