@@ -23,7 +23,7 @@ export default function WhyChooseUsSection() {
             alt="لماذا تختارنا - التزامنا بالتميز"
             width={400}
             height={400}
-            className=""
+            className="rotate-y-180"
             quality={90}
           />
         </div>
