@@ -51,12 +51,21 @@ export default function UpcommingCard({ course }: UpcommingCardProps) {
           <span>{course.city_title}</span>
         </div>
         <div className="card-buttons">
-          <Link href={registerUrl} className="btn-primary">
+          <Link
+            href={registerUrl}
+            className="btn-primary"
+            onClick={(e) => e.stopPropagation()}
+          >
             سجل الآن
           </Link>
-          <Link href={readMoreUrl} className="btn-secondary">
-            اقرأ المزيد
-            <span className="sr-only"> عن {course.course_title}</span>
+          <Link
+            href={readMoreUrl}
+            className="btn-secondary"
+            aria-label={`Read more about ${course.course_title}`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            اقرأ المزيد{" "}
+            <span className="sr-only"> حول {course.course_title}</span>
           </Link>
         </div>
       </div>

@@ -2,9 +2,13 @@ import { Metadata } from "next";
 import Breadcrumb from "@/components/ui/breadcrumb";
 import HeroBanner from "@/components/ui/hero-banner";
 import { hero } from "@/constants";
-import "@/styles/about.css";
 import { getSeoData } from "@/services/seo/seo-services";
 import AboutSchema from "@/components/schema/about-schema";
+import WhoWeAreSection from "@/components/sections/who-we-are-section";
+import OurServicesSection from "@/components/sections/our-services-section";
+import OurMissionSection from "@/components/sections/our-mission-section";
+import ExpertTrainersSection from "@/components/sections/expert-trainers-section";
+import WhyChooseUsSection from "@/components/sections/why-choose-us-section";
 
 // Generate metadata dynamically
 export async function generateMetadata(): Promise<Metadata> {
@@ -58,9 +62,8 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
       title: "عن المركز | مركز الأداء المتوازن للتدريب",
       description:
-        "تعرف على مركز الأداء المتوازن للتدريب, رسالتنا, خدماتنا, ومدربينا الخبراء.",
-      keywords:
-        "عن المركز, مركز الأداء المتوازن للتدريب, التدريب المهني, التطوير المهني",
+        "تعرف على مركز الأداء المتوازن للتدريب، رسالتنا، خدماتنا، والمدربين الخبراء.",
+      keywords: "عن المركز, مركز تدريب, التطوير المهني",
       robots: {
         index: true,
         follow: true,
@@ -80,9 +83,8 @@ export async function generateMetadata(): Promise<Metadata> {
     return {
       title: "عن المركز | مركز الأداء المتوازن للتدريب",
       description:
-        "تعرف على مركز الأداء المتوازن للتدريب, رسالتنا, خدماتنا, ومدربينا الخبراء.",
-      keywords:
-        "عن المركز, مركز الأداء المتوازن للتدريب, التدريب المهني, التطوير المهني",
+        "تعرف على مركز الأداء المتوازن للتدريب، رسالتنا، خدماتنا، والمدربين الخبراء.",
+      keywords: "عن المركز, مركز تدريب, التطوير المهني",
       robots: {
         index: true,
         follow: true,
@@ -103,10 +105,7 @@ export default function AboutPage() {
     <>
       <AboutSchema />
       <Breadcrumb
-        items={[
-          { label: "الصفحة الرئيسية", href: "/" },
-          { label: "عن المركز" },
-        ]}
+        items={[{ label: "الرئيسية", href: "/" }, { label: "عن المركز" }]}
       />
       <HeroBanner
         title={hero.about.title}
@@ -116,70 +115,11 @@ export default function AboutPage() {
         imageTitle={hero.about.imageTitle}
       />
       <section className="about-page-content">
-        <div className="container-main">
-          <div className="about-item">
-            <h2>
-              <b>مركز الأداء المتوازن للتدريب</b>
-            </h2>
-            <div>
-              <p>
-                تأسس مركز الأداء المتوازن للتدريب عام 1996 ليكون شريكًا
-                استراتيجيًا في تقديم الحلول التدريبية والاستشارية المتكاملة،
-                بهدف تمكين الأفراد والمؤسسات من تحقيق التميز والاستدامة في بيئات
-                العمل التنافسية. بفضل خبرته الممتدة لعقود ونهجه المبتكر، يقدم
-                المركز برامج متخصصة مصممة وفق أحدث المعايير الدولية، تغطي مجالات
-                القيادة، والإدارة، والتطوير المهني، مما يسهم في بناء قدرات
-                مستدامة وتعزيز ثقافة الابتكار. وبفضل حضوره العالمي، يواصل المركز
-                تمكين عملائه من مواكبة التحديات والمتغيرات في عالم الأعمال
-                المتسارع
-              </p>
-            </div>
-          </div>
-          <div className="about-item">
-            <h2>رسالتنا</h2>
-            <div>
-              <p>
-                نعمل على تعزيز الأداء المؤسسي من خلال تطوير رأس المال البشري
-                ودعم النمو المستدام عبر حلول تدريبية واستشارية مبتكرة
-              </p>
-              <p>
-                ونسعى لنكون الشريك الاستراتيجي الموثوق في بناء بيئات عمل تنافسية
-                وفعّالة.
-              </p>
-            </div>
-          </div>
-          <div className="about-item">
-            <h2>خدماتنا</h2>
-            <p>
-              - التدريب الحضوري: برامج تفاعلية تُعقد في مواقع مختارة لتجربة
-              تعليمية مباشرة
-            </p>
-            <p>
-              - التدريب عبر الإنترنت: دورات مرنة بجودة عالية متاحة في أي وقت ومن
-              أي مكان.
-            </p>
-            <p>
-              - التدريب الداخلي: حلول مخصصة لتعزيز أداء الفرق وتحقيق الأهداف
-              المؤسسية.
-            </p>
-          </div>
-          <div className="about-item">
-            <h2>مدربونا الخبراء</h2>
-            <p>
-              يضم المركز نخبة من المدربين المتخصصين يجمعون بين الخبرة الأكاديمية
-              والمهنية، مستخدمين تطبيقات عملية، ودراسات حالة، وأساليب تفاعلية
-              لضمان تجربة تعليمية فعالة وتطبيق عملي في بيئات العمل.
-            </p>
-          </div>
-          <div className="about-item">
-            <h2>لماذا نحن؟</h2>
-            <p>
-              نعتمد على الابتكار والتقنيات الحديثة في تقديم تدريب عالي الجودة
-              وفعّال. بفضل فريق من الخبراء، نقدم دعمًا مستمرًا لمساعدة المؤسسات
-              والمحترفين على تحقيق النجاح المستدام والريادة في مجالاتهم.
-            </p>
-          </div>
-        </div>
+          <WhoWeAreSection />
+          <OurMissionSection />
+          <ExpertTrainersSection />
+          <WhyChooseUsSection />
+          <OurServicesSection />
       </section>
     </>
   );
